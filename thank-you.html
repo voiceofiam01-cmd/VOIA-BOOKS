@@ -77,6 +77,16 @@ h1{
 .home:hover{text-decoration:underline}
 .ref{font-size:12px;color:var(--muted);margin-top:16px;font-family:ui-monospace,monospace;word-break:break-all}
 .tag{display:inline-block;background:var(--gold);color:var(--midnight);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:30px;margin-bottom:14px}
+.btn-download{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+  color:var(--midnight);font-weight:700;font-size:18px;
+  padding:18px 22px;border-radius:12px;text-decoration:none;
+  box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35);
+  min-height:56px;margin-bottom:8px;
+}
+.btn-download:active{transform:translateY(2px);box-shadow:0 2px 0 var(--gold-deep)}
+.tip{font-size:13.5px;color:var(--muted);margin-bottom:20px}
 </style>
 </head>
 <body>
@@ -85,14 +95,22 @@ h1{
   <div class="check" aria-hidden="true">✓</div>
   <span class="tag">Payment successful</span>
   <h1>You're in. The 20th is about to become just a Tuesday.</h1>
-  <p class="sub">Your copy of <strong>The Paycheck-to-Paycheck Escape Plan</strong> is on its way to your inbox right now.</p>
+  <p class="sub">Your copy of <strong>The Paycheck-to-Paycheck Escape Plan</strong> is ready right now — and a copy is also on its way to your email.</p>
+
+  <!-- Primary action: open the book immediately -->
+  <a class="btn-download" id="download-btn"
+     href="https://drive.google.com/file/d/1wudSozvATwn2AYAE10MdLD2_77PdKFuR/view?usp=sharing"
+     target="_blank" rel="noopener">
+    Open your ebook now →
+  </a>
+  <p class="tip">Opens in Google Drive. Tap the three dots to download/save to your phone. You can also read it online.</p>
 
   <div class="steps">
-    <h2>Next 3 minutes</h2>
+    <h2>What to do next</h2>
     <ol>
-      <li><strong>Check your email</strong> — the PDF will arrive from Paystack within 2 minutes. Check <em>Promotions</em> or <em>Updates</em> if you don't see it.</li>
-      <li><strong>Save it to your phone</strong> — this is a book you'll come back to on payday, not read once and forget.</li>
+      <li><strong>Save the PDF to your phone</strong> — tap the download icon inside Drive so you have it offline on payday.</li>
       <li><strong>Do the 10-minute diagnose today</strong> (Chapter 1). You don't need to finish the whole book to feel the difference.</li>
+      <li><strong>Check your email</strong> — Paystack also sent a copy to your inbox, in case you want it on another device. Check <em>Promotions</em> or <em>Updates</em> if you don't see it.</li>
     </ol>
   </div>
 
