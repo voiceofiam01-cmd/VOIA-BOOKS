@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>The Paycheck-to-Paycheck Escape Plan — Stop being broke by the 20th</title>
 <meta name="description" content="A plain-English 66-page plan for Nigerian salary earners who earn good money but are still broke by the 20th. No suffering. No second job." />
+<link rel="canonical" href="https://voiceofiam01-cmd.github.io/VOIA-BOOKS/paycheck/" />
 
 <!-- Meta Pixel Code -->
 <script>
@@ -70,6 +71,34 @@ body{
 img{max-width:100%;display:block}
 a{color:inherit}
 
+/* Top nav */
+.nav{
+  background:var(--midnight);color:var(--paper);
+  padding:14px 22px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:60;
+  border-bottom:1px solid var(--line);
+}
+.nav .brand{
+  font-family:'Fraunces',Georgia,serif;font-size:17px;color:var(--gold-soft);
+  letter-spacing:.08em;text-decoration:none;font-weight:600;
+  display:flex;align-items:center;gap:10px;
+}
+.nav .waves{display:inline-block}
+.nav .links{display:flex;gap:18px;align-items:center}
+.nav .links a{color:#cfd6e2;text-decoration:none;font-size:14px}
+.nav .links a:hover{color:var(--gold-soft)}
+.nav .links a.cta{
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);
+  font-weight:700;padding:9px 14px;border-radius:10px;font-size:13px;
+  box-shadow:0 3px 0 var(--gold-deep);
+}
+@media (max-width:480px){.nav .links a:not(.cta){display:none}}
+
+/* GLOBAL EDITION BANNER */
+.global-banner{background:linear-gradient(90deg,#0f1f38,#162a4a);color:#e6c577;padding:12px 22px;text-align:center;font-size:14px;letter-spacing:.01em;border-bottom:1px solid rgba(212,168,75,.35)}
+.global-banner a{color:var(--gold-soft);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.global-banner a:hover{color:var(--white)}
+@media (max-width:560px){.global-banner{font-size:13px;padding:10px 18px}}
 /* ---------- sound-wave motif top bar ---------- */
 .topbar{
   background:linear-gradient(180deg,var(--midnight) 0%,var(--midnight-2) 100%);
@@ -537,18 +566,16 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
 </head>
 <body>
 
-<!-- Top bar -->
-<div class="topbar" aria-hidden="true">
-  <svg class="waves" width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="1" y="6" width="2" height="2" rx="1" fill="#d4a84b"/>
-    <rect x="5" y="4" width="2" height="6" rx="1" fill="#d4a84b"/>
-    <rect x="9" y="2" width="2" height="10" rx="1" fill="#e6c577"/>
-    <rect x="13" y="0" width="2" height="14" rx="1" fill="#f4dc9a"/>
-    <rect x="17" y="2" width="2" height="10" rx="1" fill="#e6c577"/>
-    <rect x="21" y="4" width="2" height="6" rx="1" fill="#d4a84b"/>
-    <rect x="25" y="6" width="2" height="2" rx="1" fill="#d4a84b"/>
-  </svg>
-  The Real You Library · Voice of I AM
+<nav class="nav"><a href="/VOIA-BOOKS/" class="brand" aria-label="Voice of I AM home"><svg class="waves" width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="2" height="2" rx="1" fill="#d4a84b"/><rect x="5" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="9" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="13" y="0" width="2" height="14" rx="1" fill="#f4dc9a"/><rect x="17" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="21" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="25" y="6" width="2" height="2" rx="1" fill="#d4a84b"/></svg>VOICE OF I AM</a><div class="links">
+    <a href="/VOIA-BOOKS/">Home</a>
+    <a href="/VOIA-BOOKS/about.html">About</a>
+    <a href="/VOIA-BOOKS/privacy.html">Privacy policy</a>
+    <a href="#buy" class="cta">Buy now · ₦5,500</a>
+  </div></nav>
+
+<!-- GLOBAL EDITION BANNER -->
+<div class="global-banner">
+  🌍 Outside Nigeria? <a href="/VOIA-BOOKS/global/">The Paycheck-to-Paycheck Escape Plan — Global Edition ($9 USD)</a> is available for international readers.
 </div>
 
 <!-- ========== HERO ========== -->
@@ -824,7 +851,7 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
       <div style="font-size:14px;color:#b8c2d4;margin-top:2px">One-time payment · in Naira</div>
       <ul class="format-list">
         <li><span class="check">✓</span>66-page PDF ebook — read on any phone</li>
-        <li><span class="check">✓</span>Instant download after payment</li>
+        <li><span class="check">✓</span>Get the ebook instantly — no waiting for email</li>
         <li><span class="check">✓</span>Includes all appendices, scripts & templates</li>
         <li><span class="check">✓</span>All money in Naira (₦), Nigerian examples</li>
       </ul>
@@ -832,7 +859,7 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
         Get the ebook — ₦5,500
         <span class="arrow">→</span>
       </a>
-      <div class="instant">Instant delivery after payment. Card, transfer, USSD — Paystack secure checkout.</div>
+      <div class="instant">Access the ebook instantly after payment — download straight to your phone. Card, transfer, USSD via Paystack.</div>
       <div class="disclaimer">This book is general money education for beginners. It is not personal financial advice. For your own exact situation — especially around debt or big financial decisions — please speak to a qualified financial adviser.</div>
     </div>
   </div>
@@ -852,7 +879,7 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
 
     <details>
       <summary>What format do I get, and how is it delivered?</summary>
-      <p>You get a 66-page PDF that opens on any phone (Kuda/Opay/PalmPay notifications won't block it). It's delivered instantly to your email by Selar the moment payment completes. You can also re-download from your Selar library any time.</p>
+      <p>You get a 66-page PDF that opens on any phone. Right after you pay, you land on a page with a big button that opens the book instantly in Google Drive — no waiting for email, no login required. Tap the download icon inside Drive to save it to your phone and read offline any time.</p>
     </details>
 
     <details>
@@ -894,7 +921,14 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
 <footer>
   <div class="brand">VOICE OF I AM</div>
   <div>Books for becoming more awake to your own life.</div>
-  <div style="margin-top:8px"><a href="https://www.tiktok.com/@voiceofiam">TikTok @voiceofiam</a> · Support: <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20need%20help%20with%20The%20Paycheck-to-Paycheck%20Escape%20Plan">WhatsApp</a></div>
+  <div class="links" style="margin:14px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <a href="/VOIA-BOOKS/" style="color:var(--gold-soft);text-decoration:none">Home</a>
+    <a href="/VOIA-BOOKS/about.html" style="color:var(--gold-soft);text-decoration:none">About</a>
+    
+    <a href="/VOIA-BOOKS/privacy.html" style="color:var(--gold-soft);text-decoration:none">Privacy policy</a>
+    <a href="https://www.tiktok.com/@voiceofiam" style="color:var(--gold-soft);text-decoration:none">TikTok @voiceofiam</a>
+  </div>
+  <div>Support: <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20need%20help%20with%20The%20Paycheck-to-Paycheck%20Escape%20Plan" style="color:var(--gold-soft);text-decoration:none">WhatsApp</a></div>
   <!-- TODO: replace 2348101265454 above (FAQ + footer) with your real WhatsApp number in international format, no +, e.g. 2348031234567 -->
   <div class="legal">© 2026 Voice of I AM Publishing House. The Real You Library. All rights reserved.<br>This publication is general money education and is not a substitute for professional financial advice.</div>
 </footer>
@@ -968,5 +1002,6 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
 })();
 </script>
 
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4122747a95bc89b',t:'MTc5MDQyNDUwMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f","spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a43bde57a832ee38',t:'MTc5MDg2MTkxNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
