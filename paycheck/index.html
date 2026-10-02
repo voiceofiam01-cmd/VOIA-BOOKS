@@ -100,17 +100,14 @@ a{color:inherit}
 .global-banner a:hover{color:var(--white)}
 @media (max-width:560px){.global-banner{font-size:13px;padding:10px 18px}}
 
-/* ---------- FREE-AUTOPSY PROMO STRIP (small, non-blocking link to standalone page) ---------- */
-.autopsy-promo{background:linear-gradient(90deg,#fff7e6,#f4eddd);border-bottom:1px solid var(--line);padding:12px 22px}
-.autopsy-promo-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
-.ap-badge{background:var(--red);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px;border-radius:20px;flex-shrink:0}
-.ap-text{font-size:14px;color:var(--ink-soft);line-height:1.4}
-.ap-text strong{color:var(--ink)}
-.ap-text a{color:var(--gold-deep);font-weight:700;text-decoration:none}
-.ap-text a:hover{text-decoration:underline}
-.ap-btn{margin-left:auto;background:var(--midnight);color:var(--gold-soft);font-weight:700;font-size:13px;padding:8px 14px;border-radius:8px;text-decoration:none;white-space:nowrap;box-shadow:0 3px 0 #000;flex-shrink:0}
-.ap-btn:hover{background:var(--midnight-2)}
-@media(max-width:640px){.ap-btn{margin-left:0;width:100%;text-align:center}}
+/* ---------- BONUS BUNDLE ROW in buy box ---------- */
+.bonus{margin-top:18px;background:linear-gradient(180deg,#111f38,#0c1830);border:1px solid rgba(212,168,75,.35);border-radius:12px;padding:14px 16px;text-align:left}
+.bonus .bonus-hd{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.bonus .bonus-badge{background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px;border-radius:20px}
+.bonus .bonus-ti{font-family:'Fraunces',Georgia,serif;color:#fff;font-size:16px;font-weight:600;line-height:1.15}
+.bonus .bonus-ti em{font-style:italic;color:var(--gold-soft)}
+.bonus p{color:#a9b6cb;font-size:13px;line-height:1.5;margin:0}
+.bonus p strong{color:var(--gold-soft)}
 
 /* ---------- sound-wave motif top bar ---------- */
 .topbar{
@@ -580,28 +577,15 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
 <body>
 
 <nav class="nav"><a href="/VOIA-BOOKS/" class="brand" aria-label="Voice of I AM home"><svg class="waves" width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="2" height="2" rx="1" fill="#d4a84b"/><rect x="5" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="9" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="13" y="0" width="2" height="14" rx="1" fill="#f4dc9a"/><rect x="17" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="21" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="25" y="6" width="2" height="2" rx="1" fill="#d4a84b"/></svg>VOICE OF I AM</a><div class="links">
-    <a href="/VOIA-BOOKS/paycheck/autopsy.html">Free Autopsy</a>
     <a href="/VOIA-BOOKS/">Home</a>
     <a href="/VOIA-BOOKS/about.html">About</a>
     <a href="/VOIA-BOOKS/privacy.html">Privacy policy</a>
-    <a href="#buy" class="cta">Buy now · ₦5,500</a>
+    <a href="#buy" class="cta">Buy now · ₦5,500 + free worksheet</a>
   </div></nav>
 
 <!-- GLOBAL EDITION BANNER -->
 <div class="global-banner">
   🌍 Outside Nigeria? <a href="/VOIA-BOOKS/global/">The Paycheck-to-Paycheck Escape Plan — Global Edition ($9 USD)</a> is available for international readers.
-</div>
-
-<!-- Free lead magnet lives at /paycheck/autopsy.html (cold ad traffic + retargeting) -->
-<div class="autopsy-promo" id="autopsy">
-  <div class="autopsy-promo-inner">
-    <span class="ap-badge">Free</span>
-    <div class="ap-text">
-      <strong>New: <a href="/VOIA-BOOKS/paycheck/autopsy.html">The Payday Autopsy</a></strong>
-      <span>— a free 12-minute worksheet to find out who killed your last salary, before you buy anything.</span>
-    </div>
-    <a class="ap-btn" href="/VOIA-BOOKS/paycheck/autopsy.html">Get the free worksheet →</a>
-  </div>
 </div>
 
 <!-- ========== HERO ========== -->
@@ -613,11 +597,12 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
       <p class="sub">Salary enters. Bills, data, delivery fees, urgent 2k transfers line up. By the 18th you're checking your balance like — <em>"where did this money go?"</em> This book fixes the system. No suffering. No second job.</p>
 
       <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="top-cta">
-        Get the ebook — <span id="cta-price">₦5,500</span>
+        Get the ebook + free Autopsy — <span id="cta-price">₦5,500</span>
         <span class="arrow">→</span>
       </a>
 
       <div class="meta-row">
+        <span><span class="dot"></span>66-page ebook + 9-page bonus worksheet</span>
         <span><span class="dot"></span>Instant PDF download</span>
         <span><span class="dot"></span>Works with Kuda, Opay, PalmPay</span>
         <span><span class="dot"></span>All examples in ₦</span>
@@ -874,18 +859,26 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
     <div class="price-card">
       <div style="font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#b8c2d4">The Paycheck-to-Paycheck Escape Plan</div>
       <div class="price"><span class="naira">₦</span>5,500</div>
-      <div style="font-size:14px;color:#b8c2d4;margin-top:2px">One-time payment · in Naira</div>
+      <div style="font-size:14px;color:#b8c2d4;margin-top:2px">One-time payment · in Naira · launch price</div>
       <ul class="format-list">
         <li><span class="check">✓</span>66-page PDF ebook — read on any phone</li>
         <li><span class="check">✓</span>Get the ebook instantly — no waiting for email</li>
         <li><span class="check">✓</span>Includes all appendices, scripts & templates</li>
         <li><span class="check">✓</span>All money in Naira (₦), Nigerian examples</li>
+        <li><span class="check bonus-check">🎁</span><strong>Launch bonus:</strong> The Payday Autopsy companion worksheet (9 pages) — yours free with every order this month</li>
       </ul>
-      <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="main-cta">
-        Get the ebook — ₦5,500
+      <div class="bonus">
+        <div class="bonus-hd">
+          <span class="bonus-badge">Bonus</span>
+          <span class="bonus-ti">The Payday Autopsy — <em>a companion worksheet, free inside.</em></span>
+        </div>
+        <p>Before you start Chapter 1, run a 12-minute post-mortem on your last salary across the <strong>7 Nigerian leak categories</strong> (charges, family sends, subscriptions, loans, fuel &amp; transit, feeding, and the one big event). You'll write the verdict, sign it, and start the book already knowing which leak you're solving first. <strong>Sold separately? Maybe later. Today it ships free with the book.</strong></p>
+      </div>
+      <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="main-cta" style="margin-top:18px">
+        Get the ebook + free Autopsy — ₦5,500
         <span class="arrow">→</span>
       </a>
-      <div class="instant">Access the ebook instantly after payment — download straight to your phone. Card, transfer, USSD via Paystack.</div>
+      <div class="instant">Access the ebook and the Autopsy worksheet instantly after payment — download straight to your phone. Card, transfer, USSD via Paystack.</div>
       <div class="disclaimer">This book is general money education for beginners. It is not personal financial advice. For your own exact situation — especially around debt or big financial decisions — please speak to a qualified financial adviser.</div>
     </div>
   </div>
@@ -936,8 +929,8 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
     <div class="quote">“Thirty days from now, one emergency will feel boring.<br><span class="gold">That's the escape.</span>”</div>
     <h2 style="font-size:24px">Payday is coming.<br>This time, it stays.</h2>
     <p>Stop restarting every January, every Monday, every 1st of the month. Get the plan that works with your real life, not the one you wish you had.</p>
-    <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="final-cta" style="max-width:420px">
-      Get the ebook — ₦5,500
+    <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="final-cta" style="max-width:440px">
+      Get the ebook + free Autopsy worksheet — ₦5,500
       <span class="arrow">→</span>
     </a>
   </div>
@@ -967,8 +960,8 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
     alt=""
     aria-hidden="true"
   />
-  <div class="mini-info">
-    <div class="mini-title">The Paycheck-to-Paycheck Escape Plan</div>
+    <div class="mini-info">
+    <div class="mini-title">The Paycheck-to-Paycheck Escape Plan <span style="color:var(--gold-soft);font-weight:600">+ free Autopsy worksheet</span></div>
     <div class="mini-price">₦5,500 · Instant PDF</div>
   </div>
   <a href="https://paystack.shop/pay/c85orxy5yd" class="btn-sticky">
