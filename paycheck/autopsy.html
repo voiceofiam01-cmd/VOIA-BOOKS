@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Payday Autopsy — a free 12-minute worksheet for Nigerian salary earners</title>
+<meta name="description" content="Salary enters on the 25th. By the 18th you're broke and you can't explain it. Find out who killed your last salary in 12 minutes — free PDF worksheet." />
+<link rel="canonical" href="https://voiceofiam01-cmd.github.io/VOIA-BOOKS/paycheck/autopsy.html" />
+<meta name="robots" content="index,follow" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Meta Pixel Code (fires PageView + ViewContent for the Autopsy lead magnet) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1775037067141776');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {
+  content_name: 'The Payday Autopsy (NG) landing page',
+  content_category: 'Lead Magnet',
+  currency: 'NGN',
+  value: 0
+});
+
+function trackLeadSubmit(e){
+  if(typeof fbq === 'function'){
+    fbq('track', 'Lead', {
+      content_name: 'The Payday Autopsy (NG) — opt-in submit',
+      content_category: 'Lead Magnet',
+      currency: 'NGN',
+      value: 0
+    });
+  }
+}
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+
+<style>
+:root{
+  --midnight:#0a1628;--midnight-2:#0f1f38;--ink:#0a1628;--ink-soft:#2a3a55;
+  --paper:#f7f3ea;--paper-2:#efe8d8;--gold:#d4a84b;--gold-soft:#e6c577;--gold-deep:#a8802e;
+  --white:#fff;--muted:#5a6b86;--line:rgba(212,168,75,.25);--green:#2f6b5c;--red:#c53b3b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--ink);background:linear-gradient(180deg,#fbf7ec,#f4eddd 60%,#f7f3ea);
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+
+/* NAV */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;background:var(--paper);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
+}
+.brand{display:inline-flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.14em}
+.waves{display:block}
+.nav .links a{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none;margin-left:18px}
+.nav .links a:hover{color:var(--gold-deep)}
+.nav .links a.cta{
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);
+  padding:9px 14px;border-radius:10px;box-shadow:0 3px 0 var(--gold-deep);
+}
+@media(max-width:640px){.nav .links a:not(.cta){display:none}}
+
+/* HERO */
+.hero{padding:54px 24px 38px}
+.hero-inner{max-width:1040px;margin:0 auto;display:grid;gap:40px;grid-template-columns:1fr;align-items:center}
+.ed{display:inline-block;background:var(--red);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;padding:6px 12px;border-radius:20px;margin-bottom:18px}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:44px;line-height:1.08;letter-spacing:-.02em;margin-bottom:14px;color:var(--ink)}
+h1 em{font-style:italic;color:var(--gold-deep)}
+.sub{color:var(--ink-soft);font-size:17px;line-height:1.65;margin-bottom:20px;max-width:58ch}
+.sub strong{color:var(--ink)}
+.meta-row{display:flex;flex-wrap:wrap;gap:14px 22px;font-size:13px;color:var(--muted);font-weight:600;margin-top:16px}
+.meta-row span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block}
+.cover-wrap{text-align:center;position:relative}
+.cover{
+  max-width:100%;width:320px;border-radius:6px 10px 10px 6px;
+  box-shadow:0 2px 0 rgba(255,255,255,.5) inset,-2px 0 0 rgba(0,0,0,.15) inset,
+    0 28px 50px rgba(10,22,40,.28),0 10px 20px rgba(10,22,40,.18),0 0 0 1px rgba(212,168,75,.4);
+  transform:perspective(900px) rotateY(-8deg) rotateX(2deg) rotateZ(-1deg);
+}
+.ribbon{
+  position:absolute;top:-14px;right:calc(50% - 180px);background:var(--red);color:#fff;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:6px 12px;border-radius:4px;box-shadow:0 6px 14px rgba(197,59,59,.4);transform:rotate(6deg);
+}
+
+/* FORM CARD */
+.tool-card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;
+  box-shadow:0 14px 36px rgba(10,22,40,.08);margin-top:8px;max-width:520px;
+}
+.tool-card .label{display:inline-block;background:var(--green);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;border-radius:20px;margin-bottom:10px}
+.tool-card h2{font-family:'Fraunces',Georgia,serif;font-size:24px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.tool-card p.lede{font-size:14.5px;color:var(--ink-soft);margin-bottom:14px}
+.tool-list{list-style:none;padding:0;margin:0 0 14px}
+.tool-list li{
+  font-size:14px;color:var(--ink-soft);padding:6px 0 6px 26px;position:relative;line-height:1.45;
+  border-top:1px solid rgba(212,168,75,.18);
+}
+.tool-list li:first-child{border-top:none}
+.tool-list li::before{content:"✓";position:absolute;left:0;top:6px;color:var(--green);font-weight:700;font-size:14px}
+.seva-fields{display:flex;gap:0;flex-wrap:wrap}
+.formkit-field{flex:1 1 auto;min-width:0;margin:0}
+.formkit-input{
+  width:100%;padding:16px 18px;border:1.5px solid var(--line);border-radius:10px 0 0 10px;
+  font-size:16px;font-family:inherit;background:#fff;color:var(--ink);margin:0;outline:none;
+  height:54px;box-sizing:border-box;border-right:none;
+}
+.formkit-input:focus{border-color:var(--gold)}
+.formkit-submit{
+  width:auto;margin:0;border-radius:0 12px 12px 0;
+  box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35);
+  padding:0 22px;white-space:nowrap;height:54px;min-height:54px;
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);
+  font-weight:700;font-size:15px;border:none;cursor:pointer;font-family:inherit;
+}
+.formkit-submit:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
+.formkit-submit > span{padding:0}
+.formkit-alert{list-style:none;background:#fde8e2;border:1px solid #f2643b;color:#ea4110;border-radius:10px;padding:10px 14px;font-size:13px;margin:10px 0 0}
+.formkit-alert:empty{display:none}
+.formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c}
+.consent{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.consent a{color:var(--gold-deep);font-weight:600}
+
+/* PAIN SECTION */
+.pain{padding:40px 24px;background:linear-gradient(180deg,var(--midnight-2),var(--midnight));color:#dde4ef}
+.pain-inner{max-width:760px;margin:0 auto}
+.pain h2{font-family:'Fraunces',Georgia,serif;font-size:30px;line-height:1.2;font-weight:500;color:#fff;margin-bottom:18px}
+.pain h2 em{font-style:italic;color:var(--gold-soft)}
+.pain p{color:#b4c0d2;font-size:16px;line-height:1.7;margin-bottom:14px}
+.pain ul{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px}
+.pain li{font-size:15px;color:#cdd6e3;padding:12px 16px 12px 40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;position:relative;line-height:1.45}
+.pain li::before{content:"•";position:absolute;left:18px;top:10px;color:var(--gold-soft);font-size:22px;line-height:1}
+
+/* HOW IT WORKS */
+.how{padding:44px 24px;background:var(--paper)}
+.how-inner{max-width:820px;margin:0 auto}
+.kicker{display:block;font-family:'Inter',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:8px}
+.how h2{font-family:'Fraunces',Georgia,serif;font-size:30px;font-weight:500;color:var(--ink);margin-bottom:18px;line-height:1.15}
+.steps{display:grid;gap:14px;margin-top:20px}
+.step{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.step .num{flex:0 0 34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--midnight);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center}
+.step h3{font-family:'Fraunces',Georgia,serif;font-size:18px;color:var(--ink);margin-bottom:4px;font-weight:600}
+.step p{font-size:14.5px;color:var(--ink-soft);line-height:1.55}
+
+/* SOFT UPSELL FOOTER */
+.soft{padding:44px 24px;background:linear-gradient(180deg,#fbf7ec,#f4eddd)}
+.soft-inner{max-width:720px;margin:0 auto;text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 28px;box-shadow:0 14px 36px rgba(10,22,40,.08)}
+.soft .badge{display:inline-block;background:rgba(212,168,75,.18);color:var(--gold-deep);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:20px;border:1px solid rgba(212,168,75,.4);margin-bottom:14px}
+.soft h2{font-family:'Fraunces',Georgia,serif;font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.2}
+.soft p{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:18px}
+.soft .btn{display:inline-flex;align-items:center;gap:8px;background:var(--midnight);color:var(--gold-soft);font-weight:700;font-size:15px;padding:14px 22px;border-radius:12px;text-decoration:none;box-shadow:0 4px 0 #000}
+.soft .btn:hover{background:var(--midnight-2)}
+.soft .fine{font-size:12.5px;color:var(--muted);margin-top:10px}
+
+/* FOOTER */
+footer{padding:28px 24px 36px;text-align:center;background:var(--paper-2);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer a{color:var(--gold-deep);font-weight:600;text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(min-width:820px){
+  .hero-inner{grid-template-columns:1.1fr .9fr;gap:48px}
+  .hero{padding:66px 24px 48px}
+  h1{font-size:50px}
+}
+@media(max-width:480px){
+  .hero{padding:36px 18px 28px}
+  h1{font-size:32px}
+  .sub{font-size:16px}
+  .cover{width:240px}
+  .ribbon{right:calc(50% - 140px);font-size:10px;padding:5px 10px}
+  .seva-fields{flex-direction:column}
+  .formkit-input{height:52px;font-size:15px;padding:14px 16px;border-radius:10px;border-right:1.5px solid var(--line)}
+  .formkit-submit{width:100%;margin-top:10px;border-radius:10px;height:52px;min-height:52px}
+  .pain h2,.how h2{font-size:24px}
+  .step{padding:14px}
+  .soft-inner{padding:26px 20px}
+  .soft h2{font-size:22px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/paycheck/" class="brand" aria-label="Voice of I AM">
+    <svg class="waves" width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="6" width="2" height="2" rx="1" fill="#d4a84b"/><rect x="5" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="9" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="13" y="0" width="2" height="14" rx="1" fill="#f4dc9a"/><rect x="17" y="2" width="2" height="10" rx="1" fill="#e6c577"/><rect x="21" y="4" width="2" height="6" rx="1" fill="#d4a84b"/><rect x="25" y="6" width="2" height="2" rx="1" fill="#d4a84b"/></svg>
+    VOICE OF I AM
+  </a>
+  <div class="links">
+    <a href="/VOIA-BOOKS/">Home</a>
+    <a href="/VOIA-BOOKS/paycheck/">The Book</a>
+    <a href="#get-autopsy" class="cta">Free worksheet</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="ed">Free · 9-page PDF · 12 minutes</span>
+      <h1>Salary enters. By the 18th you're broke.<br><em>Find out who killed it.</em></h1>
+      <p class="sub">You don't need another budget app. You need a <strong>post-mortem</strong>. This 9-page worksheet walks you through your last salary — alert by alert, debit by debit — and names exactly which of the 7 Nigerian leak categories finished the money before the month did.</p>
+
+      <div class="tool-card" id="get-autopsy">
+        <span class="label">The Payday Autopsy</span>
+        <h2>It's free. It takes 12 minutes.</h2>
+        <p class="lede">You'll leave with a verdict on paper: <em>"My salary died on the ___ day of ___, killed by ___."</em></p>
+        <ul class="tool-list">
+          <li>The 7 leak categories that eat every Nigerian salary</li>
+          <li>Line-by-line worksheet — scroll your banking alerts once</li>
+          <li>Verdict page + your real leak number, no shame</li>
+          <li>3 moves to make before next payday</li>
+        </ul>
+
+        <!-- Kit form: ID 9993291 (NG Payday Autopsy list) -->
+        <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form action="https://app.kit.com/forms/9993291/subscriptions"
+              class="seva-form formkit-form"
+              method="post"
+              data-sv-form="9993291"
+              data-uid="07389e538f"
+              data-format="inline"
+              data-version="5"
+              data-options='{"settings":{"after_subscribe":{"action":"redirect","success_message":"Success! Check your email.","redirect_url":"https://voiceofiam01-cmd.github.io/VOIA-BOOKS/paycheck/autopsy-thankyou.html"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":""},"recaptcha":{"enabled":false},"return_visitor":{"action":"hide","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+              id="ck-form"
+              onsubmit="trackLeadSubmit(event)"
+              style="background:transparent;border-radius:0;box-shadow:none;max-width:none">
+          <label for="autopsy-email" style="display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:.02em">Enter your email — get the Autopsy instantly, plus a copy in your inbox:</label>
+          <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+            <div class="formkit-field">
+              <input class="formkit-input" id="autopsy-email" name="email_address" aria-label="Email Address"
+                     placeholder="you@example.com" required type="email" />
+            </div>
+            <button data-element="submit" class="formkit-submit formkit-submit" type="submit">
+              <span>Get the free Autopsy →</span>
+            </button>
+          </div>
+          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+          <p class="consent">We'll send you the Autopsy plus occasional new-book notes. No spam. Unsubscribe any time. <a href="/VOIA-BOOKS/privacy.html">Privacy</a>.</p>
+          <div class="formkit-powered-by-convertkit-container" style="display:none" data-active="false"></div>
+        </form>
+      </div>
+
+      <div class="meta-row">
+        <span><span class="dot"></span>Instant PDF download</span>
+        <span>📄 9 pages</span>
+        <span>⏱ 12 minutes</span>
+        <span>🇳🇬 Written for Nigeria</span>
+      </div>
+    </div>
+
+    <div class="cover-wrap">
+      <img class="cover" src="autopsy-cover-thumb.jpg" alt="The Payday Autopsy worksheet cover" />
+      <span class="ribbon">Free</span>
+    </div>
+  </div>
+</header>
+
+<!-- PAIN / WHY -->
+<section class="pain">
+  <div class="pain-inner">
+    <h2>You've earned this money three times over.<br><em>So where is it?</em></h2>
+    <p>Salary enters on the 25th. For the first three days you feel rich. Then the transfers start. Then the debit alerts. Then by the 18th you are scrolling your bank app at 11pm, muttering "this can't be right."</p>
+    <p>Most salary earners in Nigeria can't tell you where 30-40% of their salary went. Not because they're careless. Because the money leaves in pieces too small to notice — until you add them up on paper.</p>
+    <ul>
+      <li><strong>₦50 stamp duty</strong> on every transfer — you did 47 of them last month.</li>
+      <li><strong>"Borrow me 2k"</strong> messages that never came back — 6 people, 12k.</li>
+      <li><strong>Data, airtime, Netflix, Spotify, gym</strong> — subscriptions you forgot you had.</li>
+      <li><strong>Loan-app debits</strong> from that one week in July — still paying for it.</li>
+      <li><strong>Fuel + generator</strong> during the three weeks NEPA took.</li>
+      <li><strong>The one weekend</strong> — aso ebi, owambe, December, school fees, a January you didn't plan for.</li>
+    </ul>
+    <p>The Autopsy doesn't judge you. It lays the body on the table. You sign the verdict.</p>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how">
+  <div class="how-inner">
+    <span class="kicker">How it works</span>
+    <h2>Open your banking app. Set a timer.<br>You're done before your tea gets cold.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div>
+          <h3>Print the worksheet (or open it on your phone)</h3>
+          <p>Paper works best. But if you can't print, Notes app or a pen on the back of an envelope works too.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div>
+          <h3>Scroll every alert from payday forward</h3>
+          <p>Open your banking app. Start from the day salary entered. Drop every debit into one of the 7 buckets. One line per debit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div>
+          <h3>Add each column. Subtract from salary.</h3>
+          <p>The biggest column is the culprit. That's what killed your salary. It's almost never the thing you thought it would be.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div>
+          <h3>Sign the verdict. Do the 3 moves tomorrow.</h3>
+          <p>Last page: three specific actions (the Payday Split, one autopilot savings, one honest conversation) before next salary enters.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:30px">
+      <a href="#get-autopsy" class="formkit-submit" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;padding:0 28px;height:54px;border-radius:12px;font-size:16px">
+        <span>Send me the Autopsy →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOFT UPSELL -->
+<section class="soft">
+  <div class="soft-inner">
+    <span class="badge">After the Autopsy</span>
+    <h2>The Autopsy finds the body.<br>The book gives you the moves.</h2>
+    <p>If you want the exact 90-day system to split your salary on payday, plug the 7 leaks permanently, and survive December &amp; January — there's a 66-page book for that. Written by a Nigerian, for Nigeria. Instant PDF after payment.</p>
+    <a class="btn" href="/VOIA-BOOKS/paycheck/">See the book →</a>
+    <p class="fine">No pressure. Run the Autopsy first. Buy the book only if you want the full plan.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Made in Lagos · <a href="/VOIA-BOOKS/privacy.html">Privacy</a> · <a href="/VOIA-BOOKS/paycheck/">The Paycheck-to-Paycheck Escape Plan</a></p>
+  <p style="margin-top:6px">Voice of I AM — books that respect your intelligence.</p>
+</footer>
+
+</body>
+</html>
