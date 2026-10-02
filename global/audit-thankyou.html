@@ -47,51 +47,60 @@ function trackUpsellClick(){
 :root{--midnight:#0a1628;--midnight-2:#0f1f38;--ink:#0a1628;--ink-soft:#2a3a55;--paper:#f7f3ea;--paper-2:#efe8d8;--gold:#d4a84b;--gold-soft:#e6c577;--gold-deep:#a8802e;--white:#fff;--muted:#5a6b86;--line:rgba(212,168,75,.25);--green:#2f6b5c}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--midnight-2),var(--midnight));min-height:100vh;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:var(--paper);border-radius:18px;padding:40px 30px;max-width:540px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.4);text-align:center;border-top:4px solid var(--gold)}
-.check{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--midnight);font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 8px 20px rgba(212,168,75,.3)}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:27px;line-height:1.2;color:var(--ink);margin-bottom:8px}
-.lede{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin-bottom:20px}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--midnight-2),var(--midnight));min-height:100vh;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;align-items:flex-start;justify-content:center;padding:24px}
+.card{background:var(--paper);border-radius:18px;padding:36px 26px;max-width:520px;width:100%;box-shadow:0 20px 50px rgba(0,0,0,.4);text-align:center;border-top:4px solid var(--gold);margin-top:8px}
+.check{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--midnight);font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;box-shadow:0 8px 20px rgba(212,168,75,.3)}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:25px;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.lede{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:18px}
 
-/* Download block — primary action */
-.download{margin:22px 0 10px}
-.download .big-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:17px;padding:18px 24px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 28px rgba(212,168,75,.35);min-height:60px}
+/* Download block */
+.download{margin:10px 0}
+.download .big-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:16px 22px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 28px rgba(212,168,75,.35);min-height:56px}
 .download .big-btn:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
-.download .big-btn .icon{font-size:22px}
-.download .meta{text-align:center;font-size:13px;color:var(--muted);margin-top:8px;letter-spacing:.01em}
+.download .big-btn .icon{font-size:20px}
+.download .meta{text-align:center;font-size:12.5px;color:var(--muted);margin-top:7px;letter-spacing:.01em}
 
-/* Instructions */
-.how{text-align:left;background:var(--white);border-radius:12px;padding:18px 20px;margin:22px 0;border-left:3px solid var(--gold)}
-.how h2{font-family:'Fraunces',Georgia,serif;font-size:14px;color:var(--gold-deep);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;font-weight:600}
-.how ol{padding-left:22px;color:var(--ink-soft);font-size:14.5px;line-height:1.6}
-.how li{margin-bottom:6px}
-.how li strong{color:var(--ink)}
-
-/* Upsell */
-.upsell{margin-top:26px;padding:26px 22px;background:linear-gradient(180deg,#1a2d4d,#0f1f38);border-radius:14px;text-align:left;border:1px solid rgba(212,168,75,.35);position:relative;overflow:hidden}
-.upsell::before{content:"";position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,75,.22),transparent 70%);pointer-events:none}
-.upsell .tag{display:inline-block;background:rgba(212,168,75,.15);color:var(--gold-soft);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:20px;border:1px solid rgba(212,168,75,.3);margin-bottom:12px}
-.upsell h2{font-family:'Fraunces',Georgia,serif;font-size:22px;line-height:1.25;color:var(--white);font-weight:500;margin-bottom:8px}
-.upsell .lede{color:#cfd6e2;font-size:14.5px;line-height:1.6;margin-bottom:14px}
-.upsell ul{list-style:none;padding:0;margin:0 0 18px 0}
-.upsell li{color:#d8dee9;font-size:14px;line-height:1.55;padding:5px 0 5px 22px;position:relative}
-.upsell li::before{content:"✓";position:absolute;left:0;color:var(--gold-soft);font-weight:700}
-.upsell .primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:16px 22px;border-radius:12px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.3);min-height:54px}
+/* Upsell — moved ABOVE the fold, directly after download */
+.upsell{margin:22px 0 0;padding:22px 20px;background:linear-gradient(180deg,#1a2d4d,#0f1f38);border-radius:14px;text-align:left;border:1px solid rgba(212,168,75,.35);position:relative;overflow:hidden}
+.upsell::before{content:"";position:absolute;top:-50px;right:-50px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,75,.22),transparent 70%);pointer-events:none}
+.upsell .upsell-grid{display:flex;gap:16px;align-items:flex-start;position:relative;z-index:1}
+.upsell .cover{flex:0 0 92px;width:92px;height:130px;border-radius:6px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.45),0 0 0 1px rgba(212,168,75,.3);background:#0a1628}
+.upsell .cover img{width:100%;height:100%;object-fit:cover;display:block}
+.upsell .copy{flex:1;min-width:0}
+.upsell .tag{display:inline-block;background:rgba(212,168,75,.15);color:var(--gold-soft);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:20px;border:1px solid rgba(212,168,75,.3);margin-bottom:8px}
+.upsell h2{font-family:'Fraunces',Georgia,serif;font-size:18px;line-height:1.2;color:var(--white);font-weight:500;margin-bottom:6px}
+.upsell .lede{color:#cfd6e2;font-size:13.5px;line-height:1.55;margin-bottom:10px}
+.upsell ul{list-style:none;padding:0;margin:0 0 12px 0}
+.upsell li{color:#d8dee9;font-size:13px;line-height:1.5;padding:3px 0 3px 18px;position:relative}
+.upsell li::before{content:"✓";position:absolute;left:0;color:var(--gold-soft);font-weight:700;font-size:12px}
+.upsell .primary{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:15px;padding:13px 18px;border-radius:10px;text-decoration:none;box-shadow:0 5px 0 var(--gold-deep),0 8px 20px rgba(212,168,75,.3);min-height:48px}
 .upsell .primary:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
-.upsell .meta{text-align:center;font-size:12.5px;color:#8ea0bb;margin-top:10px;letter-spacing:.01em}
-.upsell .no-thanks{display:block;text-align:center;margin-top:12px;color:#8ea0bb;font-size:13px;text-decoration:none}
+.upsell .meta{text-align:center;font-size:12px;color:#8ea0bb;margin-top:8px;letter-spacing:.01em}
+.upsell .no-thanks{display:block;text-align:center;margin-top:8px;color:#8ea0bb;font-size:12.5px;text-decoration:none}
 .upsell .no-thanks:hover{color:var(--gold-soft);text-decoration:underline}
 
-.note{font-size:13.5px;color:var(--muted);margin-top:18px;line-height:1.55}
+/* Instructions (below upsell, less critical) */
+.how{text-align:left;background:var(--white);border-radius:12px;padding:16px 18px;margin:22px 0 0;border-left:3px solid var(--gold)}
+.how h2{font-family:'Fraunces',Georgia,serif;font-size:12.5px;color:var(--gold-deep);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.how ol{padding-left:20px;color:var(--ink-soft);font-size:13.5px;line-height:1.55}
+.how li{margin-bottom:5px}
+.how li strong{color:var(--ink)}
+
+.note{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.55}
 .note a{color:var(--gold-deep);font-weight:600}
-.home{display:block;margin-top:16px;color:var(--muted);font-size:14px;text-decoration:none}
+.home{display:block;margin-top:14px;color:var(--muted);font-size:13.5px;text-decoration:none}
 .home:hover{text-decoration:underline;color:var(--gold-deep)}
 
 @media (max-width:480px){
-  .card{padding:32px 22px}
-  h1{font-size:23px}
-  .download .big-btn{font-size:16px;padding:16px 20px}
-  .upsell h2{font-size:19px}
+  body{padding:14px}
+  .card{padding:28px 20px;margin-top:0}
+  h1{font-size:22px}
+  .download .big-btn{font-size:15px;padding:14px 18px}
+  .upsell{padding:18px 16px}
+  .upsell .cover{flex:0 0 76px;width:76px;height:108px}
+  .upsell h2{font-size:16px}
+  .upsell .lede{font-size:12.5px;margin-bottom:8px}
+  .upsell li{font-size:12.5px}
 }
 </style>
 </head>
@@ -99,52 +108,60 @@ h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:27px;line-heig
 <main class="card">
   <div class="check" aria-hidden="true">✓</div>
   <h1>Here's your Audit.</h1>
-  <p class="lede">Your copy of <strong>The 10-Minute Audit</strong> is ready. Tap the button below to open it now — we also emailed a copy to the address you entered, in case you want it later.</p>
+  <p class="lede">Your copy of <strong>The 10-Minute Audit</strong> is ready. Tap below to open it — we also emailed a copy to you in case you want it later.</p>
 
   <!-- INSTANT DOWNLOAD -->
   <div class="download">
     <a class="big-btn"
-       href="lead-magnet.pdf"
+       href="the-10-minute-audit.pdf"
        target="_blank"
        rel="noopener"
+       download="The 10-Minute Audit.pdf"
        onclick="trackAuditDownload()">
       <span class="icon" aria-hidden="true">📄</span>
       Download The 10-Minute Audit →
     </a>
-    <p class="meta">PDF · 8 pages · opens in a new tab · free forever</p>
+    <p class="meta">PDF · 8 pages · opens instantly · free forever</p>
   </div>
 
+  <!-- UPSELL — directly under download, above the fold, with cover -->
+  <div class="upsell">
+    <div class="upsell-grid">
+      <div class="cover">
+        <img src="global-cover-thumb.jpg" alt="The Paycheck-to-Paycheck Escape Plan — Global Edition book cover" />
+      </div>
+      <div class="copy">
+        <span class="tag">After you do the Audit</span>
+        <h2>You found the leak.<br>Here's the plan to fix it.</h2>
+        <p class="lede">The Audit gives you the number. The book gives you the step-by-step to change it — in order, without the guilt.</p>
+        <ul>
+          <li>Stop the silent leaks</li>
+          <li>8-Minute Payday Drill — done today</li>
+          <li>Your first $1,000 buffer</li>
+          <li>Triage Card for when a month is on fire</li>
+        </ul>
+        <a class="primary"
+           href="https://paystack.shop/pay/3sr-qh8ovi"
+           onclick="trackUpsellClick()">
+          Get the full book — $9 →
+        </a>
+        <p class="meta">$9 USD · 66 pages · PDF · delivered instantly</p>
+        <a class="no-thanks" href="/VOIA-BOOKS/global/">I'll read the Audit first →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCTIONS (below the fold) -->
   <div class="how">
     <h2>How to get the most out of it</h2>
     <ol>
-      <li><strong>Print it if you can.</strong> Paper remembers what the thumb forgets — and this is one exercise where handwriting changes the outcome.</li>
-      <li><strong>Grab a pen and open your banking app.</strong> Last month's statements. Fixed payments only. No shame — numbers first.</li>
-      <li><strong>Set a timer for 10 minutes</strong> and do it tonight. Not this weekend — tonight. The number itself changes things.</li>
+      <li><strong>Print it if you can.</strong> Paper remembers what the thumb forgets — handwriting changes this exercise.</li>
+      <li><strong>Grab a pen, open your banking app,</strong> last month's statements. Fixed payments only. No shame.</li>
+      <li><strong>Set a timer for 10 minutes</strong> and do it tonight. The number itself changes things.</li>
     </ol>
   </div>
 
-  <!-- UPSELL: direct to Paystack -->
-  <div class="upsell">
-    <span class="tag">After you do the Audit</span>
-    <h2>You're about to find the leak.<br>Here's the plan to fix it.</h2>
-    <p class="lede">The Audit gives you the number. <em>The Paycheck-to-Paycheck Escape Plan</em> gives you the step-by-step to actually change it — in the order that matters, without the guilt.</p>
-    <ul>
-      <li>Stop the silent leaks you don't even notice</li>
-      <li>The 8-Minute Payday Drill — your first real split, done today</li>
-      <li>Build your first $1,000 buffer without earning more</li>
-      <li>The Triage Card for when a month is already on fire</li>
-      <li>Plain English — 66 pages, finish in one sitting</li>
-    </ul>
-    <a class="primary"
-       href="https://paystack.shop/pay/3sr-qh8ovi"
-       onclick="trackUpsellClick()">
-      Get the full book — $9 →
-    </a>
-    <p class="meta">$9 USD · 66 pages · PDF · delivered instantly to your inbox</p>
-    <a class="no-thanks" href="/VOIA-BOOKS/global/">I'll start with the Audit first →</a>
-  </div>
-
-  <p class="note"><strong>Email didn't arrive?</strong> Check Promotions or Spam. Not there after 10 minutes? <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20signed%20up%20for%20the%2010-Minute%20Audit%20but%20didn%27t%20get%20the%20email.">Message us on WhatsApp</a> and we'll send it to you personally.</p>
+  <p class="note"><strong>Email didn't arrive?</strong> Check Promotions or Spam. Not there after 10 minutes? <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20signed%20up%20for%20the%2010-Minute%20Audit%20but%20didn%27t%20get%20the%20email.">Message us on WhatsApp</a>.</p>
 
   <a class="home" href="/VOIA-BOOKS/">&larr; Back to Voice of I AM</a>
 </main>
