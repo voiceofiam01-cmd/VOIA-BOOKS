@@ -142,6 +142,57 @@ a{color:inherit}
   .magnet .magnet-cover img{width:200px}
 }
 
+/* ---------- KIT STARTER-TEMPLATE OVERRIDES (neutralize dark/orange injected UI) ---------- */
+.magnet .formkit-form,
+.magnet .formkit-form *{box-sizing:border-box}
+.magnet .formkit-form{background:transparent !important;border-radius:0 !important;box-shadow:none !important;max-width:none !important;min-height:0 !important;color:var(--ink) !important;padding:0 !important;font-family:inherit !important}
+.magnet .formkit-form[data-style="full"],
+.magnet .formkit-form [data-style="full"]{background:transparent !important;min-height:0 !important;border-radius:0 !important;display:block !important}
+.magnet .formkit-form .formkit-background{display:none !important}
+.magnet .formkit-form .formkit-container{background:transparent !important;padding:0 !important;display:block !important}
+.magnet .formkit-form .formkit-header{display:none !important}
+.magnet .formkit-form .formkit-content{display:none !important}
+.magnet .formkit-form .formkit-disclaimer{display:none !important}
+.magnet .formkit-form .formkit-powered-by-convertkit-container,
+.magnet .formkit-form .formkit-powered-by-convertkit{display:none !important;opacity:0 !important}
+.magnet .formkit-form .formkit-alert{background:#fde8e2 !important;border:1px solid #f2643b !important;color:#ea4110 !important;border-radius:10px !important;padding:10px 14px !important;font-size:13px !important;text-align:left !important;width:auto !important;margin:10px 0 0 !important;list-style:none !important}
+.magnet .formkit-form .formkit-alert:empty{display:none !important}
+.magnet .formkit-form .formkit-alert-success{background:#d3fbeb !important;border-color:#10bf7a !important;color:#0c905c !important}
+.magnet .formkit-form .seva-fields.formkit-fields{display:flex !important;gap:0 !important;flex-wrap:wrap !important;align-items:stretch !important}
+.magnet .formkit-form .formkit-field{flex:1 1 auto !important;min-width:0 !important;margin:0 !important}
+.magnet .formkit-form .formkit-input{
+  width:100% !important;padding:16px 18px !important;
+  border:1.5px solid var(--line) !important;border-right:none !important;
+  border-radius:10px 0 0 10px !important;
+  font-size:16px !important;font-family:inherit !important;
+  background:#fff !important;color:var(--ink) !important;
+  margin:0 !important;outline:none !important;height:56px !important;
+  box-sizing:border-box !important;font-weight:400 !important;line-height:1.4 !important;
+}
+.magnet .formkit-form .formkit-input::placeholder{color:#99a4b3 !important;opacity:1 !important}
+.magnet .formkit-form .formkit-input:focus{border-color:var(--gold) !important;outline:none !important}
+.magnet .formkit-form .formkit-submit{
+  width:auto !important;margin:0 !important;border-radius:0 12px 12px 0 !important;
+  box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35) !important;
+  padding:0 24px !important;white-space:nowrap !important;
+  height:56px !important;min-height:56px !important;
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold)) !important;
+  color:var(--midnight) !important;font-weight:700 !important;font-size:15px !important;
+  border:none !important;cursor:pointer !important;font-family:inherit !important;
+  position:relative !important;overflow:visible !important;
+}
+.magnet .formkit-form .formkit-submit > span{
+  display:inline-flex !important;padding:0 !important;background:transparent !important;
+  font-size:15px !important;font-weight:700 !important;color:var(--midnight) !important;
+}
+.magnet .formkit-form .formkit-submit:hover{background:linear-gradient(180deg,#f0d48a,#dab05b) !important}
+.magnet .formkit-form .formkit-submit .formkit-spinner{display:none !important}
+@media (max-width:480px){
+  .magnet .formkit-form .seva-fields.formkit-fields{flex-direction:column !important}
+  .magnet .formkit-form .formkit-input{height:52px !important;font-size:15px !important;padding:14px 16px !important;border-radius:10px !important;border-right:1.5px solid var(--line) !important}
+  .magnet .formkit-form .formkit-submit{width:100% !important;margin-top:10px !important;border-radius:10px !important;height:52px !important;min-height:52px !important}
+}
+
 /* ---------- sound-wave motif top bar ---------- */
 .topbar{
   background:linear-gradient(180deg,var(--midnight) 0%,var(--midnight-2) 100%);
@@ -635,14 +686,17 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
         <li><strong>3 moves for tomorrow.</strong> The very first things to change before next payday.</li>
       </ul>
 
-      <!-- KIT (ConvertKit) FORM — REPLACE FORM ID + UID + redirect_url with your Nigerian list form.
-           See setup notes in /marketing/ — create a new ConvertKit form for Nigerian leads. -->
+      <!-- KIT (ConvertKit) FORM — ID 9993291 / UID 07389e538f (NG Payday Autopsy list).
+           NOTE: If you ever re-save this form in Kit with the "Starter" (dark/orange) template,
+           Kit injects a background image + "Join the waitlist" header + orange button. The CSS
+           below (in <style>) forces our cream/gold styling and hides the injected chrome.
+           For a clean markup without overrides, switch the form template to "Minimal" in Kit. -->
       <div class="tool-form" id="optin-form">
-        <form action="https://app.kit.com/forms/PAYCHECK_KIT_FORM_ID/subscriptions"
+        <form action="https://app.kit.com/forms/9993291/subscriptions"
               class="seva-form formkit-form"
               method="post"
-              data-sv-form="PAYCHECK_KIT_FORM_ID"
-              data-uid="PAYCHECK_KIT_UID"
+              data-sv-form="9993291"
+              data-uid="07389e538f"
               data-format="inline"
               data-version="5"
               data-options='{"settings":{"after_subscribe":{"action":"redirect","success_message":"Success! Check your email.","redirect_url":"https://voiceofiam01-cmd.github.io/VOIA-BOOKS/paycheck/autopsy-thankyou.html"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":""},"recaptcha":{"enabled":false},"return_visitor":{"action":"hide","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
