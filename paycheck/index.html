@@ -99,6 +99,49 @@ a{color:inherit}
 .global-banner a{color:var(--gold-soft);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .global-banner a:hover{color:var(--white)}
 @media (max-width:560px){.global-banner{font-size:13px;padding:10px 18px}}
+
+/* ---------- FREE AUTOPSY OPT-IN (lead magnet) ---------- */
+.magnet{background:linear-gradient(180deg,#fbf7ec,#f4eddd);border-bottom:1px solid var(--line);padding:44px 24px}
+.magnet .magnet-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.magnet .magnet-copy .badge{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px}
+.magnet .magnet-copy h2{font-family:'Fraunces',Georgia,serif;font-size:34px;line-height:1.1;font-weight:500;color:var(--ink);margin-bottom:12px;letter-spacing:-.01em}
+.magnet .magnet-copy h2 em{font-style:italic;color:var(--gold-deep)}
+.magnet .magnet-copy p.lede{color:var(--ink-soft);font-size:16px;line-height:1.6;margin-bottom:16px}
+.magnet .magnet-copy .bullets{list-style:none;padding:0;margin:0 0 18px}
+.magnet .magnet-copy .bullets li{font-size:15px;color:var(--ink-soft);padding:5px 0 5px 26px;position:relative;line-height:1.45;border-top:1px solid rgba(212,168,75,.15)}
+.magnet .magnet-copy .bullets li:first-child{border-top:none}
+.magnet .magnet-copy .bullets li::before{content:"✓";position:absolute;left:0;top:5px;color:var(--red);font-weight:700;font-size:14px}
+.magnet .tool-form{margin-top:6px}
+.magnet .tool-form label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;letter-spacing:.02em}
+.magnet .tool-form .seva-fields{display:flex;gap:0;flex-wrap:wrap}
+.magnet .tool-form .formkit-field{flex:1 1 auto;min-width:0;margin:0}
+.magnet .tool-form .formkit-input{width:100%;padding:16px 18px;border:1.5px solid var(--line);border-radius:10px 0 0 10px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);margin:0;outline:none;height:56px;box-sizing:border-box;border-right:none}
+.magnet .tool-form .formkit-input:focus{border-color:var(--gold)}
+.magnet .tool-form .formkit-submit{width:auto;margin:0;border-radius:0 12px 12px 0;box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35);padding:0 24px;white-space:nowrap;height:56px;min-height:56px;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:15px;border:none;cursor:pointer;font-family:inherit}
+.magnet .tool-form .formkit-submit:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
+.magnet .tool-form .consent{font-size:12px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.magnet .tool-form .consent a{color:var(--gold-deep);font-weight:600}
+.magnet .tool-form .formkit-alert{list-style:none;color:var(--red);font-size:13px;margin-top:8px}
+.magnet .magnet-cover{position:relative;text-align:center}
+.magnet .magnet-cover img{max-width:100%;width:280px;border-radius:6px 10px 10px 6px;box-shadow:0 2px 0 rgba(255,255,255,.5) inset,-2px 0 0 rgba(0,0,0,.15) inset,0 28px 50px rgba(10,22,40,.28),0 10px 20px rgba(10,22,40,.18),0 0 0 1px rgba(212,168,75,.4);transform:perspective(900px) rotateY(-8deg) rotateX(2deg) rotateZ(-1deg)}
+.magnet .magnet-cover .ribbon{position:absolute;top:-14px;right:-6px;background:var(--red);color:#fff;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:4px;box-shadow:0 6px 14px rgba(197,59,59,.4);transform:rotate(6deg)}
+@media (max-width:780px){
+  .magnet{padding:34px 20px}
+  .magnet .magnet-inner{grid-template-columns:1fr;gap:28px}
+  .magnet .magnet-copy h2{font-size:27px}
+  .magnet .magnet-cover img{width:220px}
+}
+@media (max-width:480px){
+  .magnet{padding:28px 16px}
+  .magnet .magnet-copy h2{font-size:24px}
+  .magnet .magnet-copy p.lede{font-size:15px}
+  .magnet .magnet-copy .bullets li{font-size:14px}
+  .magnet .tool-form .formkit-input{height:52px;font-size:15px;padding:14px 16px;border-radius:10px;border-right:1.5px solid var(--line)}
+  .magnet .tool-form .formkit-submit{width:100%;margin-top:10px;border-radius:10px;height:52px;min-height:52px}
+  .magnet .tool-form .seva-fields{flex-direction:column}
+  .magnet .magnet-cover img{width:200px}
+}
+
 /* ---------- sound-wave motif top bar ---------- */
 .topbar{
   background:linear-gradient(180deg,var(--midnight) 0%,var(--midnight-2) 100%);
@@ -578,13 +621,65 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
   🌍 Outside Nigeria? <a href="/VOIA-BOOKS/global/">The Paycheck-to-Paycheck Escape Plan — Global Edition ($9 USD)</a> is available for international readers.
 </div>
 
+<!-- ========== FREE LEAD MAGNET: THE PAYDAY AUTOPSY ========== -->
+<section class="magnet" id="autopsy">
+  <div class="magnet-inner">
+    <div class="magnet-copy">
+      <span class="badge">Free · 9-page PDF · 12 minutes</span>
+      <h2>Before the plan — find out <em>who killed your last salary.</em></h2>
+      <p class="lede">Salary entered on the 25th. By the 18th you're broke and you can't explain it. Before you can fix it, you need to do the post-mortem.</p>
+      <ul class="bullets">
+        <li><strong>The 7 leak categories.</strong> Charges, family sends, subscriptions/airtime/data, loans, fuel &amp; transit, feeding, and the one big event (aso ebi / December / school fees).</li>
+        <li><strong>Line-by-line worksheet.</strong> Open your banking alerts. Drop every debit into one bucket. Add it up. The culprit names itself.</li>
+        <li><strong>Verdict page.</strong> "My salary died on the ____ day of ____, killed by ____."</li>
+        <li><strong>3 moves for tomorrow.</strong> The very first things to change before next payday.</li>
+      </ul>
+
+      <!-- KIT (ConvertKit) FORM — REPLACE FORM ID + UID + redirect_url with your Nigerian list form.
+           See setup notes in /marketing/ — create a new ConvertKit form for Nigerian leads. -->
+      <div class="tool-form" id="optin-form">
+        <form action="https://app.kit.com/forms/PAYCHECK_KIT_FORM_ID/subscriptions"
+              class="seva-form formkit-form"
+              method="post"
+              data-sv-form="PAYCHECK_KIT_FORM_ID"
+              data-uid="PAYCHECK_KIT_UID"
+              data-format="inline"
+              data-version="5"
+              data-options='{"settings":{"after_subscribe":{"action":"redirect","success_message":"Success! Check your email.","redirect_url":"https://voiceofiam01-cmd.github.io/VOIA-BOOKS/paycheck/autopsy-thankyou.html"},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":false,"url":""},"recaptcha":{"enabled":false},"return_visitor":{"action":"hide","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
+              id="ck-form"
+              onsubmit="trackLeadSubmit(event)"
+              style="background:transparent;border-radius:0;box-shadow:none;max-width:none">
+          <label for="autopsy-email">Enter your email — get the Autopsy instantly. We'll also send a copy to your inbox:</label>
+          <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+            <div class="formkit-field">
+              <input class="formkit-input" id="autopsy-email" name="email_address" aria-label="Email Address"
+                     placeholder="you@example.com" required type="email" />
+            </div>
+            <button data-element="submit" class="formkit-submit formkit-submit" type="submit">
+              Get the free Autopsy →
+            </button>
+          </div>
+          <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+          <p class="consent">We'll send you the Autopsy plus occasional new-book notes. No spam. Unsubscribe any time. <a href="/VOIA-BOOKS/privacy.html">Privacy</a>.</p>
+          <div class="formkit-powered-by-convertkit-container" style="display:none" data-active="false"></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="magnet-cover">
+      <img src="autopsy-cover-thumb.jpg" alt="The Payday Autopsy — cover" />
+      <span class="ribbon">Free</span>
+    </div>
+  </div>
+</section>
+
 <!-- ========== HERO ========== -->
 <header class="hero">
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">Nigerian Edition · 66 pages · Finish in 2 hours</div>
-      <h1>You earn decent money. So why are you <span class="accent">broke by the 20th?</span></h1>
-      <p class="sub">Salary enters. Bills, data, delivery fees, urgent 2k transfers line up. By the 18th you're checking your balance like — <em>“where did this money go?”</em> This book fixes the system. No suffering. No second job.</p>
+      <div class="eyebrow">After the Autopsy · Nigerian Edition · 66 pages · Finish in 2 hours</div>
+      <h1>You found who killed your salary.<br/>Now <span class="accent">stop it next month.</span></h1>
+      <p class="sub">The Autopsy names the culprit. This book is the cure — the exact 90-day system to split your salary on payday, plug the 7 leak categories, and have ₦100k+ sitting in your account before January. No suffering. No second job. Written by a Nigerian, for Nigeria.</p>
 
       <a href="https://paystack.shop/pay/c85orxy5yd" class="btn" id="top-cta">
         Get the ebook — <span id="cta-price">₦5,500</span>
@@ -950,7 +1045,19 @@ footer .legal{margin-top:10px;font-size:12px;color:#8b95a8}
   </a>
 </div>
 
+<script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 <script>
+// Opt-in Lead submit handler for the free Payday Autopsy form
+function trackLeadSubmit(e){
+  if(typeof fbq === 'function'){
+    fbq('track', 'Lead', {
+      content_name: 'The Payday Autopsy (NG) — opt-in submit',
+      content_category: 'Lead Magnet',
+      currency: 'NGN',
+      value: 0
+    });
+  }
+}
 // Track outbound Buy clicks for Meta
 (function(){
   var BUY_URL = 'https://paystack.shop/pay/c85orxy5yd';

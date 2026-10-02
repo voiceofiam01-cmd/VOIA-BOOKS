@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Your Payday Autopsy is here</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1775037067141776');
+fbq('track', 'PageView');
+fbq('track', 'Lead', { content_name: 'The Payday Autopsy (NG) - confirmed', content_category: 'Lead Magnet' });
+
+// ===== LAUNCH CONFIG (NG) =====
+// Launch price ends Oct 26 2026 23:59 WAT (UTC+1).
+var LAUNCH_END = new Date('2026-10-26T23:59:00+01:00').getTime();
+var LAUNCH_PRICE = 5500;
+var REGULAR_PRICE = 7500;
+var PAYSTACK_LAUNCH = 'https://paystack.shop/pay/c85orxy5yd';
+
+function trackAuditDownload(){
+  if(typeof fbq === 'function'){
+    fbq('track', 'ViewContent', {
+      content_name: 'The Payday Autopsy PDF downloaded',
+      content_category: 'Lead Magnet',
+      value: 0,
+      currency: 'NGN'
+    });
+  }
+}
+function trackUpsellClick(price){
+  if(typeof fbq === 'function'){
+    fbq('track', 'InitiateCheckout', {
+      content_name: 'The Paycheck-to-Paycheck Escape Plan (NG)',
+      content_category: price < REGULAR_PRICE ? 'Launch Upsell' : 'Book Upsell',
+      value: price,
+      currency: 'NGN'
+    });
+  }
+}
+function formatNaira(n){
+  return '\u20A6' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=Lead&noscript=1"/></noscript>
+<style>
+:root{--midnight:#0a1628;--midnight-2:#0f1f38;--ink:#0a1628;--ink-soft:#2a3a55;--paper:#f7f3ea;--paper-2:#efe8d8;--gold:#d4a84b;--gold-soft:#e6c577;--gold-deep:#a8802e;--white:#fff;--muted:#5a6b86;--line:rgba(212,168,75,.25);--green:#2f6b5c;--red:#c53b3b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--midnight-2),var(--midnight));min-height:100vh;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:20px 16px 40px}
+.card{background:var(--paper);border-radius:20px;max-width:540px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden;border-top:4px solid var(--gold)}
+.steps-bar{display:flex;align-items:center;background:var(--midnight);padding:14px 22px;gap:8px;font-size:12px;color:#8ea0bb;font-weight:600;letter-spacing:.04em}
+.steps-bar .step{display:flex;align-items:center;gap:7px;opacity:.4}
+.steps-bar .step.done{opacity:.6}.steps-bar .step.active{opacity:1;color:var(--gold-soft)}
+.steps-bar .step .num{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#8ea0bb}
+.steps-bar .step.done .num{background:var(--green);border-color:var(--green);color:#fff}
+.steps-bar .step.active .num{background:var(--gold);border-color:var(--gold);color:var(--midnight)}
+.steps-bar .divider{flex:1;height:1px;background:rgba(255,255,255,.08)}
+.steps-bar .step-label{line-height:1}
+.hero{padding:28px 26px 22px;text-align:center;border-bottom:1px solid var(--line)}
+.check{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--midnight);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 8px 20px rgba(212,168,75,.3)}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:25px;line-height:1.15;color:var(--ink);margin-bottom:8px}
+.lede{color:var(--ink-soft);font-size:14.5px;line-height:1.55;margin-bottom:18px}
+.download{margin:0}
+.download .big-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:16px 22px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 28px rgba(212,168,75,.35);min-height:56px}
+.download .big-btn:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
+.download .big-btn .icon{font-size:20px}
+.download .meta{text-align:center;font-size:12.5px;color:var(--muted);margin-top:7px;letter-spacing:.01em}
+.launch{margin:12px 0 4px;background:rgba(200,40,40,.12);border:1px solid rgba(224,72,72,.3);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;color:#ffd9d9;font-size:12.5px;font-weight:600;letter-spacing:.01em;text-align:center}
+.launch.expired{background:rgba(47,107,92,.1);border-color:rgba(47,107,92,.3);color:#c4e4bc}
+.launch .pulse{width:7px;height:7px;border-radius:50%;background:#e04848;box-shadow:0 0 0 0 rgba(224,72,72,.6);animation:pulse 2s infinite;flex-shrink:0}
+.launch.expired .pulse{background:var(--green);animation:none}
+.launch .clock{display:inline-flex;gap:4px;align-items:center}
+.launch .clock .unit{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:3px 6px;font-variant-numeric:tabular-nums;font-size:12px;color:#fff;min-width:28px;text-align:center;font-weight:700;line-height:1.2}
+.launch .clock .label{font-size:8px;color:#b89292;display:block;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-top:1px}
+.launch.expired .clock .unit{color:#c4e4bc;background:rgba(0,0,0,.25)}
+.launch.expired .clock .label{color:#7a9a72}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,72,72,.6)}70%{box-shadow:0 0 0 8px rgba(224,72,72,0)}100%{box-shadow:0 0 0 0 rgba(224,72,72,0)}}
+.upsell{padding:24px 22px 22px;background:linear-gradient(180deg,#1a2d4d,#0f1f38);text-align:center;position:relative;overflow:hidden}
+.upsell::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,75,.2),transparent 65%);pointer-events:none}
+.upsell-grid{display:flex;gap:18px;align-items:center;position:relative;z-index:2;margin-bottom:16px}
+.upsell .cover-wrap{flex:0 0 110px;position:relative}
+.upsell .cover{position:relative;width:110px;height:156px;border-radius:5px 8px 8px 5px;overflow:hidden;box-shadow:
+    0 2px 0 rgba(255,255,255,.08) inset,-2px 0 0 rgba(0,0,0,.3) inset,
+    0 20px 36px rgba(0,0,0,.55),0 8px 14px rgba(0,0,0,.4),0 0 0 1px rgba(212,168,75,.35);
+  transform:perspective(800px) rotateY(-6deg) rotateX(2deg) rotateZ(-1deg);background:#0a1628}
+.upsell .cover img{width:100%;height:100%;object-fit:cover;display:block;border-radius:5px 8px 8px 5px}
+.upsell .cover .spine{position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(255,255,255,.08) 40%,rgba(0,0,0,.15));border-radius:5px 0 0 5px}
+.upsell .cover .gloss{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(115deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 65%,rgba(255,255,255,.05) 100%);pointer-events:none;border-radius:5px 8px 8px 5px}
+.upsell .pitch{flex:1;min-width:0;text-align:left}
+.upsell .tag{display:inline-block;background:rgba(212,168,75,.18);color:var(--gold-soft);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:20px;border:1px solid rgba(212,168,75,.35);margin-bottom:8px}
+.upsell h2{font-family:'Fraunces',Georgia,serif;font-size:21px;line-height:1.1;color:var(--white);font-weight:500;margin-bottom:10px}
+.upsell ul{list-style:none;padding:0;margin:0}
+.upsell li{color:#cdd6e3;font-size:13.5px;line-height:1.4;padding:3px 0 3px 20px;position:relative}
+.upsell li::before{content:"✓";position:absolute;left:0;color:var(--gold-soft);font-weight:700;font-size:13px;top:3px}
+.upsell .price-row{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:12px;position:relative;z-index:2}
+.upsell .now{font-family:'Fraunces',Georgia,serif;font-size:32px;font-weight:600;color:var(--gold-soft);line-height:1}
+.upsell .was{font-size:15px;color:#8ea0bb;text-decoration:line-through}
+.upsell .save{font-size:11.5px;background:rgba(212,168,75,.18);color:var(--gold-soft);font-weight:700;padding:3px 8px;border-radius:20px;border:1px solid rgba(212,168,75,.3)}
+.upsell .primary{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:15px 18px;border-radius:12px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35);min-height:54px;position:relative;z-index:2}
+.upsell .primary:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
+.upsell .primary .arrow{transition:transform .2s}
+.upsell .primary:hover .arrow{transform:translateX(3px)}
+.upsell .meta{text-align:center;font-size:12px;color:#8ea0bb;margin-top:7px;letter-spacing:.01em}
+.upsell .no-thanks{display:block;text-align:center;margin-top:10px;color:#7a8aa3;font-size:12.5px;text-decoration:none}
+.upsell .no-thanks:hover{color:var(--gold-soft);text-decoration:underline}
+.guarantee{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:12px;color:#a7b4c6;text-align:left;line-height:1.45}
+.guarantee .icon{flex:0 0 18px;font-size:16px}
+.how{padding:22px 26px;text-align:left;background:var(--paper);border-top:1px solid var(--line)}
+.how h2{font-family:'Fraunces',Georgia,serif;font-size:12.5px;color:var(--gold-deep);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.how ol{padding-left:22px;color:var(--ink-soft);font-size:14px;line-height:1.6}
+.how li{margin-bottom:6px}.how li strong{color:var(--ink)}
+.foot{padding:18px 26px 24px;background:var(--paper-2);text-align:center;border-top:1px solid var(--line)}
+.note{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.55}
+.note a{color:var(--gold-deep);font-weight:600}
+.home{display:inline-block;color:var(--muted);font-size:13.5px;text-decoration:none}
+.home:hover{text-decoration:underline;color:var(--gold-deep)}
+@media (max-width:480px){
+  body{padding:10px}.card{border-radius:16px}
+  .steps-bar{padding:11px 16px;font-size:11px;gap:6px}
+  .steps-bar .step-label{display:none}
+  .steps-bar .step .num{width:18px;height:18px;font-size:10px}
+  .hero{padding:22px 20px 18px}
+  h1{font-size:22px}.lede{font-size:14px;margin-bottom:14px}
+  .download .big-btn{font-size:15px;padding:14px 18px;min-height:52px}
+  .download .meta{font-size:12px;margin-top:6px}
+  .upsell{padding:18px 16px 16px}
+  .upsell::before{top:-60px;width:220px;height:220px}
+  .upsell-grid{gap:14px;margin-bottom:14px;align-items:flex-start}
+  .upsell .cover-wrap{flex:0 0 88px}
+  .upsell .cover{width:88px;height:125px;border-radius:4px 7px 7px 4px;box-shadow:0 2px 0 rgba(255,255,255,.08) inset,-2px 0 0 rgba(0,0,0,.3) inset,0 16px 28px rgba(0,0,0,.55),0 6px 12px rgba(0,0,0,.35),0 0 0 1px rgba(212,168,75,.3);transform:perspective(650px) rotateY(-8deg) rotateX(2deg) rotateZ(-2deg)}
+  .upsell .cover .spine{width:5px}
+  .upsell .tag{font-size:9px;padding:2px 7px;margin-bottom:6px}
+  .upsell h2{font-size:17px;line-height:1.1;margin-bottom:8px}
+  .upsell ul{margin-top:4px}
+  .upsell li{font-size:12px;padding:2px 0 2px 18px;line-height:1.3}
+  .upsell .now{font-size:26px}.upsell .was{font-size:14px}.upsell .save{font-size:11px;padding:2px 7px}
+  .upsell .price-row{gap:8px;margin-bottom:10px}
+  .upsell .primary{font-size:15px;padding:13px 18px;min-height:48px;border-radius:11px;box-shadow:0 5px 0 var(--gold-deep),0 8px 18px rgba(212,168,75,.3)}
+  .upsell .meta{font-size:11px;margin-top:6px}
+  .launch{padding:8px 10px;font-size:11px;margin:8px 0 2px;gap:5px}
+  .launch .clock .unit{padding:2px 5px;font-size:11px;min-width:22px}
+  .launch .clock .label{font-size:7px}
+  .upsell .no-thanks{font-size:12px;margin-top:8px}
+  .guarantee{font-size:11.5px;padding:8px 11px;margin-top:10px;gap:7px;line-height:1.4}
+  .how{padding:18px 20px}.how h2{font-size:12px;margin-bottom:8px}
+  .how ol{font-size:13px;padding-left:20px}
+  .foot{padding:16px 20px 20px}
+}
+</style>
+</head>
+<body>
+<main class="card">
+
+  <div class="steps-bar" aria-label="Progress">
+    <div class="step done"><span class="num">✓</span><span class="step-label">Signed up</span></div>
+    <div class="divider"></div>
+    <div class="step active"><span class="num">2</span><span class="step-label">Download Autopsy</span></div>
+    <div class="divider"></div>
+    <div class="step"><span class="num">3</span><span class="step-label">Next payday</span></div>
+  </div>
+
+  <section class="hero">
+    <div class="check" aria-hidden="true">✓</div>
+    <h1>Here's your Autopsy.</h1>
+    <p class="lede">Your copy of <strong>The Payday Autopsy</strong> is ready. Tap below to open it now — we also emailed a copy to your inbox.</p>
+    <div class="download">
+      <a class="big-btn"
+         href="the-payday-autopsy.pdf"
+         target="_blank" rel="noopener"
+         download="The Payday Autopsy.pdf"
+         onclick="trackAuditDownload()">
+        <span class="icon" aria-hidden="true">📄</span>
+        Download The Payday Autopsy →
+      </a>
+      <p class="meta">PDF · 9 pages · opens instantly · free forever</p>
+    </div>
+  </section>
+
+  <section class="upsell">
+    <div class="upsell-grid">
+      <div class="cover-wrap">
+        <div class="cover">
+          <img src="book-cover.jpg" alt="The Paycheck-to-Paycheck Escape Plan" />
+          <div class="spine" aria-hidden="true"></div>
+          <div class="gloss" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="pitch">
+        <span class="tag">After the Autopsy</span>
+        <h2>You found who killed it.<br>Now stop next month.</h2>
+        <ul>
+          <li>The 8-Minute Payday Split before you spend</li>
+          <li>Plug the 7 leak categories permanently</li>
+          <li>Survive December, January & August meeting</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="price-row">
+      <span class="now" id="price-now">₦5,500</span>
+      <span class="was">₦7,500</span>
+      <span class="save">Save ₦2,000</span>
+    </div>
+    <a class="primary" id="buy-btn"
+       href="https://paystack.shop/pay/c85orxy5yd"
+       onclick="trackUpsellClick(LAUNCH_PRICE)">
+      Get the full book — ₦5,500 <span class="arrow">→</span>
+    </a>
+    <p class="meta"><span id="meta-note">Launch price</span> · 66 pages · PDF · delivered instantly</p>
+
+    <div class="launch" id="launch-banner" role="alert">
+      <span class="pulse" aria-hidden="true"></span>
+      <span id="launch-msg"><strong>Launch price ends in</strong></span>
+      <span class="clock" aria-label="Countdown">
+        <span class="unit"><span id="cd-days">0</span><span class="label">d</span></span>
+        <span class="unit"><span id="cd-hours">00</span><span class="label">h</span></span>
+        <span class="unit"><span id="cd-mins">00</span><span class="label">m</span></span>
+        <span class="unit"><span id="cd-secs">00</span><span class="label">s</span></span>
+      </span>
+    </div>
+
+    <a class="no-thanks" href="/VOIA-BOOKS/paycheck/">I'll do the Autopsy first →</a>
+
+    <div class="guarantee">
+      <span class="icon" aria-hidden="true">🛡</span>
+      <span>Try the first payday split. If your next salary still disappears on the 18th, message me on WhatsApp for a full refund — no stories.</span>
+    </div>
+  </section>
+
+  <section class="how">
+    <h2>How to run the Autopsy tonight</h2>
+    <ol>
+      <li><strong>Print it if you can.</strong> Writing it down by hand changes what you see.</li>
+      <li><strong>Open your banking app.</strong> Go back to the day salary entered. Scroll every alert to zero.</li>
+      <li><strong>Sort every debit into the 7 categories.</strong> Charges, family, subscriptions, loans, fuel, feeding, the one big thing.</li>
+      <li><strong>Add it up. Subtract from salary.</strong> That last number is your leak. The culprit is named.</li>
+    </ol>
+  </section>
+
+  <footer class="foot">
+    <p class="note"><strong>Email didn't arrive?</strong> Check Promotions or Spam. Not there after 10 minutes? <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20signed%20up%20for%20the%20Payday%20Autopsy%20but%20didn%27t%20get%20the%20email.">Message us on WhatsApp</a>.</p>
+    <a class="home" href="/VOIA-BOOKS/">&larr; Back to Voice of I AM</a>
+  </footer>
+</main>
+
+<script>
+// Countdown
+(function(){
+  var banner=document.getElementById('launch-banner');
+  var msg=document.getElementById('launch-msg');
+  var dEl=document.getElementById('cd-days'),hEl=document.getElementById('cd-hours'),mEl=document.getElementById('cd-mins'),sEl=document.getElementById('cd-secs');
+  var buyBtn=document.getElementById('buy-btn');
+  var metaNote=document.getElementById('meta-note');
+  var pulse=banner.querySelector('.pulse');
+  var priceNow=document.getElementById('price-now');
+  var wasEl=document.querySelector('.upsell .was');
+  var saveBadge=document.querySelector('.upsell .save');
+  function pad(n){return n<10?'0'+n:''+n}
+  function setExpired(){
+    banner.classList.add('expired');
+    msg.innerHTML='<strong>Launch has ended.</strong> The book is now <span class="price">'+formatNaira(REGULAR_PRICE)+'</span>.';
+    dEl.textContent='00';hEl.textContent='00';mEl.textContent='00';sEl.textContent='00';
+    priceNow.textContent=formatNaira(REGULAR_PRICE);
+    if(wasEl) wasEl.style.display='none';
+    if(saveBadge) saveBadge.style.display='none';
+    if(metaNote) metaNote.textContent='Regular price';
+    buyBtn.setAttribute('onclick','trackUpsellClick('+REGULAR_PRICE+')');
+    buyBtn.innerHTML='Get the full book — '+formatNaira(REGULAR_PRICE)+' <span class="arrow">→</span>';
+  }
+  function tick(){
+    var now=Date.now();var diff=LAUNCH_END-now;
+    if(diff<=0){setExpired();return}
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor((diff%86400000)/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var s=Math.floor((diff%60000)/1000);
+    dEl.textContent=d;hEl.textContent=pad(h);mEl.textContent=pad(m);sEl.textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+})();
+</script>
+</body>
+</html>
