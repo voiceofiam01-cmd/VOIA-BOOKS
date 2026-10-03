@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Watching Mind — Metacognition, Shadow Work, and the Silence Beneath Your Thoughts</title>
+<meta name="description" content="There is a gap between having a thought and knowing you are having it. Most adults never find it. This book is the doorway. By Munachimso E. Nwagbara.">
+<meta property="og:title" content="The Watching Mind">
+<meta property="og:description" content="The boy with two pens accidentally discovered what most people spend a lifetime searching for.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f5f0;--ink:#1a1410;--muted:#6b6255;--rule:#d4cab6;
+  --burgundy:#722f37;--burgundy-dark:#4e1e24;--gold:#b08d4e;--gold-deep:#8a6c3a;
+  --cream:#fdfbf6;--paper:#f5f0e6;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--burgundy)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--burgundy);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin-bottom:20px}
+.best-badge{display:inline-block;background:#dc2626;color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:5px 10px;border-radius:3px;margin-left:10px;vertical-align:middle;box-shadow:0 2px 6px -2px rgba(220,38,38,.4)}
+@media(max-width:420px){.best-badge{display:block;margin:10px 0 0 0;width:fit-content;margin-left:0}}
+h1{font-family:var(--serif);font-size:clamp(40px,8vw,62px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#2b241d;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(78,30,36,.55),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(150deg,#722f37,#4e1e24 60%,#2c0e13)}
+.cover-texture{position:absolute;inset:0;background:url('../library/global.htmlcovers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.6}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#f0e6d0;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(240,230,208,.7);margin-bottom:auto}
+.cover-mid{margin-top:40%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:24px;font-weight:700;line-height:1.05;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:10px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(240,230,208,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--burgundy-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--burgundy);color:#f0e6d0;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px;letter-spacing:.01em}
+.cta:hover{background:var(--burgundy-dark);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--burgundy-dark)}
+.hero-stat span{font-size:13px;color:var(--muted);letter-spacing:.03em}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+h2 em{font-style:italic;color:var(--burgundy);font-weight:400}
+p{margin-bottom:18px;color:#2b241d}
+strong{font-weight:600}
+em{font-style:italic}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#3d352b;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--burgundy);color:#f0e6d0;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px 22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--burgundy-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#4a4035;line-height:1.55}
+.recog{background:#fef3c7;border:1px solid #fcd34d;border-radius:4px;padding:28px 28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:#78350f;margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:#78350f;line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:#92400e;font-weight:700}
+.warn{background:var(--paper);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#3d352b;line-height:1.65}
+.warn b{display:block;font-style:normal;font-family:var(--serif);font-size:18px;color:var(--burgundy-dark);margin-bottom:8px}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--burgundy-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#4a4035;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#2b241d}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--burgundy);font-weight:700;font-size:22px;line-height:1}
+.buy{background:var(--ink);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#9a8d74;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#9a8d74;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#d9cfb8;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--burgundy-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#c9a063}
+.buy-trust{text-align:center;font-size:13px;color:#9a8d74;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--burgundy);color:#f0e6d0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#4a4035;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--burgundy-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--burgundy)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#4a4035}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(253,251,246,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--burgundy)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/global.html" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/global.html">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Worldwide · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform <span class="best-badge">Longform · Book One</span></span>
+        <h1>The Watching<br>Mind.</h1>
+
+        <p class="lede">He had two pens as a boy, and they had different voices. One was patient, walking him through a sum step by step. The other was sharper, correcting the first, sometimes mocking it a little, the way an older cousin might. He was seven. He held whichever pen matched whichever voice was talking. He did this for years.</p>
+        <p class="lede">The loneliness is there in the image — a child home alone, inventing the company he needs to get through homework. That isn't what he wants you to notice. What he wants you to notice is the structure. A boy was doing a sum. And a boy was also <em>watching</em> a boy do a sum, in two competing voices, neither of which was simply "him."</p>
+        <p class="lede"><strong>Most adults spend their whole lives without ever finding that gap. A worry arrives and they do not experience it as "a worry has arrived" — they experience it as the truth of the moment. An old resentment surfaces and they do not experience it as "an old pattern is running" — they experience it as this person is doing it to me right now, for the first time.</strong></p>
+        <p class="lede">The thought and the thinker are pressed together so tightly there is no room to ask a single useful question: <em>is this thought accurate? Where did it come from? Do I have to believe it just because it showed up?</em></p>
+        <p class="lede">This book is the gap. It is not a doctrine. It is not a meditation app. It is a doorway. Everything else in the Longform — shadow work, silence, inherited patterns, craving, trust, choice, the life you build — becomes available the moment that gap opens, even slightly, even for a few seconds.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>31</b><span>chapters</span></div>
+          <div class="hero-stat"><b>8</b><span>parts</span></div>
+          <div class="hero-stat"><b>~34k</b><span>words · ~220pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">The<br>Watching<br>Mind</div>
+              <div class="cover-sub">Metacognition, Shadow Work, and the Silence Beneath Your Thoughts</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">$24 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      Before I could read a sentence, I could read a silence. In our house, and in the houses around ours in Ugbokonkwo, money was a language spoken mostly in whispers. The adults lowered their voices. And I learned, long before my alphabet, to lean toward a lowered voice instead of away from it, because a lowered voice was where the actual information lived. By six or seven I could walk into a room and know, usually within a few seconds, whether the tension in it was about money, about a marriage, about a health worry someone hadn't named yet, or about nothing at all.<br><br>
+      Here is the part most books stop before reaching: that same watching mind does not retire when the child grows up and the room becomes safe. It has no mechanism for knowing the room is safe now. It only knows how to watch. So it keeps watching — in marriages, in workplaces, in ordinary friendly conversations where nothing is actually at stake — scanning for the flicker of tension it was trained on decades earlier, sometimes finding it where it doesn't exist, sometimes exhausting a person who cannot explain why an ordinary Tuesday conversation left them so tired.
+      <cite>— Chapter 2, Reading the Room Before You Could Read a Book</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">The doorway</span>
+    <h2>The gap does not need to be installed.<br>It needs to be <em>noticed.</em></h2>
+    <p>You already have this capacity. Everyone does. The two pens were the author's accidental discovery — a seven-year-old boy who, for lack of company, split his own narration in two and in doing so created a small space between himself and his own thinking. You probably have your own version somewhere in your history: a diary you argued with yourself inside, a long solitary walk where you caught yourself mid-thought and thought wait, <em>why</em> am I thinking that, a moment of anger where some quieter part of you watched the anger and wasn't fully persuaded by it.</p>
+    <p>That quieter part is not a special gift. It is the same capacity in you. The practice is almost embarrassingly simple to describe and famously difficult to sustain: several times a day, for no reason and at no scheduled moment, ask yourself <em>what is my mind doing right now</em> — not what am I thinking about, which keeps you inside the thought, but what is my mind <em>doing</em>, which steps you back far enough to see the thought as an object rather than a truth.</p>
+
+    <div class="pull">
+      You don't have to change anything you find. A thought that has been seen often loses a portion of its grip on its own, the way an argument loses force the moment you say it out loud and hear how thin it actually sounds.
+      <cite>— Chapter 1, The Two Pens</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">What you will recognise</span>
+    <h2>If any of these are you, this book was written for you.</h2>
+    <div class="recog">
+      <h3>You know how to read everyone else's room but your own.</h3>
+      <ul>
+        <li>You can feel tension in a conversation within five seconds of walking in — but you cannot name what is happening in your own body until it is already too late.</li>
+        <li>You leave ordinary Tuesday conversations exhausted and you do not know why. The watcher never clocked off.</li>
+        <li>You replay arguments at 2am and every version ends with you in the right — and a small tired part of you suspects the other person is doing the exact same thing on their pillow.</li>
+        <li>You have had the same fight with the same person for four years and each of you can recite the other's lines. The scripts run you.</li>
+        <li>You know how to soothe everyone and nobody taught you how to soothe yourself. The weight behind the sternum arrives and you have no name for it.</li>
+        <li>You scroll when you could sit in silence because silence has started to show you things you are not ready to look at.</li>
+        <li>You have read books about mindfulness and you still cannot do it. The instructions were too thin. You needed to understand the mechanism before you could trust the practice.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>The cost of not noticing.</h3>
+      <p>This is not a soft, "spiritual" problem. It shows up in concrete places:</p>
+      <span class="sunk">You react to your partner as if they were your father, or your mother, or the person who hurt you when you were fifteen — and you cannot see it while it is happening.</span>
+      <span class="sunk">You make large decisions — jobs, cities, relationships — from a craving you mistake for clarity, and only understand what was driving you eighteen months later.</span>
+      <span class="sunk">You sit under a pastor or a prophet or a motivational speaker and feel something in your chest light up, and you cannot distinguish the weight of the real from the weight of performance.</span>
+      <span class="sunk">You cannot sit in a quiet room for ten minutes without reaching for your phone, because when the noise stops the shadow starts talking.</span>
+      <span class="sunk">You spend your life inside your thoughts the way a fish is inside water — total immersion, no felt distance, no sense that there is a thinker separate from the thought.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Eight parts</span>
+    <h2>How the book is built.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Part I</span><b>Learning to Watch</b><span>The two pens. Reading the room before you could read a book. The weight before the word. "You already know the answer." The doorway opens here.</span></div>
+      <div class="gcell"><span class="gn">Part II</span><b>The Mind and Time</b><span>Her head on his lap. Being told first. Fetching water and playing with seeds. Three and a half years. What memory is actually doing — and what it is not.</span></div>
+      <div class="gcell"><span class="gn">Part III</span><b>The Mind Beneath the Mind</b><span>The man who married his pupil. A wire in the home. Before you were three. What was said about her. Kneeling before her kinsmen. Inherited patterns running below language.</span></div>
+      <div class="gcell"><span class="gn">Part IV</span><b>The Mind as Threshold</b><span>What the body was doing before the mind understood. Bare feet in worship. Beneath the Ogilisi tree. When the churches closed. The body is where the signal lives.</span></div>
+      <div class="gcell"><span class="gn">Part V</span><b>The Mind Inherited</b><span>Nwanneka's notebook. Humpty Dumpty on a blackboard. The number he still keeps. Bands that cannot bend God's arm. What was handed down without being said.</span></div>
+      <div class="gcell"><span class="gn">Part VI</span><b>The Mind and Craving</b><span>The boy who watched. Debts whispered after dark, revisited. The weight and the want. What craving borrows from meaning. The signal and the noise wear the same costume.</span></div>
+      <div class="gcell"><span class="gn">Part VII</span><b>The Mind in Silence</b><span>The barrister's quiet house. Beneath the hospital staircase. Generators and zinc roofs. The notebook's silence. Most spiritual writing sells you a way out of silence. This one walks in.</span></div>
+      <div class="gcell"><span class="gn">Part VIII</span><b>Using the Mind</b><span>The ancient question kept open. What remains unknown. The book ends not with a doctrine but with a practice you carry for the rest of your life.</span></div>
+    </div>
+    <p style="font-style:italic;color:var(--muted);font-size:15px;margin-top:10px">Each chapter opens with something that actually happened — to him, because it is the only material he can vouch for without inventing a stranger to stand in for you. Each chapter ends with a Question to Carry, not homework. A thing to walk with.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">The weight before the word</span>
+    <h2>There is a signal that arrives <em>before</em> the thinking mind has composed a sentence.</h2>
+    <p>The author describes a specific pressure behind his sternum that arrives a few seconds before he says something true he has no ordinary way of knowing. He is careful, in the book, not to over-claim this. He does not know why it works. He is suspicious of anyone — on either side — who claims certainty about what does or doesn't happen in moments like that one.</p>
+    <p>But he asks you to notice that you have a version of this too, even if you have never sat under an ukwu ube tree with cowries. It is the sinking in your stomach before you've consciously registered the bad news. It is the tightening in your shoulders the instant before you decide you don't trust someone. It is the settling — call it a click — that arrives a half-second before you say yes to an opportunity your rational pros-and-cons list hasn't finished evaluating.</p>
+    <p>Cognitive scientists call it a somatic marker: a bodily signal that precedes and often outruns deliberate reasoning. The plain observation is more useful than the jargon: <strong>your body knows things before your mind has finished composing sentences about them.</strong> Most people never learn to listen for the knowing before the sentence arrives, so they only ever get the sentence — which is slower, and frequently wrong in ways the earlier signal wasn't.</p>
+
+    <div class="scene">
+      I'm not going to lean too hard on the science, because I think the plainer observation is more useful: your body knows things before your mind has finished composing sentences about them, and most people never learn to listen for the knowing before the sentence arrives.<br><br>
+      Over time, the pause does two things. First, it slows down the reflexive opinions that are really just performance. Second, and more valuable, it starts to build your ear for the difference between a signal that's worth trusting and a signal that's just noise wearing the same costume — a distinction we return to properly when we look at how craving can feel exactly as urgent, exactly as bodily certain, as genuine intuition.
+      <cite>— Chapter 3, The Weight Before the Word</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="warn">
+      <b>This is not what you think it is.</b>
+      It is not a book about "mindfulness" in the app sense — no bells, no streaks, no ten-minute morning routine that makes you a better capitalist. It is not a Buddhist book wearing African clothes. It is not a Christian book either, though the author is a Christian and writes frankly about worship. It is not a psychology textbook, though it draws on what psychologists have found. It is a man who, partly by accident and partly by a strange gift he did not ask for, learned to watch his own mind earlier and more relentlessly than most, and is handing you what he found in the only language he trusts — the language of what actually happened.
+    </div>
+    <p style="margin-top:18px"><strong>There are no seven-step protocols.</strong> There are no morning routines. There are no affirmations. There are stories, and then underneath the stories there is a question the author will not answer for you. If you need a book that gives you homework, there are many good ones. If you want a book that teaches you how to look at your own mind the way you would look at a room you grew up in, this is that book.</p>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>The Watching Mind</h2>
+      <p class="buy-sub">31 chapters · 8 parts · ~34,000 words · EPUB + PDF</p>
+      <div class="buy-price">$24 <small>one-time</small></div>
+      <p class="buy-note">You had the gap at seven. You can find it again.</p>
+      <ul class="stack">
+        <li><strong>The complete book.</strong> 31 chapters across eight parts. EPUB + PDF. ~220 pages.</li>
+        <li><strong>Paper-color EPUB.</strong> Designed for slow reading. Chapter opening motifs, proper italics, typeset the way he wanted it.</li>
+        <li><strong>A Question to Carry</strong> at the end of every chapter. Not homework. A thing to walk with for a week.</li>
+        <li><strong>No jargon, no systems, no promises of enlightenment.</strong> One practice, carried across eight rooms of a life.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition, every revision, free.</li>
+        <li><strong>30-day refund.</strong> Read the first three chapters and do the practice for three days. If the gap does not open even slightly, email us. Full refund. No performance.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L01_GLOBAL_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — $24 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, Apple Pay, bank transfer · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He is not writing from the far side of anything.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> is the author of the Voice of I AM Longform. He was born in Enugu and lives between the city and Mgbowo, in Awgu Local Government Area, where people arrive at his gate under an ukwu ube tree carrying questions they are afraid to name out loud. He has a mathematics degree and a small supply company.</p>
+        <p>He does not claim to have mastered his mind. Some of his own questions are still open. His mother's notebook is still missing. His brother Collins is still missing. He has stopped believing that not-knowing is a problem to be solved before a life can be lived well. He writes the way he does because careful, plain language is the only kind he has found that doesn't lie about what a mind is actually like from the inside.</p>
+        <p style="margin:0">Book One is where he recommends you start, regardless of which question brought you here. Every other book in the Longform assumes you can do this one thing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Is this a Christian book?</summary><p>The author is a Christian and the book includes chapters that take place in churches, under sacred trees, and with cowries. It does not resolve to one system. He is honest about the overlap and the tension. Readers from many traditions have written to say it worked. Readers who need a book to pick a side may prefer something else.</p></details>
+    <details><summary>Is this a "mindfulness" book?</summary><p>Only in the oldest sense of the word. No apps, no timers, no ten-step morning routine. The practice at the core is: several times a day, ask "what is my mind doing right now." That is it. The book spends its length explaining why that is so difficult, why it matters, and what opens up when you can do it even a little.</p></details>
+    <details><summary>Is this memoir or teaching?</summary><p>Both, and neither. Each chapter opens with something that actually happened — two pens, a room in Ugbokonkwo, a night with cowries, a mother's lap. From there it goes looking at what the mind was doing underneath. The story is the vessel. The thing it carries is what you do with your own mind afterwards.</p></details>
+    <details><summary>Do I have to believe in cowries / the supernatural?</summary><p>No. He is careful not to over-claim his own experiences and does not ask you to accept any particular metaphysics. The chapters about the weight before the word and the body knowing first sit comfortably alongside cognitive science (somatic markers, affect, interoception). The practices do not depend on believing anything unusual.</p></details>
+    <details><summary>How long is it really, and how should I read it?</summary><p>~34,000 words — about 220 pages. It reads slower than that. People write to say they read one chapter a week and carry the question for the rest of the week. That is the intended pace. It is not a book to finish; it is a door to walk through.</p></details>
+    <details><summary>Is this book one of a series I have to buy all of?</summary><p>No. Each Longform stands alone. But Book One is where the author recommends you start because every other book in the series assumes you can do the one thing this one teaches — step back and watch the thought instead of being it. You do not need to read another book after this one. Many people don't.</p></details>
+    <details><summary>Can I read this without having done the Real You Library books?</summary><p>Yes. It is built to be readable on its own. If anxiety or overthinking is what brought you here, you may find <em>Stop Overthinking Your Relationship</em> or <em>The Anxious Attachment Detox</em> useful companions, but they are not required.</p></details>
+    <details><summary>I've read a lot of books about awareness and meditation and none of them "stuck." Why would this?</summary><p>Because those books often tell you to watch your thoughts without telling you why you can't. This one goes into the mechanism: how the watcher was built under real conditions, why it turns itself off in safety, why craving can feel identical to genuine signal, why silence is so expensive. Understanding the mechanism is what makes the practice survivable.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">A boy with two pens<br>found the gap by accident.</h2>
+    <p>You have the words. You only need the accident to become a habit.</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — $24 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/global.html">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="mailto:hello@voiceofiam.com">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>The Watching Mind</em> — <b>$24</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L01_GLOBAL_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L01_GLOBAL_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'The Watching Mind (Global)',value:24,currency:'USD'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>

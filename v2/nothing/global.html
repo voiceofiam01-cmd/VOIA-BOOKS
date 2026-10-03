@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nothing To Understand, Everything To Know — A Novel in Four Books</title>
+<meta name="description" content="Nobody caused the whole tragedy. Everyone touched part of it. A novel about three lives braided by one fire, and the lies we tell to make the world bearable. By Munachimso E. Nwagbara.">
+<meta property="og:title" content="Nothing To Understand, Everything To Know">
+<meta property="og:description" content="He thought he was being taught how a radio worked. In truth he was being taught something he would spend his whole life misusing.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f3f6;--ink:#1a0f18;--muted:#6b5864;--rule:#d4bfcf;
+  --aub:#3b1630;--aub-dark:#240a1c;--plum:#5c2748;--gold:#c9a96e;--gold-deep:#8a6c3a;
+  --cream:#fbf8fb;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--aub)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--aub);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--aub);font-weight:700;margin-bottom:20px}
+h1{font-family:var(--serif);font-size:clamp(36px,7.2vw,56px);line-height:1.04;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#2d1c28;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(36,10,28,.6),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(160deg,#5c2748,#3b1630 55%,#240a1c)}
+.cover-texture{position:absolute;inset:0;background:url('../library/global.htmlcovers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.45}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#f3e8ef;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(243,232,239,.7);margin-bottom:auto}
+.cover-mid{margin-top:26%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:22px;font-weight:700;line-height:1.1;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:12px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(243,232,239,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--aub-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--aub);color:#f3e8ef;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px}
+.cta:hover{background:var(--aub-dark);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--aub-dark)}
+.hero-stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+p{margin-bottom:18px;color:#2d1c28}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#43243a;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--aub);color:#f3e8ef;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--aub-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#43243a;line-height:1.55}
+.recog{background:#f3e8ef;border:1px solid #c9a0be;border-radius:4px;padding:28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--aub-dark);margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:var(--aub-dark);line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:var(--plum);font-weight:700}
+.warn{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#43243a;line-height:1.65}
+.warn b{display:block;font-family:var(--serif);font-size:18px;color:var(--aub-dark);margin-bottom:8px;font-style:italic}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--aub-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#43243a;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#2d1c28}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--aub);font-weight:700;font-size:22px;line-height:1}
+.threecol{display:grid;grid-template-columns:1fr;gap:18px;margin:30px 0}
+@media(min-width:680px){.threecol{grid-template-columns:1fr 1fr 1fr}}
+.pcard{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:22px}
+.pcard .pnum{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.pcard b{display:block;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--aub-dark);margin-bottom:10px;line-height:1.2}
+.pcard span{font-size:14px;color:#43243a;line-height:1.6}
+.buy{background:var(--ink);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#c9b8d3;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#c9b8d3;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#e8dfd8;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--aub-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#d4b870}
+.buy-trust{text-align:center;font-size:13px;color:#c9b8d3;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--aub);color:#f3e8ef;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#43243a;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--aub-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--aub)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#43243a}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(251,248,251,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--aub-dark)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/global.html" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/global.html">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Worldwide · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform · A Novel</span>
+        <h1>Nothing to Understand,<br>Everything to Know.</h1>
+
+        <p class="lede">Elias was four when he broke the radio. It was his father's — a large brown set that sat on the shelf like a piece of furniture, half sacred. His father repaired it, because that was what his father did. In the evenings it filled the sitting room with voices from Enugu and Lagos and London. Nobody else was allowed to touch it.</p>
+        <p class="lede">One afternoon he took a screwdriver from the kitchen drawer, copied the slow certain movements he had watched his father make, lifted off the back, and looked. Wires. Valves. The smell of dust and warm metal. A geography he could not read. He understood he did not know how to put it back. His mother walked in. The silence was worse than shouting. <em>Only this child,</em> she muttered on her way out, <em>of all my children, only this one.</em></p>
+        <p class="lede">His father came home, sat with the wreckage for a long time, came to the boy's room, held out the working hand, and said: <em>Show me where it came apart.</em></p>
+        <p class="lede"><strong>They rebuilt it together at the table. When the last wire was seated, his father turned the dial and the room filled with a voice. He looked at the boy with grave pleasure and said three sentences that would become the happiest memory of Elias's childhood, and also the seed of his whole error:</strong></p>
+        <p class="lede"><em>If you understand how a thing works, you can fix it. Take it apart carefully. See where each piece goes. Then it can be whole again.</em></p>
+        <p class="lede">At four he thought he was being taught how a radio worked. In truth he was being taught something he would spend the rest of his life misusing. That anything that troubles you can be opened up. Examined. Understood. And made to work again. He would spend his whole life trying to make the number stop mattering — the money, the fire, the thing his father could not say, the thing his wife could not forgive — and he would not understand until it was nearly too late that the number was never the thing he was afraid of.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>4</b><span>books</span></div>
+          <div class="hero-stat"><b>91</b><span>chapters</span></div>
+          <div class="hero-stat"><b>~97k</b><span>words · ~490pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform · A Novel</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">Nothing<br>to Understand,<br>Everything<br>to Know</div>
+              <div class="cover-sub">A Novel in Four Books</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">$19 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      He did not know, then, that his father would spend the next thirty years trying, in his wordless way, to repeat that moment. That every time the boy came home with something broken — a toy, a schoolbook, a bicycle, a heart — his father would reach for the tools, and the boy would have moved on, and the distance between them would widen.
+      <cite>— Book I, Chapter Two, The Radio</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Three lives braided by one fire</span>
+    <h2>Nobody caused the whole tragedy.<br>Everyone touched part of it.</h2>
+    <p>This is a novel about three people whose lives were braided together before any of them was old enough to know what a life was.</p>
+
+    <div class="threecol">
+      <div class="pcard">
+        <span class="pnum">Book I · Elias</span>
+        <b>The engineer who believed he could fix anything.</b>
+        <span>Born on a lane off the old Enugu road, February 14, 1988, to the click-click-click of his father counting coins at night. He learned that if you understood a thing you could fix it. The lesson would cost him more than he could count. He would sign an engineering assessment at Oduya — correct in every particular — and choose not to look at what was missing.</span>
+      </div>
+      <div class="pcard">
+        <span class="pnum">Book II · Mara</span>
+        <b>The photographer who could see everyone but herself.</b>
+        <span>Born in a crowded Lagos compound, September 9, 1992, the middle child who learned to read a room before she could read a book. At nine an uncle gave her a dented 35mm camera; she learned to catch people when they were not performing. Her grandmother told her: you are always looking at everyone else; one day you will have to look at yourself. Mara said I don't want to. That is the fear, isn't it, her grandmother said.</span>
+      </div>
+      <div class="pcard">
+        <span class="pnum">Book III · Daniel</span>
+        <b>The pastor's son who asked why people must die.</b>
+        <span>Born in Ibadan, November 21, 1985, into a house where God was as present as the air. His father, a kind working pastor, never once told him to stop asking. Daniel grew up believing if he understood he could be safe. He would spend most of his life trying to believe again. In the end, at forty-five, he assembled five objects on a table in a Lagos archive and called two strangers to come.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="pull">
+      Cities flatten their disasters into stories, and then they forget the stories, and the forgetting is the only thing that lets them go on. But the room had not forgotten. It smelled of old paper — dry paper — the particular smell of documents that have outlived the people who made them.
+      <cite>— Book IV, The Room</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">What the book is really about</span>
+    <h2>The single-cause story is a lie<br>we tell to make the world bearable.</h2>
+    <p>Four people died at Oduya in 2015. The city needed a villain. The city was given one. The city moved on.</p>
+    <p>But the truth is stored in five objects on a table fifteen years later: an engineering assessment correct in every particular signed by a man who knew there was a hole in the record and chose not to look into it; a photograph of the fire's aftermath holding a truth nobody saw, not even the photographer; a red cloth-bound notebook written in a code only one man could read; the testimony of a man who spent years in prison for a web of decisions that was not his; and the confession of a dying man about a brother-in-law he had destroyed, a son he had made hate a father, a death he could not undo.</p>
+    <p>Daniel had assembled it thinking he was proving a philosophy — that human beings cannot bear complexity, that we flatten a web into a chain, that the single-cause story is how we survive. He had been so busy proving it he had not noticed he was doing it himself. The web included him. It always does.</p>
+
+    <div class="scene">
+      When their lives crossed, nobody caused the whole tragedy. Everyone touched part of it. The man who signed the report did not light the fire. The man who lit the fire did not write the missing page. The photographer did not see the thing in her own frame. The pastor searched for answers when the answers had been sitting across from him at dinner for years. And the villain the world had been given was not, in fact, the villain. The world was not simple enough for one.
+      <cite>— Book IV, Convergence</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">If any of these are you</span>
+    <h2>This novel will sit inside you for a long time.</h2>
+    <div class="recog">
+      <h3>You have been looking for the villain.</h3>
+      <ul>
+        <li>You have carried a version of an old wound in which one person was entirely to blame, and you have started to suspect the story is too clean.</li>
+        <li>You are the child who learned early that usefulness was the price of being kept, and you have spent your adult life trying to fix whatever breaks in front of you.</li>
+        <li>You are the quiet observer — the one who sees everyone — and you have built your life around not being seen.</li>
+        <li>You grew up inside a certainty that later cracked, and you have spent years trying to assemble a version of the world that does not require a villain.</li>
+        <li>You have noticed that when a disaster happens, the first story everyone tells is almost never the true one, but it is the one that gets printed.</li>
+        <li>You are Nigerian and you have watched the way this country flattens its own tragedies into headlines, then moves on before the smoke clears.</li>
+        <li>You read fiction because you are tired of books that explain you. You want books that show you something you cannot unsee.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>What the single-cause story costs you.</h3>
+      <p>It is not just a newspaper habit. It is the operating system of most lives:</p>
+      <span class="sunk">You spend years hating one person for a thing that a whole web of people touched, and the hatred keeps you from seeing your own place in it.</span>
+      <span class="sunk">You break things trying to fix them, because you believe the mechanism is the problem and the mechanism is never only the problem.</span>
+      <span class="sunk">You become a person who can see everyone clearly and cannot see the person holding the camera.</span>
+      <span class="sunk">You build a theology or a philosophy or a politics that explains everything and can explain nothing, because a world that needs a villain cannot be a world that includes you.</span>
+      <span class="sunk">You keep searching for understanding when what you needed was already across the dinner table — waiting, patient with you, while you looked past it for the answer.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Structure</span>
+    <h2>Four books, four lives, one room.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Book I</span><b>Elias Nwosu</b><span>Four parts. The boy, becoming Elias, Oduya, the question. 22 chapters. From the radio on the shelf to the fire to the missing page.</span></div>
+      <div class="gcell"><span class="gn">Book II</span><b>Mara Okafor</b><span>Four parts. The girl who watched, love, the fire, the woman who could see everyone. 28 chapters. From a pencil drawing of her grandmother to the photograph she could not read.</span></div>
+      <div class="gcell"><span class="gn">Book III</span><b>Daniel Adeyemi</b><span>Four parts. Certainty, the old man and the fracture, the search and Oduya, knowing. 22 chapters. From the dinner-table questions to the room in the archive.</span></div>
+      <div class="gcell"><span class="gn">Book IV</span><b>Convergence</b><span>Four parts. The room, what they thought they knew, the collapse of the story, knowing. 19 chapters. Five objects on a table. Three strangers. One afternoon in 2030.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="warn">
+      <b>This is not a parable.</b>
+      There is no wise character who arrives at the end and explains what it all meant. There is no single reveal where the camera pulls back and the truth is delivered in a speech. The truth, in this book, is distributed. It is in the gaps between the five objects, in the things each of the three characters knows and does not know about themselves. It is in the fact that the villain the world was given was not, in fact, the villain, and the world was not simple enough for one. This is a novel that refuses to give you a single handle. That refusal is the point.
+    </div>
+    <p style="margin-top:18px"><strong>It is also not true crime.</strong> Oduya is not based on a specific fire in a specific year. It is built from the pattern of every fire in this country where a city needed a villain, and was given one, and then forgot.</p>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>Nothing to Understand,<br>Everything to Know</h2>
+      <p class="buy-sub">A novel in four books · 91 chapters · ~97,000 words · EPUB + PDF</p>
+      <div class="buy-price">$19 <small>one-time</small></div>
+      <p class="buy-note">He thought he was being taught how a radio worked.</p>
+      <ul class="stack">
+        <li><strong>The complete novel.</strong> Four books, 91 chapters, epilogue. EPUB + PDF. ~490 pages.</li>
+        <li><strong>Three full lives rendered.</strong> Childhoods, marriages, work, wounds. Not a treatise with characters attached — a novel.</li>
+        <li><strong>Nigeria on the page.</strong> Enugu, Lagos, Ibadan; provisions shops and garages and pastor's studies and university archives; the click-click-click of coins on a table and the hush after a generator dies at seven.</li>
+        <li><strong>No moral.</strong> The author will not tell you what to think about any of these three people. He will let you live with them.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition free, including any revisions and the eventual print edition foreword.</li>
+        <li><strong>30-day refund.</strong> Read the first eight chapters (Elias's childhood through the radio). If you do not want to sit with the rest of these people for the remaining 83, email us. Full refund.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L08_GLOBAL_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — $19 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, Apple Pay, bank transfer · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He has spent years watching what<br>happens when we need a villain.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> writes from Mgbowo, Enugu. He is the author of the seven preceding Longform books — on the mind, on family wounds, on trust, on belief, on the second life, on the alibis the mind constructs. For ten years he has sat under an ukwu ube tree answering people's questions and watching the same pattern repeat: when a thing is too complicated to hold, someone gets made into the villain.</p>
+        <p>This is his first published novel. He will tell you plainly it took five years to write, and that he wrote the final chapter three times before he could bear what the room contained, and that he is still, in certain ways, afraid of what he put on the page.</p>
+        <p style="margin:0">The seven preceding Longform books are nonfiction and are not required reading. This novel stands on its own. Readers familiar with the previous books will recognise themes, but no prior book is a prerequisite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Is this a Christian novel? An Igbo novel?</summary><p>It is a Nigerian novel written by a man from Mgbowo who has read widely in both traditions and is writing in neither mode. Priests and pastors appear. The chi is named. The world the characters move in is the actual world most Nigerians live in, where Christian and traditional understandings sit beside each other without tidy resolution.</p></details>
+    <details><summary>Is it based on a real fire?</summary><p>Oduya is not a single real event. It is built from the pattern of a dozen events the author has watched — in which a city needed a villain, was given one, printed the story, and moved on before the smoke cleared.</p></details>
+    <details><summary>Which character is the author?</summary><p>None of them. All of them. Elias has his father's hands. Mara has his watching. Daniel has his years of theological training and fracture. But these are fictional people, and any attempt to map them one-to-one onto real people will mislead.</p></details>
+    <details><summary>Is there a redemptive ending?</summary><p>There is an honest ending. The final chapter is not a triumph and not a funeral. It is a room with five objects and three people who now know what they did not know before. Whether knowledge is redemption is one of the questions the book asks rather than answers.</p></details>
+    <details><summary>Is this depressing? I don't want to read something that leaves me in pieces.</summary><p>It is a book about a fire that kills four people and ruins a fifth's life, so parts of it are heavy. But it is also a book about a father and a son rebuilding a radio, about a grandmother seeing a child for the first time, about a man who learns to stop looking past the person across the dinner table. It holds both. It is honest, not cruel.</p></details>
+    <details><summary>How long is it really?</summary><p>~97,000 words — about 490 pages. A proper novel. Not a novella. Read it at the pace novels want — a few chapters a sitting, with pauses. Do not rush. It rewards slow reading the way a careful photograph rewards slow looking.</p></details>
+    <details><summary>Do I need to read the first seven Longform books?</summary><p>No. This is fiction and self-contained. That said, readers of The Watching Mind, Trust It Twice, Choose It Twice, and The Alibi of the Mind will recognise the soil this novel grew in. The nonfiction books describe the patterns; this novel lets you live inside them.</p></details>
+    <details><summary>Will there be a print edition?</summary><p>Eventual print plans exist but there is no release date. Buy the digital edition now and the print-edition foreword and any revisions will arrive free as a lifetime update.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">The world was not simple enough<br>for one villain.</h2>
+    <p>Five objects on a table. Three strangers. One afternoon. Everything to know.</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — $19 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/global.html">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="mailto:hello@voiceofiam.com">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>Nothing to Understand</em> — <b>$19</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L08_GLOBAL_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L08_GLOBAL_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'Nothing To Understand, Everything To Know (Global)',value:19,currency:'USD'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>

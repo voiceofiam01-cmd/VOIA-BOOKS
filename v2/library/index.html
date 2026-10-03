@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Voice of I AM — The Library</title>
+<meta name="description" content="Short, honest books by Africans, for Africans, on the things nobody teaches you. 86 titles. Read on any device. Lifetime updates.">
+<meta property="og:title" content="Voice of I AM — The Library">
+<meta property="og:description" content="Books for becoming more awake to your own life.">
+<meta property="og:image" content="/VOIA-BOOKS/v2/library/og.jpg">
+<link rel="preconnect" href="https://connect.facebook.net">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cream:#f5f0e6;
+  --cream-2:#ebe4d4;
+  --paper:#fdfbf6;
+  --ink:#1a1410;
+  --ink-soft:#3d352b;
+  --muted:#7a7163;
+  --rule:#d4cab6;
+  --rule-light:#e6decc;
+  --burgundy:#722f37;
+  --burgundy-dark:#4e1e24;
+  --gold:#b08d4e;
+  --gold-deep:#8a6c3a;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --serif-display:var(--serif);
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --radius:4px;
+}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--cream);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:inherit}
+
+/* ── top announcement bar ── */
+.announce{
+  background:var(--burgundy);color:#f0e6d0;
+  font-size:13px;letter-spacing:.04em;text-align:center;
+  padding:10px 20px;
+}
+.announce a{color:#f0e6d0;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
+
+/* ── header ── */
+.hdr{
+  background:var(--cream);border-bottom:1px solid var(--rule);
+  padding:22px 24px;position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(10px);background:rgba(245,240,230,.92);
+}
+.hdr-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{
+  font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em;
+  text-decoration:none;line-height:1.2;
+}
+.logo em{font-style:normal;color:var(--burgundy)}
+.logo small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:1px}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-link{font-size:13px;color:var(--ink-soft);text-decoration:none;letter-spacing:.02em;border-bottom:1px solid transparent}
+.hdr-link:hover{border-color:var(--gold)}
+.hdr-cart{
+  background:var(--burgundy);color:#f0e6d0;
+  padding:9px 16px;border-radius:4px;font-size:13px;font-weight:600;
+  text-decoration:none;display:inline-flex;align-items:center;gap:6px;
+  transition:background .15s ease;
+}
+.hdr-cart:hover{background:var(--burgundy-dark)}
+
+/* ── search bar (sticky shadow) ── */
+.search-wrap{border-bottom:1px solid var(--rule);background:var(--cream);padding:0 24px;position:sticky;top:73px;z-index:39}
+.search-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:12px 0}
+.search-icon{color:var(--muted);flex-shrink:0;font-size:18px;line-height:1}
+.search-input{
+  flex:1;border:none;background:transparent;
+  font-family:var(--serif);font-size:18px;color:var(--ink);
+  outline:none;padding:4px 0;min-width:0;
+}
+.search-input::placeholder{color:var(--muted);font-style:italic}
+.search-count{font-size:13px;color:var(--muted);white-space:nowrap;font-family:var(--sans)}
+
+/* ── hero ── */
+.hero{padding:68px 24px 72px;border-bottom:1px solid var(--rule)}
+.hero-inner{max-width:820px;margin:0 auto;text-align:center}
+.hero-rule{width:60px;height:2px;background:var(--gold);margin:0 auto 28px}
+.hero-eyebrow{
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--burgundy);font-weight:700;margin-bottom:16px;
+}
+.hero h1{
+  font-family:var(--serif-display);
+  font-size:clamp(36px,6vw,64px);line-height:1.04;
+  font-weight:700;letter-spacing:-.025em;
+  margin-bottom:24px;color:var(--ink);
+}
+.hero-led{font-family:var(--serif);font-size:20px;line-height:1.55;color:var(--ink-soft);max-width:640px;margin:0 auto 32px;font-style:italic}
+.hero-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;padding-top:28px;border-top:1px solid var(--rule);max-width:560px;margin:0 auto}
+.hero-stat b{display:block;font-family:var(--serif);font-size:26px;font-weight:700;color:var(--burgundy);line-height:1}
+.hero-stat span{display:block;font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+
+/* ── shelf nav ── */
+.shelf-nav{padding:28px 24px 0;border-bottom:1px solid var(--rule);background:var(--paper)}
+.shelf-nav-inner{max-width:1240px;margin:0 auto}
+.shelf-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:thin;padding-bottom:0;-webkit-overflow-scrolling:touch}
+.shelf-tab{
+  flex-shrink:0;cursor:pointer;
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  color:var(--muted);background:transparent;border:none;
+  padding:12px 16px 14px;letter-spacing:.02em;
+  border-bottom:2px solid transparent;
+  transition:color .15s,border-color .15s;
+  white-space:nowrap;
+}
+.shelf-tab:hover{color:var(--ink)}
+.shelf-tab.active{color:var(--burgundy);border-bottom-color:var(--burgundy)}
+.shelf-sub{
+  font-family:var(--serif);font-style:italic;font-size:15px;color:var(--muted);
+  padding:14px 0 18px;border-top:1px solid var(--rule-light);margin-top:0;
+}
+
+/* ── featured carousel / strip ── */
+.featured{background:var(--ink);color:#f0e6d0;padding:56px 24px 60px;border-bottom:1px solid var(--rule)}
+.featured-inner{max-width:1240px;margin:0 auto}
+.featured h2{
+  font-family:var(--serif);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:32px;font-weight:700;
+}
+.featured-grid{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:720px){.featured-grid{grid-template-columns:repeat(3,1fr);gap:40px}}
+.feat-book{display:flex;gap:20px;align-items:flex-start;gap:24px}
+@media(max-width:719px){.feat-book{gap:18px}}
+.feat-cover{
+  width:110px;flex-shrink:0;aspect-ratio:2/3;
+  border-radius:2px;position:relative;overflow:hidden;
+  box-shadow:6px 8px 24px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.06);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:14px 12px;color:#fdfbf6;
+  font-family:var(--serif);
+}
+.feat-cover .spine{position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:2px 0 0 2px}
+.feat-cover .bc-top{font-size:8px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;font-family:var(--sans);font-weight:700;z-index:1}
+.feat-cover .bc-title{font-weight:700;line-height:1.1;letter-spacing:-.01em;z-index:1}
+.feat-cover .bc-title small{font-size:10px;display:block;font-weight:400;font-style:italic;opacity:.8;margin-top:6px}
+.feat-cover .bc-bottom{margin-top:auto;z-index:1}
+.feat-cover .bc-author{font-size:8px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-family:var(--sans);font-weight:700;margin-bottom:2px}
+.feat-cover .bc-sku{font-size:7px;opacity:.5;font-family:var(--sans);letter-spacing:.08em}
+.feat-body{flex:1;min-width:0}
+.feat-tag{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.feat-body h3{font-family:var(--serif);font-size:22px;line-height:1.2;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
+.feat-body p{font-size:14px;line-height:1.5;color:#c9bda6;margin-bottom:14px}
+.feat-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--gold);font-size:14px;font-weight:600;text-decoration:none;
+  border-bottom:1px solid var(--gold);padding-bottom:2px;
+  transition:gap .15s;cursor:pointer;
+}
+.feat-cta:hover{gap:10px}
+
+/* ── books grid ── */
+.library{padding:48px 24px 80px}
+.library-inner{max-width:1240px;margin:0 auto}
+.shelf-label{
+  font-family:var(--serif);font-size:28px;font-weight:700;
+  letter-spacing:-.01em;margin-bottom:4px;
+  display:flex;align-items:baseline;gap:12px;
+}
+.shelf-label::before{content:"";width:30px;height:2px;background:var(--gold);display:inline-block;margin-right:4px}
+.shelf-count{font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400}
+.shelf-desc{font-family:var(--serif);font-style:italic;color:var(--muted);margin-bottom:32px;font-size:16px}
+.book-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:32px 20px;
+  margin-bottom:60px;
+}
+@media(min-width:600px){.book-grid{grid-template-columns:repeat(3,1fr);gap:40px 28px}}
+@media(min-width:900px){.book-grid{grid-template-columns:repeat(4,1fr);gap:48px 28px}}
+@media(min-width:1160px){.book-grid{grid-template-columns:repeat(5,1fr);gap:52px 28px}}
+
+/* ── book card ── */
+.book{cursor:pointer;text-decoration:none;color:inherit;display:block}
+.book-soon{opacity:.62}
+.book-soon .book-cover{box-shadow:2px 4px 12px -6px rgba(26,20,16,.15),inset 0 0 0 1px rgba(0,0,0,.05);filter:grayscale(.35)}
+.book-soon:hover .book-cover{transform:translateY(-2px)}
+.book-cover{
+  width:100%;aspect-ratio:2/3;position:relative;overflow:hidden;
+  border-radius:2px;margin-bottom:14px;
+  box-shadow:4px 8px 22px -8px rgba(26,20,16,.25),0 2px 6px -2px rgba(26,20,16,.12),inset 0 0 0 1px rgba(0,0,0,.05);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:18px 14px;color:#fdfbf6;font-family:var(--serif);
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease;
+}
+.book:hover .book-cover{
+  transform:translateY(-4px) rotateY(-3deg) rotateX(1deg);
+  box-shadow:6px 16px 36px -10px rgba(26,20,16,.35),0 4px 10px -2px rgba(26,20,16,.15),inset 0 0 0 1px rgba(0,0,0,.08);
+}
+.book-cover .spine{position:absolute;left:0;top:0;bottom:0;width:5px;background:rgba(0,0,0,.22);border-radius:2px 0 0 2px}
+.book-cover .gold-line{position:absolute;left:10px;right:10px;top:50%;height:1px;background:rgba(255,255,255,.2)}
+.book-cover .bc-top{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.75;font-family:var(--sans);font-weight:700;z-index:1}
+.book-cover .bc-title{font-size:16px;font-weight:700;line-height:1.12;letter-spacing:-.01em;z-index:1}
+.book-cover .bc-title small{font-size:10px;display:block;font-weight:400;font-style:italic;opacity:.85;margin-top:6px;letter-spacing:0;font-family:var(--serif)}
+.book-cover .bc-bottom{margin-top:auto;z-index:1}
+.book-cover .bc-author{font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;font-family:var(--sans);font-weight:700;margin-bottom:3px}
+.book-cover .bc-sku{font-size:8px;opacity:.5;font-family:var(--sans);letter-spacing:.1em}
+.book-meta{padding:0 2px}
+.book-title{font-family:var(--serif);font-size:15px;font-weight:700;line-height:1.25;letter-spacing:-.005em;margin-bottom:4px}
+.book-sub{font-size:12px;color:var(--muted);line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.book-price{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--burgundy)}
+.book-price .old{font-size:13px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-left:6px}
+.book-badge{
+  display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--burgundy);color:#f0e6d0;
+  padding:2px 6px;border-radius:2px;font-weight:700;
+  vertical-align:middle;margin-left:6px;
+}
+
+/* ── about strip ── */
+.about{background:var(--paper);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:56px 24px}
+.about-inner{max-width:760px;margin:0 auto;text-align:center}
+.about h2{font-family:var(--serif);font-size:clamp(24px,4vw,32px);font-weight:700;letter-spacing:-.015em;margin-bottom:20px;line-height:1.2}
+.about p{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--ink-soft);margin-bottom:16px}
+.about p.voice{font-style:italic;color:var(--burgundy);margin-top:24px;font-size:18px}
+
+/* ── newsletter ── */
+.newsletter{background:var(--burgundy);color:#f0e6d0;padding:56px 24px;text-align:center}
+.news-inner{max-width:520px;margin:0 auto}
+.newsletter h2{font-family:var(--serif);font-size:clamp(24px,4vw,30px);font-weight:700;letter-spacing:-.01em;margin-bottom:12px}
+.newsletter p{font-size:15px;opacity:.85;margin-bottom:20px}
+.news-form{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.news-input{
+  flex:1;min-width:220px;padding:12px 16px;border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);color:#f0e6d0;border-radius:4px;
+  font-family:var(--sans);font-size:14px;outline:none;
+}
+.news-input::placeholder{color:rgba(240,230,208,.6)}
+.news-input:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+.news-btn{
+  background:var(--gold);color:var(--burgundy-dark);border:none;
+  padding:12px 22px;border-radius:4px;font-weight:700;font-size:14px;
+  cursor:pointer;font-family:var(--sans);
+}
+.news-btn:hover{background:#c49b58}
+.news small{display:block;font-size:12px;opacity:.65;margin-top:12px}
+
+/* ── footer ── */
+footer{background:var(--ink);color:#a89f8f;padding:40px 24px 24px;font-size:13px}
+.footer-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:640px){.footer-inner{grid-template-columns:2fr 1fr 1fr 1fr}}
+.footer-logo{font-family:var(--serif);font-weight:700;font-size:18px;color:#f0e6d0;margin-bottom:8px}
+.footer-logo em{font-style:normal;color:var(--gold)}
+footer p{font-size:13px;color:#a89f8f;line-height:1.6}
+footer h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+footer ul{list-style:none}
+footer li{margin-bottom:6px}
+footer a{color:#c9bda6;text-decoration:none}
+footer a:hover{color:#f0e6d0}
+.footer-bot{max-width:1240px;margin:32px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#7a7163}
+
+/* ── product modal ── */
+.modal{
+  position:fixed;inset:0;background:rgba(26,20,16,.72);z-index:100;
+  display:none;align-items:flex-start;justify-content:center;
+  padding:24px;overflow-y:auto;
+  backdrop-filter:blur(8px);
+}
+.modal.open{display:flex}
+.modal-card{
+  background:var(--paper);width:100%;max-width:960px;
+  border-radius:6px;position:relative;
+  margin:32px 0;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  overflow:hidden;
+}
+.modal-close{
+  position:absolute;top:16px;right:16px;z-index:2;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,.5);color:#fff;border:none;
+  font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  line-height:1;transition:background .15s;
+}
+.modal-close:hover{background:rgba(0,0,0,.75)}
+.modal-body{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:720px){.modal-body{grid-template-columns:280px 1fr}}
+.modal-cover-side{
+  background:var(--cream-2);padding:36px;
+  display:flex;align-items:flex-start;justify-content:center;
+  border-bottom:1px solid var(--rule);
+}
+@media(min-width:720px){.modal-cover-side{border-bottom:none;border-right:1px solid var(--rule);padding:40px 28px}}
+.modal-cover{
+  width:100%;max-width:200px;aspect-ratio:2/3;
+  border-radius:2px;position:relative;overflow:hidden;
+  box-shadow:6px 12px 28px -6px rgba(26,20,16,.35),inset 0 0 0 1px rgba(0,0,0,.06);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:22px 16px;color:#fdfbf6;font-family:var(--serif);
+}
+.modal-cover .spine{position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:2px 0 0 2px}
+.modal-cover .bc-top{font-size:9px;letter-spacing:.2em;text-transform:uppercase;opacity:.78;font-family:var(--sans);font-weight:700;z-index:1}
+.modal-cover .bc-title{font-size:22px;font-weight:700;line-height:1.08;letter-spacing:-.015em;z-index:1}
+.modal-cover .bc-title small{font-size:12px;display:block;font-weight:400;font-style:italic;opacity:.85;margin-top:10px;letter-spacing:0}
+.modal-cover .bc-bottom{margin-top:auto;z-index:1}
+.modal-cover .bc-author{font-size:9px;letter-spacing:.16em;text-transform:uppercase;opacity:.72;font-family:var(--sans);font-weight:700;margin-bottom:3px}
+.modal-cover .bc-sku{font-size:8px;opacity:.5;font-family:var(--sans);letter-spacing:.1em}
+.modal-info{padding:36px}
+@media(min-width:720px){.modal-info{padding:40px 44px}}
+.bread{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:600}
+.bread a{color:var(--burgundy);text-decoration:none}
+.modal-info h1{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin-bottom:6px}
+.modal-info .sub{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink-soft);margin-bottom:10px}
+.modal-info .author{font-size:14px;color:var(--muted);margin-bottom:20px}
+.modal-info .author strong{color:var(--ink);font-weight:600}
+.modal-blurb{font-family:var(--serif);font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:24px}
+.modal-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+.modal-price{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--burgundy)}
+.modal-price-note{font-size:13px;color:var(--muted)}
+.modal-buys{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.btn-buy{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--burgundy);color:#f0e6d0;border:none;
+  padding:14px 28px;border-radius:4px;font-weight:600;font-size:15px;
+  cursor:pointer;text-decoration:none;font-family:var(--sans);
+  transition:background .15s;
+}
+.btn-buy:hover{background:var(--burgundy-dark)}
+.btn-buy.promo{background:var(--ink)}
+.btn-buy.promo:hover{background:var(--ink-soft)}
+.btn-buy.btn-soon{background:#a1a1aa;color:#fff;cursor:default;opacity:.85;font-style:italic}
+.btn-buy.btn-soon:hover{background:#a1a1aa}
+.btn-sample{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--ink);border:1px solid var(--rule);
+  padding:14px 22px;border-radius:4px;font-weight:600;font-size:15px;
+  cursor:pointer;text-decoration:none;font-family:var(--sans);
+}
+.btn-sample:hover{border-color:var(--ink)}
+.modal-trust{font-size:13px;color:var(--muted);margin-bottom:28px}
+.modal-trust span{margin:0 8px;color:var(--rule)}
+.modal-relatives{border-top:1px solid var(--rule);padding-top:20px}
+.modal-relatives h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:12px}
+.rel-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:520px){.rel-list{grid-template-columns:repeat(3,1fr)}}
+.rel{
+  display:flex;gap:10px;align-items:center;
+  text-decoration:none;color:var(--ink);padding:6px;
+  border-radius:4px;transition:background .1s;cursor:pointer;
+}
+.rel:hover{background:var(--cream-2)}
+.rel-mini{
+  width:32px;flex-shrink:0;aspect-ratio:2/3;border-radius:1px;
+  box-shadow:1px 2px 4px rgba(0,0,0,.2);
+}
+.rel-t{font-size:12px;line-height:1.3;font-weight:600;font-family:var(--serif);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ── no results ── */
+.no-results{
+  text-align:center;padding:80px 24px;color:var(--muted);font-family:var(--serif);
+  font-style:italic;font-size:18px;
+}
+.no-results button{
+  display:inline-block;margin-top:16px;font-family:var(--sans);font-style:normal;
+  background:var(--burgundy);color:#f0e6d0;border:none;padding:10px 20px;
+  border-radius:4px;font-size:14px;font-weight:600;cursor:pointer;
+}
+
+/* ── utility ── */
+.hidden{display:none!important}
+::selection{background:var(--gold);color:var(--ink)}
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<div class="announce">
+  New: <em>The Complete Longform Library</em> — all 17 Munachimso books, $199 · <a href="#book/B-LONGFORM">See the offer →</a><br><span style="opacity:.7;font-size:12px">Plus: <a href="#book/B-ITTWICE">It-Twice Trilogy</a> · <a href="#book/B-DEATH">Mortality Shelf</a> · <a href="#book/B-FAITH">Faith &amp; Inquiry Shelf</a> · <a href="#book/B-FULL">Full Elise Library (69 books, $89)</a></span>
+</div>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <a href="/VOIA-BOOKS/v2/library/" class="logo">
+      Voice of <em>I AM</em>
+      <small>The Library</small>
+    </a>
+    <div class="hdr-right">
+      <a href="/VOIA-BOOKS/v2/about.html" class="hdr-link">About</a>
+      <a href="/VOIA-BOOKS/v2/policies.html" class="hdr-link">Policies</a>
+      <a href="#" class="hdr-cart" onclick="return false">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Cart · <span id="cart-count">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="search-wrap">
+  <div class="search-inner">
+    <span class="search-icon">⌕</span>
+    <input class="search-input" id="q" type="search" placeholder="Search 86 books — try sleep, money, death, faith, trust…" autocomplete="off">
+    <span class="search-count" id="count"></span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-rule"></div>
+    <div class="hero-eyebrow">Voice of I AM Publishing House · Lagos</div>
+    <h1>Books for becoming more awake<br>to your own life.</h1>
+    <p class="hero-led">Short, honest books by Africans, for Africans, on the things nobody teaches you — money, heartbreak, sleep, midlife, the quiet questions. No jargon. No lectures. Books you actually finish.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b>86</b><span>Titles</span></div>
+      <div class="hero-stat"><b>7</b><span>Shelves</span></div>
+      <div class="hero-stat"><b>~100</b><span>Average pages</span></div>
+      <div class="hero-stat"><b>30-day</b><span>Refund</span></div>
+    </div>
+  </div>
+</section>
+
+<nav class="shelf-nav">
+  <div class="shelf-nav-inner">
+    <div class="shelf-tabs" role="tablist">
+      <button class="shelf-tab active" data-shelf="all">All books</button>
+    </div>
+    <p class="shelf-sub" id="shelf-sub"></p>
+  </div>
+</nav>
+
+<section class="featured" id="featured">
+  <div class="featured-inner">
+    <h2>Reading now</h2>
+    <div class="featured-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<main class="library">
+  <div class="library-inner" id="library-inner"></div>
+</main>
+
+<section class="about">
+  <div class="about-inner">
+    <h2>A small publishing house in Lagos.</h2>
+    <p>Voice of I AM publishes short books on the things nobody teaches you — how to stop running out of money before the month ends, how to sleep when your brain holds board meetings at 3am, how to love someone without losing yourself, how to grow old without becoming a burden, and the quiet spiritual questions that sit under all of it.</p>
+    <p>We are not a guru factory. We do not sell $2,000 courses. We publish books you can finish in a weekend, written by people who have lived the thing they are writing about. Every book comes with lifetime updates and a straightforward refund: read it, try it, and if it does not speak to you, tell us — your money comes back.</p>
+    <p class="voice">"Books for becoming more awake to your own life."</p>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="news-inner">
+    <h2>First chapter, free.</h2>
+    <p>Leave your email and we'll send you the first chapter of a new book every Friday — plus early access to launches and launch-only pricing.</p>
+    <form class="news-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Added';this.querySelector('input').value='';">
+      <input class="news-input" type="email" placeholder="your@email.com" required>
+      <button class="news-btn" type="submit">Subscribe</button>
+    </form>
+    <small>No spam. One email a week. Unsubscribe in one click.</small>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Voice of <em>I AM</em></div>
+      <p>A small independent publishing house in Lagos. Short books, honest books, for Africans and for readers anywhere who value the plain word.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#shelf/all">All books</a></li>
+        <li><a href="#shelf/foundations">Foundations</a></li>
+        <li><a href="#shelf/money-work">Money & Work</a></li>
+        <li><a href="#shelf/hearts">Hearts</a></li>
+        <li><a href="#shelf/bundles">Bundles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="/VOIA-BOOKS/v2/policies.html">Refund policy</a></li>
+        <li><a href="/VOIA-BOOKS/v2/policies.html">How downloads work</a></li>
+        <li><a href="mailto:hello@voiceofiam.com">Contact us</a></li>
+        <li><a href="https://wa.me/2348101265454">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>House</h4>
+      <ul>
+        <li><a href="/VOIA-BOOKS/v2/about.html">About VOIA</a></li>
+        <li><a href="#">For booksellers</a></li>
+        <li><a href="#">Submissions</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 Voice of I AM Publishing · Lagos · Port Harcourt · Enugu</span>
+    <span>@voiceofiam</span>
+  </div>
+</footer>
+
+<!-- product modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card" id="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="catalogue.js"></script>
+<script>
+/* ── texture map (blank text-FREE cloth/paper backgrounds; real type rendered in HTML) ── */
+const SHELF_TEXTURE = {
+  'foundations':   'texture-cream.jpg',
+  'money-work':    'texture-teal.jpg',
+  'hearts':        'texture-deepburgundy.jpg',
+  'golden-years':  'texture-amber.jpg',
+  'fifty-something':'texture-terracotta.jpg',
+  'longform':      'texture-navy.jpg',
+  'bundles':       'texture-black.jpg',
+};
+/* covers that use a dark texture need light text; cream needs dark */
+const SHELF_INK = {
+  'foundations':   {fg:'#1a1410', accent:'#722f37', gold:'#8a6c3a'},
+  'money-work':    {fg:'#fdfbf6', accent:'#fdfbf6', gold:'#c9a96e'},
+  'hearts':        {fg:'#f5f0e6', accent:'#f5f0e6', gold:'#c9a96e'},
+  'golden-years':  {fg:'#fdfbf6', accent:'#fdfbf6', gold:'#f5f0e6'},
+  'fifty-something':{fg:'#fdfbf6', accent:'#fdfbf6', gold:'#c9a96e'},
+  'longform':      {fg:'#f5f0e6', accent:'#f5f0e6', gold:'#c9a96e'},
+  'bundles':       {fg:'#c9a96e', accent:'#f5f0e6', gold:'#c9a96e'},
+};
+/* anchor/featured books override to deep-burgundy texture */
+const FEATURED_TEXTURE = {
+  'RYL-P01': 'texture-deepburgundy.jpg',
+  'VOI-L09': 'texture-navy.jpg',
+  'B-FULL':  'texture-black.jpg',
+  'VOI-L05': 'texture-navy.jpg',
+  'TRY-037': null, // Paycheck has its own JPG cover in paycheck/
+};
+
+/* ── cover generator: texture background + real HTML typography (every word is real VOIA copy) ── */
+function coverHtml(book, sizeCls){
+  var override = FEATURED_TEXTURE[book.sku];
+  var texture, ink, solidBg = null;
+  if(override === null){
+    // Real JPG cover for books that have one (Paycheck)
+    return '<div class="'+sizeCls+'" style="background:url(\'../paycheck/book-cover.jpg\') center/cover #1c1917;">'+
+      '<div class="spine" style="background:rgba(0,0,0,.28)"></div></div>';
+  } else if(override){
+    if(override === 'solid'){
+      // Render solid-color cover using book.coverColor
+      solidBg = book.coverColor || '#1c1917';
+      ink = {fg:'#f5f0e6', accent:'#f5f0e6', gold:'rgba(245,240,230,.6)'};
+    } else {
+      texture = override;
+      if(override.indexOf('cream')!==-1) ink = SHELF_INK['foundations'];
+      else if(override.indexOf('black')!==-1) ink = SHELF_INK['bundles'];
+      else ink = SHELF_INK['hearts'];
+    }
+  } else {
+    // Longform books with a promo page get solid covers in their brand color
+    if(book.shelf==='longform' && book.coverColor){
+      solidBg = book.coverColor;
+      ink = {fg:'#f5f0e6', accent:'#f5f0e6', gold:'rgba(245,240,230,.55)'};
+    } else {
+      texture = SHELF_TEXTURE[book.shelf] || 'texture-cream.jpg';
+      ink = SHELF_INK[book.shelf] || SHELF_INK['foundations'];
+    }
+  }
+  var short = book.title;
+  if(short.length > 28 && short.indexOf(':')!==-1) short = short.split(':')[0];
+  if(short.length > 32) short = short.substring(0,30) + '…';
+  var sub = book.subtitle || '';
+  if(sub.length > 50) sub = sub.substring(0,48) + '…';
+  var authorDisplay = book.author
+    .replace('Munachimso E. Nwagbara','Munachimso Nwagbara');
+  var titleSize = sizeCls.indexOf('modal')!==-1 ? '26px' :
+                  sizeCls.indexOf('feat')!==-1 ? '15px' : '15px';
+  var isCream = texture && texture.indexOf('cream')!==-1;
+  var isBundle = !!book.save;
+  var ruleColor = ink.gold;
+  var topText = isBundle ? 'VOICE OF I AM · BOXED SET' : 'VOICE OF I AM';
+  var spineBg = isCream ? 'rgba(0,0,0,.12)' : 'rgba(0,0,0,.28)';
+  var topColor = isCream ? ink.fg : 'rgba(245,240,230,.82)';
+  var botColor = isCream ? 'rgba(26,20,16,.6)' : 'rgba(245,240,230,.75)';
+  var skuColor = isCream ? 'rgba(26,20,16,.4)' : 'rgba(245,240,230,.5)';
+  var shadow = isCream ? 'none' : '0 1px 3px rgba(0,0,0,.35)';
+  var showSub = (sub && (sizeCls.indexOf('modal')!==-1 || sizeCls.indexOf('feat')!==-1));
+
+  var bgStyle;
+  if(solidBg){
+    bgStyle = 'background:linear-gradient(135deg,'+solidBg+','+darken(solidBg,.25)+');color:'+ink.fg+';box-shadow:0 1px 3px rgba(0,0,0,.35);';
+  } else {
+    bgStyle = 'background:url(\'covers/'+texture+'\') center/cover,linear-gradient(135deg,rgba(0,0,0,0),rgba(0,0,0,.22));color:'+ink.fg+';';
+  }
+  var out = '<div class="'+sizeCls+'" style="'+bgStyle+'">';
+  out += '<div class="spine" style="background:'+spineBg+'"></div>';
+  out += '<div class="bc-top" style="color:'+topColor+'">'+topText+'</div>';
+  out += '<div style="position:absolute;left:14px;right:14px;top:50%;transform:translateY(-52%);text-align:left;">';
+  out += '<div style="height:1px;background:'+ruleColor+';width:40px;margin:0 0 14px;opacity:.8"></div>';
+  out += '<div class="bc-title" style="color:'+ink.fg+';font-size:'+titleSize+';line-height:1.12;text-shadow:'+shadow+';">'+escapeHtml(short);
+  if(showSub){
+    out += '<small style="display:block;font-size:'+(sizeCls.indexOf('modal')!==-1?'13px':'10px')+';font-weight:400;font-style:italic;opacity:.85;margin-top:8px;letter-spacing:0;color:'+ink.fg+';">'+escapeHtml(sub)+'</small>';
+  }
+  out += '</div></div>';
+  out += '<div class="bc-bottom" style="color:'+botColor+'">';
+  out += '<div class="bc-author">'+escapeHtml(authorDisplay)+'</div>';
+  out += '<div class="bc-sku" style="color:'+skuColor+'">'+book.sku+'</div>';
+  out += '</div></div>';
+  return out;
+}
+
+function darken(hex,amt){
+  var c=hex.replace('#','');
+  if(c.length===3)c=c[0]+c[0]+c[1]+c[1]+c[2]+c[2];
+  var r=parseInt(c.substr(0,2),16),g=parseInt(c.substr(2,2),16),b=parseInt(c.substr(4,2),16);
+  r=Math.max(0,Math.floor(r*(1-amt)));g=Math.max(0,Math.floor(g*(1-amt)));b=Math.max(0,Math.floor(b*(1-amt)));
+  return '#'+[r,g,b].map(function(n){var h=n.toString(16);return h.length<2?'0'+h:h}).join('');
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+
+/* ── shelf tabs ── */
+var tabsEl = document.querySelector('.shelf-tabs');
+SHELVES.forEach(function(s){
+  var b=document.createElement('button');
+  b.className='shelf-tab';b.dataset.shelf=s.id;b.textContent=s.label;
+  tabsEl.appendChild(b);
+});
+
+/* ── state ── */
+var activeShelf = 'all';
+var searchQuery = '';
+
+/* ── render featured ── */
+function renderFeatured(){
+  var featured = BOOKS.filter(function(b){return b.featured}).slice(0,3);
+  var fg = document.getElementById('featured-grid');
+  fg.innerHTML = featured.map(function(b){
+    return '<div class="feat-book" data-sku="'+b.sku+'">'+
+      coverHtml(b,'feat-cover')+
+      '<div class="feat-body">'+
+        (b.promoPage?'<span class="feat-tag">Featured read</span>':'<span class="feat-tag">New &amp; noted</span>')+
+        '<h3>'+escapeHtml(b.title)+'</h3>'+
+        '<p>'+escapeHtml(b.blurb.substring(0,120))+'…</p>'+
+        (b.promoPage?'<a class="feat-cta" href="'+b.promoPage+'">Read the full page →</a>':'<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">Read more →</span>')+
+      '</div>'+
+    '</div>';
+  }).join('');
+  fg.querySelectorAll('.feat-book[data-sku]').forEach(function(el){
+    var b = getBook(el.dataset.sku);
+    if(b && !b.promoPage){
+      el.style.cursor='pointer';
+      el.addEventListener('click',function(){openBook(b.sku)});
+    }
+  });
+}
+
+function getBook(sku){return BOOKS.find(function(b){return b.sku===sku})}
+
+/* ── render grid ── */
+function renderLibrary(){
+  var inner = document.getElementById('library-inner');
+  var sub = document.getElementById('shelf-sub');
+  var filtered = BOOKS.filter(function(b){
+    if(activeShelf!=='all' && b.shelf!==activeShelf) return false;
+    if(searchQuery){
+      var q=searchQuery.toLowerCase();
+      var hay = (b.title+' '+b.subtitle+' '+b.author+' '+(b.tags||[]).join(' ')+' '+b.blurb).toLowerCase();
+      if(hay.indexOf(q)===-1) return false;
+    }
+    return true;
+  });
+
+  document.getElementById('count').textContent = filtered.length+' book'+(filtered.length===1?'':'s');
+
+  if(filtered.length===0){
+    inner.innerHTML='<div class="no-results">No books match that search.<br><button onclick="document.getElementById(\'q\').value=\'\';searchQuery=\'\';document.querySelector(\'.shelf-tab[data-shelf=all]\').click();">Browse all</button></div>';
+    sub.textContent='';
+    return;
+  }
+
+  sub.textContent = activeShelf==='all' ? 'Every book in the library. Pick a shelf above to narrow.' : (SHELVES.find(function(s){return s.id===activeShelf}).sub);
+
+  // Group by shelf if viewing "all", else one block
+  var html='';
+  if(activeShelf==='all' && !searchQuery){
+    SHELVES.forEach(function(shelf){
+      var shelfBooks = filtered.filter(function(b){return b.shelf===shelf.id});
+      if(shelfBooks.length===0) return;
+      html += '<div id="shelf-'+shelf.id+'">';
+      html += '<h2 class="shelf-label">'+shelf.label+'<span class="shelf-count">'+shelfBooks.length+' books</span></h2>';
+      html += '<p class="shelf-desc">'+shelf.sub+'</p>';
+      html += '<div class="book-grid">';
+      shelfBooks.forEach(function(b){html += cardHtml(b)});
+      html += '</div></div>';
+    });
+  } else {
+    html += '<div>';
+    if(activeShelf!=='all'){
+      var s = SHELVES.find(function(sh){return sh.id===activeShelf});
+      html += '<h2 class="shelf-label">'+s.label+'<span class="shelf-count">'+filtered.length+' books</span></h2>';
+      html += '<p class="shelf-desc">'+s.sub+'</p>';
+    } else if(searchQuery){
+      html += '<h2 class="shelf-label">Results<span class="shelf-count">'+filtered.length+' books</span></h2>';
+      html += '<p class="shelf-desc">Matching "'+escapeHtml(searchQuery)+'"</p>';
+    }
+    html += '<div class="book-grid">';
+    filtered.forEach(function(b){html += cardHtml(b)});
+    html += '</div></div>';
+  }
+  inner.innerHTML = html;
+
+  // attach card clicks
+  inner.querySelectorAll('.book').forEach(function(el){
+    el.addEventListener('click',function(e){e.preventDefault();openBook(el.dataset.sku)});
+  });
+}
+
+function cardHtml(b){
+  var price = b.comingSoon ? '<span style="color:var(--muted);font-style:italic;font-weight:400;font-size:13px">Coming soon</span>' : '$'+b.price;
+  var badge='';
+  if(b.comingSoon) badge='<span class="book-badge" style="background:#d4d4d8;color:#52525b;box-shadow:none">Coming soon</span>';
+  else if(b.badge) badge='<span class="book-badge" style="background:#dc2626;color:#fff;box-shadow:0 2px 6px -2px rgba(220,38,38,.5)">'+b.badge+'</span>';
+  else if(b.save) badge='<span class="book-badge">Bundle</span>';
+  else if(b.featured && b.promoPage) badge='<span class="book-badge" style="background:var(--gold);color:var(--burgundy-dark)">Featured</span>';
+  else if(b.hubRefs && b.hubRefs>=15) badge='<span class="book-badge" style="background:var(--gold-deep)">Reader favorite</span>';
+  var cardCls = 'book' + (b.comingSoon?' book-soon':'');
+  return '<a class="'+cardCls+'" data-sku="'+b.sku+'" href="#book/'+b.sku+'">'+
+    coverHtml(b,'book-cover')+
+    '<div class="book-meta">'+
+      '<div class="book-title">'+escapeHtml(b.title)+badge+'</div>'+
+      '<div class="book-sub">'+escapeHtml(b.subtitle||'')+'</div>'+
+      '<div class="book-price">'+price+'</div>'+
+    '</div>'+
+  '</a>';
+}
+
+/* ── product modal ── */
+function openBook(sku){
+  var b = getBook(sku); if(!b) return;
+  if(b.promoPage){ window.location.href = b.promoPage; return; }
+
+  var shelf = SHELVES.find(function(s){return s.id===b.shelf});
+  // find relatives: same shelf + any books in b.contains, or books that point to it
+  var relatives = BOOKS.filter(function(x){
+    if(x.sku===b.sku) return false;
+    if(b.contains && b.contains.indexOf(x.sku)!==-1) return true;
+    if(x.shelf===b.shelf && !x.save) return false; // limit
+    return false;
+  }).slice(0,6);
+  if(relatives.length<4){
+    var sameShelf = BOOKS.filter(function(x){return x.sku!==b.sku && x.shelf===b.shelf && !x.save && relatives.indexOf(x)===-1}).slice(0,4-relatives.length);
+    relatives = relatives.concat(sameShelf);
+  }
+
+  var isSoon = !!b.comingSoon;
+  var buyUrl = '#'; // placeholder — will be filled when Paystack product per SKU is set up
+  var buyLabel = isSoon ? 'Coming soon — join the waitlist' : 'Add to cart — $'+b.price;
+  var ctaExtra = '';
+  if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' at checkout</span>';
+  var priceDisplay = isSoon ? '<span style="color:var(--muted);font-style:italic">Coming soon</span>' : '$'+b.price;
+  var priceNote = isSoon ? 'This book is being edited and prepared for release. Join the waitlist to be first to know.' : 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
+  var buyAction = isSoon ? 'href="#waitlist"' : 'href="'+buyUrl+'" onclick="return addToCart(\''+b.sku+'\')"';
+  var buyBtnCls = isSoon ? 'btn-buy btn-soon' : 'btn-buy';
+  var trustLine = isSoon ? 'We\'ll email you the moment it launches<span>·</span>No spam, ever<span>·</span>One-click unsubscribe' : 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
+
+  var html =
+    '<div class="modal-cover-side">'+coverHtml(b,'modal-cover')+'</div>'+
+    '<div class="modal-info">'+
+      '<div class="bread"><a href="#shelf/'+shelf.id+'">'+shelf.label+'</a> · '+b.sku+'</div>'+
+      '<h1>'+escapeHtml(b.title)+'</h1>'+
+      '<div class="sub">'+escapeHtml(b.subtitle||'')+'</div>'+
+      '<div class="author">By <strong>'+escapeHtml(b.author)+'</strong>';
+  if(b.pages) html += ' · '+b.pages+' pages';
+  html += '</div>'+
+      '<p class="modal-blurb">'+escapeHtml(b.blurb)+'</p>'+
+      '<div class="modal-price-row">'+
+        '<span class="modal-price">'+priceDisplay+'</span>'+
+        '<span class="modal-price-note">'+priceNote+'</span>'+
+      '</div>'+
+      '<div class="modal-buys">'+
+        '<a class="'+buyBtnCls+'" '+buyAction+'>'+buyLabel+ctaExtra+'</a>'+
+        '<a class="btn-sample" href="#">Read a free sample</a>'+
+      '</div>'+
+      '<div class="modal-trust">'+trustLine+'</div>';
+  if(b.save){
+    html += '<div style="background:#fef3c7;border:1px solid #fde68a;border-radius:4px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#78350f"><strong>Bundle saves you '+b.save+'.</strong> Contains all the books below — delivered together in one download.</div>';
+  }
+  if(relatives.length){
+    html += '<div class="modal-relatives"><h3>'+(b.contains?'Included in this bundle':'You might also like')+'</h3><div class="rel-list">';
+    relatives.forEach(function(r){
+      html += '<a class="rel" data-sku="'+r.sku+'" onclick="openBook(\''+r.sku+'\');return false;">'+
+        '<div class="rel-mini" style="background:linear-gradient(135deg,'+r.coverColor+','+darken(r.coverColor,.15)+')"></div>'+
+        '<div class="rel-t">'+escapeHtml(r.title)+'</div>'+
+      '</a>';
+    });
+    html += '</div></div>';
+  }
+  html += '</div>';
+
+  document.getElementById('modal-body').innerHTML = html;
+  var modal = document.getElementById('modal');
+  modal.classList.add('open');modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  history.replaceState(null,'','#book/'+sku);
+}
+
+function closeModal(){
+  var modal = document.getElementById('modal');
+  modal.classList.remove('open');modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+  history.replaceState(null,'','#shelf/'+activeShelf);
+}
+document.getElementById('modal-close').addEventListener('click',closeModal);
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+
+/* ── cart (demo) ── */
+var cart=[];
+function addToCart(sku){
+  cart.push(sku);
+  document.getElementById('cart-count').textContent=cart.length;
+  if(window.fbq) fbq('track','AddToCart',{content_ids:[sku]});
+  alert('Added to cart. (Checkout coming — Paystack products per SKU will be wired next.)');
+  return false;
+}
+
+/* ── tab clicks ── */
+document.querySelector('.shelf-tabs').addEventListener('click',function(e){
+  var t=e.target;if(!t.classList.contains('shelf-tab'))return;
+  document.querySelectorAll('.shelf-tab').forEach(function(x){x.classList.remove('active')});
+  t.classList.add('active');
+  activeShelf=t.dataset.shelf;
+  history.replaceState(null,'','#shelf/'+activeShelf);
+  renderLibrary();
+  if(activeShelf==='all') window.scrollTo({top:document.querySelector('.library').offsetTop-120,behavior:'smooth'});
+  else {
+    var el = document.getElementById('shelf-'+activeShelf);
+    if(el) window.scrollTo({top:el.offsetTop-120,behavior:'smooth'});
+    else window.scrollTo({top:document.querySelector('.library').offsetTop-120,behavior:'smooth'});
+  }
+});
+
+/* ── search ── */
+document.getElementById('q').addEventListener('input',function(e){
+  searchQuery = e.target.value.trim();
+  if(searchQuery){
+    document.querySelectorAll('.shelf-tab').forEach(function(x){x.classList.remove('active')});
+    document.querySelector('.shelf-tab[data-shelf=all]').classList.add('active');
+    activeShelf='all';
+  }
+  renderLibrary();
+});
+
+/* ── deep links ── */
+function routeHash(){
+  var h = location.hash || '#shelf/all';
+  if(h.indexOf('#book/')===0){
+    openBook(h.substring(6));
+  } else if(h.indexOf('#shelf/')===0){
+    var s = h.substring(7);
+    var tab = document.querySelector('.shelf-tab[data-shelf="'+s+'"]');
+    if(tab) tab.click();
+  }
+}
+window.addEventListener('hashchange',routeHash);
+
+/* ── init ── */
+renderFeatured();
+renderLibrary();
+setTimeout(routeHash,0);
+</script>
+</body>
+</html>

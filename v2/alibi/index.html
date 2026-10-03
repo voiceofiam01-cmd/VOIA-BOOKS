@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Alibi of the Mind — Why You Believe What You Need to Believe</title>
+<meta name="description" content="Two people describe the same fifteen minutes and arrive at two incompatible accounts. Neither is lying. That is the uncomfortable part. By Munachimso E. Nwagbara.">
+<meta property="og:title" content="The Alibi of the Mind">
+<meta property="og:description" content="You are the detective and the suspect. You are also, unfortunately, the only witness who was in the room.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f3f4f6;--ink:#111827;--muted:#6b7280;--rule:#d1d5db;
+  --slate:#374151;--slate-dark:#1f2937;--gun:#111827;--gold:#bfa15a;--gold-deep:#7c6428;
+  --cream:#fafaf9;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--slate)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--slate);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--slate);font-weight:700;margin-bottom:20px}
+.best-badge{display:inline-block;background:#dc2626;color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:5px 10px;border-radius:3px;margin-left:10px;vertical-align:middle}
+@media(max-width:420px){.best-badge{display:block;margin:10px 0 0 0;width:fit-content;margin-left:0}}
+h1{font-family:var(--serif);font-size:clamp(38px,7.5vw,58px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#1f2937;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(17,24,39,.6),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(160deg,#4b5563,#1f2937 50%,#0b0f17)}
+.cover-texture{position:absolute;inset:0;background:url('../library/covers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.35;filter:grayscale(.6)}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#e5e7eb;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(229,231,235,.7);margin-bottom:auto}
+.cover-mid{margin-top:28%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:22px;font-weight:700;line-height:1.08;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:10px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(229,231,235,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--slate-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--slate);color:#f3f4f6;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px}
+.cta:hover{background:var(--gun);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--slate-dark)}
+.hero-stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+p{margin-bottom:18px;color:#1f2937}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#374151;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--slate-dark);color:#e5e7eb;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--slate-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#374151;line-height:1.55}
+.recog{background:#eef2ff;border:1px solid #93a5d1;border-radius:4px;padding:28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:#1f2937;margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:#1f2937;line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:#374151;font-weight:700}
+.warn{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#374151;line-height:1.65}
+.warn b{display:block;font-family:var(--serif);font-size:18px;color:var(--slate-dark);margin-bottom:8px;font-style:italic}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--slate-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#374151;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#111827}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--slate);font-weight:700;font-size:22px;line-height:1}
+.buy{background:var(--gun);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#9ca3af;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#9ca3af;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#d9d4d0;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--slate-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#cdb26b}
+.buy-trust{text-align:center;font-size:13px;color:#9ca3af;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--slate);color:#e5e7eb;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#374151;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--slate-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--slate)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#374151}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(250,250,249,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--slate-dark)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Nigeria · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform <span class="best-badge">Longform · Book Seven</span></span>
+        <h1>The Alibi<br>of the Mind.</h1>
+
+        <p class="lede">Two people are describing the same fifteen minutes of their lives, and they are describing two different marriages. He says she raised her voice first, over something small — a comment about his mother, dropped into a conversation about weekend plans like it belonged there. He says he stayed calm. He says he was trying to keep the peace while she spiralled. He can tell you the sequence. He can tell you what she was wearing. He can tell you, with something close to relief, that at least this time he has a clear conscience.</p>
+        <p class="lede">She says he had been distant all week, and the comment about his mother was never really about his mother — it was the only door available for saying something true. She says he went cold the instant she brought it up, a particular cold she has learned to recognise, and that his calm was its own kind of attack. She can tell you the sequence too. She can tell you what he was wearing. She can tell you, with the same relief, that she knows exactly what happened.</p>
+        <p class="lede"><strong>Neither of them is lying. That is the uncomfortable part.</strong></p>
+        <p class="lede">If one of them were lying, this would be a simple problem — find out who, and why, and the rest follows. But question each separately, ask each to swear to what they remember, and you will find two sincere people arriving at accounts that cannot both be accurate, each certain the other has, out of pride or self-protection, gotten it wrong. The gap between the two accounts is not a gap in honesty. It is a gap in what got noticed and what got missed. And underneath the vantage point, quietly doing its work, is something else: each of them needed a version of the story in which they were not the one who caused the damage. So each mind — not maliciously, not even consciously — built one.</p>
+        <p class="lede">This is not a book about other people's lies. It is a book about the alibis your own mind constructs for you, sincerely, without your permission, and in the parts of your life where being wrong would cost you the most.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>25</b><span>chapters</span></div>
+          <div class="hero-stat"><b>5</b><span>parts</span></div>
+          <div class="hero-stat"><b>~85k</b><span>words · ~430pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">The Alibi<br>of the Mind</div>
+              <div class="cover-sub">Why You Believe What You Need to Believe</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">₦15,000 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      You are the detective and the suspect. You are also, unfortunately, the only witness who was in the room. Certainty feels like evidence. That is the trap. When you feel sure of something, the feeling does not arrive labelled with its source. It does not announce whether it came from examining the facts or from needing to keep something you don't want to lose — a friendship, a self-image, an old resentment that has started to feel like company.
+      <cite>— Prologue, The Person in the Mirror Is Also the Witness</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">The lawyer and the scientist</span>
+    <h2>Two modes live in the same skull.<br>They sound equally confident.</h2>
+    <p>There is a version of the mind that behaves like a scientist — genuinely curious, willing to be surprised, willing to let evidence overturn a favourite theory. And there is a version that behaves like a lawyer — smart, resourceful, utterly committed to a predetermined conclusion, brilliant at finding whatever supports the client and ignoring whatever doesn't.</p>
+    <p>Both versions live in you. Both can sound equally confident. The book is about learning to tell, in the moment, which one is currently speaking.</p>
+
+    <div class="pull">
+      Is this belief the product of investigation, or the product of defense? Not "is this belief true" — you often can't know that with certainty, and demanding certainty is its own trap. The narrower, more answerable question is whether you arrived here by looking, or by needing.
+      <cite>— Prologue</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">You know what this feels like</span>
+    <h2>If any of these are you, the book was written for you.</h2>
+    <div class="recog">
+      <h3>You have been both the detective and the suspect.</h3>
+      <ul>
+        <li>You have had an argument where, days later, you had to quietly admit the other person was mostly right — and you can remember how sincerely you believed your version in the room.</li>
+        <li>You are much better at spotting self-deception in your friends and your partner and your parents than you are at spotting it in yourself, and you have started to wonder what that asymmetry is protecting.</li>
+        <li>You have held a belief for years that would be unusually painful to be wrong about — about your career, your family, your side of an old fight, your own motives — and you notice you get defensive when it is questioned even gently.</li>
+        <li>You have issued an apology that, in hindsight, was mostly a negotiation: "I'm sorry you felt that way" — the kind where the words are present and the admission is not.</li>
+        <li>You can see clearly that someone else is arguing from identity rather than evidence, and you have wondered whether you are ever doing that without knowing it.</li>
+        <li>You are tired of the way your own mind works to protect you from things you need to look at — and you want a way out that is not the other trap, which is paranoid self-doubt.</li>
+        <li>You have reached the point where "I was wrong" has become, in certain areas of your life, one of the hardest sentences in the language — and you want to be able to say it and mean it.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>What the alibi costs you over a lifetime.</h3>
+      <p>A self-deceptive belief does not announce itself as such. It announces itself as certainty. And it has consequences that compound:</p>
+      <span class="sunk">You have the same argument with the same person, in some version, every month — each time freshly convinced, each time with a clear conscience, each time certain this time the record will show you were right.</span>
+      <span class="sunk">You stay in jobs and relationships and churches long after the evidence has stopped supporting your version of why you are there, because the version protects you.</span>
+      <span class="sunk">You damage people you love and then defend the damage with explanations that are, from the inside, completely convincing.</span>
+      <span class="sunk">You issue apologies that never quite land, because underneath the words the mind is still trying to reduce the amount of reality it has to surrender.</span>
+      <span class="sunk">You reach midlife and discover you have been defending a version of yourself that was never quite accurate, and the cost of revising it now includes everything you built on top of it.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Twenty-five chapters across five parts</span>
+    <h2>The Cost Test, the Lawyer/Scientist split,<br>and how to say "I was wrong" and mean it.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Part I</span><b>The Human Need to Be Right</b><span>You are not the exception. Why you spot it in others and miss it in yourself. Where self-deception concentrates: the places where the truth would cost you something. The Cost Test.</span></div>
+      <div class="gcell"><span class="gn">Part II</span><b>The Evidence and the Alibi</b><span>What the mind notices and what it discards. Motivated reasoning. Selective memory. How explanations quietly upgrade into defenses. The difference between context and escape.</span></div>
+      <div class="gcell"><span class="gn">Part III</span><b>The Five Defenses</b><span>The specific tools the lawyer uses: denial, rationalisation, projection, deflection, moral licensing. Each chapter names the mechanism and gives a concrete test.</span></div>
+      <div class="gcell"><span class="gn">Part IV</span><b>When It Matters Most</b><span>Where the alibi concentrates: arguments, apologies, money, reputation, decisions already made, identity, the stories we tell about our parents and our past.</span></div>
+      <div class="gcell"><span class="gn">Part V</span><b>The Practice</b><span>How to ask yourself the uncomfortable question. The pause before the defense. How to notice the lawyer arriving. How to admit you were wrong — the clean three-word admission, and why the qualified versions are escape routes.</span></div>
+      <div class="gcell"><span class="gn">Closing</span><b>The Clean Admission</b><span>"I did this. It affected you this way. I understand more now than I did then. I should have handled it differently. Here is what I intend to do about it." A chapter on apology that stays close to the facts.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="warn">
+      <b>This is not a book about learning to never trust yourself.</b>
+      Paranoid self-doubt is not the cure for self-deception. It is a different disease wearing the same coat. You cannot function treating every thought as a suspect. This book does not ask you to. It asks you to learn a specific, repeatable question at the moments when it matters most: did I arrive here by looking, or by needing? That is a narrow skill, not a wholesale demolition of your own judgment. The scientist in you is real. The point is to notice when the lawyer has taken over.
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>The Alibi of the Mind</h2>
+      <p class="buy-sub">25 chapters · 5 parts · ~85,000 words · EPUB + PDF</p>
+      <div class="buy-price">₦15,000 <small>one-time</small></div>
+      <p class="buy-note">The difficulty itself is a signal worth investigating.</p>
+      <ul class="stack">
+        <li><strong>The complete book.</strong> 25 chapters across five parts, prologue, closing. EPUB + PDF. ~430 pages.</li>
+        <li><strong>The Cost Test.</strong> Five questions to ask of any belief you are defending fiercely — what would you have to admit, change, reverse, disappoint, or surrender?</li>
+        <li><strong>The Lawyer/Scientist checklist</strong> — the six tells that let you distinguish, in real time, which version of your mind is speaking.</li>
+        <li><strong>The Clean Admission template</strong> (Chapter 25) — five sentences for an apology that does not defend itself.</li>
+        <li><strong>Concrete examples throughout.</strong> The couple in the prologue return across several chapters. A father arguing with his daughter. Real fights, real apologies, real patterns.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition free.</li>
+        <li><strong>30-day refund.</strong> Read Part I and run the Cost Test on one belief you currently hold fiercely. If you learn nothing about how your own mind protects you, email us. Full refund.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L07_NG_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — ₦15,000 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, transfer, USSD · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He is not writing as someone who has defeated self-deception.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> wrote this book because he has been both the husband and the wife in the prologue. He has issued the negotiating apology. He has defended the version. He has believed, with total and misplaced conviction, things that later turned out to be protective stories his mind had built for him.</p>
+        <p>He writes from Mgbowo, Enugu, from inside the same slow project the rest of us are in. He will tell you plainly that he still catches the lawyer at work, usually after the fact and sometimes mid-sentence. The book is written because catching yourself mid-sentence is better than catching yourself ten years later, and because most people never learn to catch themselves at all.</p>
+        <p style="margin:0">Read Books One (Watching), Four (Trust), and Five (Choose) first. You cannot inspect your own alibis until you can notice your own mind, until you can tell the difference between earned and borrowed trust, and until you have begun to audit the beliefs you hold by default.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Won't this just make me doubt everything I think?</summary><p>No. Paranoid self-doubt is explicitly identified as one of the two diseases. The book teaches a specific, narrow skill for high-stakes moments, not a global posture of distrust toward your own judgment. The scientist in you is real. The book wants more of that, not less.</p></details>
+    <details><summary>Does this say I'm a bad person / a liar?</summary><p>No. The entire first chapter is built on the premise that neither person in the prologue is lying. Self-deception is not dishonesty. It is a structural feature of how the mind works — universal, not moral. Seeing it in yourself does not make you a bad person. Refusing to see it, after you know it is there, does real damage.</p></details>
+    <details><summary>Is this just psychology? Or is it spiritual?</summary><p>It draws on both traditions and is reducible to neither. The author's framework is his own, built from years of sitting with people and watching what the mind does. He does not pretend this is a clinical textbook and he does not pretend it is revelation. It is careful observation.</p></details>
+    <details><summary>Do I need to read the previous books first?</summary><p>Formally no. Practically, yes. The Cost Test works on top of skills taught in Books One, Four, and Five: noticing your own mind (One), inspecting trust (Four), auditing inherited belief (Five). Without those, people tend to use this book as a weapon for spotting other people's alibis, which is the easiest and least useful way to read it.</p></details>
+    <details><summary>Will this help my marriage / my relationship with my parents?</summary><p>Probably. Not because it tells you what to say to them, but because once you can spot the alibi in your own account, the argument changes. The book ends with a chapter on apology because apology is where self-deception does its most visible damage in relationships.</p></details>
+    <details><summary>How long is it really?</summary><p>~85,000 words — about 430 pages. One chapter a week. Pause at the end of each chapter and run the Cost Test on something you defended that week. This is a practice book, not a book to finish.</p></details>
+    <details><summary>What if I read it and just get better at lying to myself?</summary><p>That is a real risk the author names in the book. The lawyer is brilliant. It can use the language of self-examination to build a new, more sophisticated alibi ("I am the kind of person who admits I'm wrong, therefore..."). The practice sections are designed to flag that move specifically, but the author is honest that there is no final victory. There is only the pause before the defense, practiced thousands of times.</p></details>
+    <details><summary>I am scared of what I'll find if I look honestly.</summary><p>You should be. That fear is not a sign you should stop. It is a sign there is something worth looking at. The book does not minimise the cost. Chapter 25 is about how to survive what you find — because clean admissions are not acts of self-hatred, and there is a dignity in them the mind cannot manufacture for you.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">The question is not who is lying to me.</h2>
+    <p>The stranger, more useful question: what has my own mind already decided to protect — and what would it take for me to notice?</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — ₦15,000 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="https://wa.me/2348101265454">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>The Alibi of the Mind</em> — <b>₦15,000</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L07_NG_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L07_NG_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'The Alibi of the Mind (NG)',value:15000,currency:'NGN'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Why Must We Die? — Taking a Four-Word Sentence Apart</title>
+<meta name="description" content="Death entered the world not through design, not through sin, but through a dog's appetite and a toad's persistence and a message that arrived out of order. By Munachimso E. Nwagbara.">
+<meta property="og:title" content="Why Must We Die?">
+<meta property="og:description" content="I will not tell you what happens after death, because I do not know, and I have stopped pretending that I need to know before I can think clearly about the question.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f5f2ee;--ink:#1a140f;--muted:#6b5e52;--rule:#c9bdab;
+  --char:#2b2320;--char-dark:#14100d;--bone:#e8dfd0;--gold:#b89658;--gold-deep:#7d6430;
+  --cream:#faf7f1;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--char)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--char);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--char);font-weight:700;margin-bottom:20px}
+h1{font-family:var(--serif);font-size:clamp(38px,7.6vw,58px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#2c241f;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(20,16,13,.65),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(160deg,#3d332d,#2b2320 55%,#14100d)}
+.cover-texture{position:absolute;inset:0;background:url('../library/global.htmlcovers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.3;filter:grayscale(.5)sepia(.2)}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#ede3d4;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(237,227,212,.7);margin-bottom:auto}
+.cover-mid{margin-top:24%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:24px;font-weight:700;line-height:1.06;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:12px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(237,227,212,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--char-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--char);color:#ede3d4;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px}
+.cta:hover{background:var(--char-dark);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--char-dark)}
+.hero-stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+p{margin-bottom:18px;color:#2c241f}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#3e332b;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--char-dark);color:#ede3d4;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--char-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#3e332b;line-height:1.55}
+.recog{background:#f2ead8;border:1px solid #d9c197;border-radius:4px;padding:28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--char-dark);margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:#3e332b;line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:var(--char);font-weight:700}
+.warn{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#3e332b;line-height:1.65}
+.warn b{display:block;font-family:var(--serif);font-size:18px;color:var(--char-dark);margin-bottom:8px;font-style:italic}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--char-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#3e332b;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#1a140f}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--char);font-weight:700;font-size:22px;line-height:1}
+.buy{background:var(--ink);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#b8ac99;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#b8ac99;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#e8dfd0;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--char-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#caa664}
+.buy-trust{text-align:center;font-size:13px;color:#b8ac99;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--char);color:#ede3d4;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#3e332b;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--char-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--char)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#3e332b}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(250,247,241,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--char-dark)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/global.html" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/global.html">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Worldwide · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform</span>
+        <h1>Why Must<br>We Die?</h1>
+
+        <p class="lede">In the time before death, when human beings could still speak face to face with Chukwu, something terrible happened for the first time. A person fell down and did not get up. The body grew cold. The breath stopped. They had never seen this before. There was no word for what had happened, because nothing like it had ever happened.</p>
+        <p class="lede">Confused and frightened, the people held a council beneath the ogirisi tree for seven days. On the eighth day they chose two messengers. To the dog — fast, strong, loyal — they gave the hopeful message: tell Chukwu that when a person falls this way, the person should wake up; death should be like sleep, temporary, brief, followed by rising. To the toad — slow, deliberate, persistent — they gave the darker message: tell Chukwu that when a person falls, the person should not wake up; death should be permanent, final, without return.</p>
+        <p class="lede">They gave the positive message to the faster messenger. The dog would arrive first. But on the way the dog passed a compound where food was being prepared — roasted yam, palm oil, the rich scent of ogiri fermenting in clay pots. He stopped. He ate. The errand slipped from his mind the way water slips through open fingers. The toad did not stop. Hop by hop, hour by hour, he delivered his message. Chukwu granted the first message to arrive. Divine decrees, once spoken, cannot be withdrawn.</p>
+        <p class="lede"><strong>And so death entered the world. Not through divine design. Not through human sin. Through a dog's appetite and a toad's persistence and a message that arrived out of order.</strong></p>
+        <p class="lede">The sentence "Why must we die?" contains four words. Each one is a trap. <em>Why</em> conflates three questions — causal, functional, existential — and most people ask the third and receive the first. <em>Must</em> implies necessity when what we actually have is universality. <em>We</em> seems obvious until you ask whether it includes bacteria, jellyfish, bristlecone pines, or only humans. <em>Die</em> seems like a single event until you learn the heart, the brain, the cells, and consciousness all die at different times and in different ways. Death is not a moment. It is a cascade. This book takes each word apart.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>45</b><span>chapters</span></div>
+          <div class="hero-stat"><b>5</b><span>parts</span></div>
+          <div class="hero-stat"><b>~106k</b><span>words · ~530pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">Why<br>Must<br>We Die?</div>
+              <div class="cover-sub">Taking a Four-Word Sentence Apart</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">$24 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      The Dog and the Toad is not an epigraph. It is not decoration. It is a claim made by a tradition that has been thinking about death for millennia: that death is not necessary, not woven into the fabric of existence, not the plan. Death happened — contingently, through error, through a failure of logistics. The world we live in is the result of a message that arrived out of order. That claim will be tested, challenged, revisited, and transformed across the course of this book.
+      <cite>— Prologue, The Day Death Became a Question</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="pull">
+      I used to believe that after death there was heaven or hell. Somewhere along the way, that belief dissolved — not through argument, not through trauma, but gradually, the way morning mist thins under a rising sun, until one morning you reach for it and it is simply not there. I did not replace it with the opposite conviction either. I do not believe that death leads to nothing. I have not concluded that consciousness ends when the brain stops. I have concluded nothing. I simply do not know.
+      <cite>— Prologue</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">From the cell to the funeral</span>
+    <h2>Science does its work. Philosophy does its work. Grief does its work. The question remains.</h2>
+    <p>The book is organised in five parts that move outward in widening circles, from the smallest unit to the largest question:</p>
+    <p><strong>Part I takes the sentence apart.</strong> Four chapters, one per word. Why? Must? We? Die? Each word is shown to carry a trap — a conflation, an assumption, a category error, a mis-timing. Most arguments about death never get past these four traps.</p>
+    <p><strong>Part II is the body.</strong> Eleven chapters from biology, evolution, oncology, and gerontology. Everything dies (but not quite everything). A body built to break. The cell that refused to die (cancer). The price of repair (senescence). The immortal worm. The shape of the selective shadow. Our denial. Transition and grief. A first summing.</p>
+    <p><strong>Part III is the human.</strong> The animal that knows. The first funeral. The invention of the afterlife. The fear beneath the fear. Building things that outlive us. The doctor who could not save himself. How do we want to die? Then an interlude set in a compound — the place where the living and the dead share space.</p>
+    <p><strong>Part IV is the mind.</strong> Where are you? The brain makes a person. The hard problem of consciousness. When the brain stops. Near-death experiences. Can you survive without your body? The man who comes back. The Igbo question — what exactly returns? The person who does not end at the skin. The ancestors are not a scientific hypothesis. Chukwu without the human witness.</p>
+    <p><strong>Part V is the unknown.</strong> The immortality industry. If we could live forever. The universe does not promise us forever. Evil without death. Why is there something that can die? The strange fact that we are here. We wanted an answer. What we actually know. What if the question was wrong? Then an epilogue.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">If any of these are you</span>
+    <h2>This book was written for you.</h2>
+    <div class="recog">
+      <h3>You have stopped pretending to know.</h3>
+      <ul>
+        <li>You sat beside a grave and realised you did not know what happens next, and that the not-knowing was not a failure of faith.</li>
+        <li>You have been told "death is necessary for evolution" and felt in your body that the answer did not match the weight of the question.</li>
+        <li>You are a doctor or a nurse who watches death professionally and has discovered that clinical training does not settle the question — it sharpens it.</li>
+        <li>You lost someone and were given theological slogans that felt thin in your mouth, and then were given secular slogans that felt thinner.</li>
+        <li>You grew up with a story about a dog and a toad and have spent years wondering whether the story is truer than the doctrine it sits beside.</li>
+        <li>You are afraid of dying, or afraid of not dying, and you want a book that treats both fears honestly without selling you an answer.</li>
+        <li>You are tired of books that take you straight to a conclusion they had reached before page one.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>What the false certainties cost us.</h3>
+      <p>When we answer the question too quickly, we do not only mis-state the truth. We damage people:</p>
+      <span class="sunk">The bereaved are told their loved one is "in a better place" before they have been allowed to feel that the place they are in is worse.</span>
+      <span class="sunk">The dying are denied honest conversation because the people around them cannot tolerate their own uncertainty.</span>
+      <span class="sunk">The young are handed either a fear-based eschatology or a glib materialism, and both collapse the first time a real death arrives.</span>
+      <span class="sunk">Medical decisions at the end of life are made by people who have not done the work of deciding what they actually believe death is.</span>
+      <span class="sunk">Grief is pathologised by one tradition and theologised away by another, and neither lets the grieving person simply sit with what they have lost.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">What the book does</span>
+    <h2>Five parts, no final answer, and an epilogue.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Part I · The Question</span><b>Four Words, Four Traps</b><span>Why? Must? We? Die? Each word taken apart. The three why's. Necessity vs universality. The unstable "we." Death as cascade, not moment.</span></div>
+      <div class="gcell"><span class="gn">Part II · The Body</span><b>Biology, Cancer, Aging</b><span>11 chapters. Programmed death vs wear-and-tear. The cell that refused to die. The immortal jellyfish, the bristlecone pine. Denial. The first summing.</span></div>
+      <div class="gcell"><span class="gn">Part III · The Human</span><b>Knowledge, Grief, Legacy</b><span>7 chapters + interlude. The first funeral. Afterlives across cultures. The fear beneath the fear. The doctor who could not save himself. The Compound interlude.</span></div>
+      <div class="gcell"><span class="gn">Part IV · The Mind</span><b>Consciousness and the Ancestors</b><span>12 chapters. Where are you? The hard problem. Near-death. What exactly returns? The person who does not end at the skin. Ancestors are not a hypothesis.</span></div>
+      <div class="gcell"><span class="gn">Part V · The Unknown</span><b>Immortality and the Question Beneath the Question</b><span>8 chapters. Longevity tech. Forever as evil? Why is there anything that can die? What we actually know. What if the question was wrong?</span></div>
+      <div class="gcell"><span class="gn">Epilogue</span><b>We Are Still Here</b><span>Not an answer. Not a surrender. The place the investigation leaves you.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="warn">
+      <b>This book does not end with "and therefore you should believe X."</b>
+      The author states plainly that he does not know what happens after death, and that he has stopped pretending he needs to know in order to think clearly. The book is an investigation, not a conclusion. Sometimes science wins a chapter. Sometimes a proverb is more philosophically precise than a peer-reviewed paper. Sometimes two traditions disagree and the disagreement is more illuminating than either answer alone. You will not be preached at. You will not be converted. You will be asked to think more carefully than you have before about the one sentence every human being eventually has to say.
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>Why Must We Die?</h2>
+      <p class="buy-sub">45 chapters · 5 parts · Epilogue · ~106,000 words · EPUB + PDF</p>
+      <div class="buy-price">$24 <small>one-time</small></div>
+      <p class="buy-note">The not-knowing turned out not to be a torment. It turned out to be a beginning.</p>
+      <ul class="stack">
+        <li><strong>The complete book.</strong> Prologue, 45 chapters across five parts, The Compound interlude, epilogue. EPUB + PDF. ~530 pages.</li>
+        <li><strong>The Dog and the Toad</strong> retold and then tested across the whole book, not used as decoration.</li>
+        <li><strong>Science given its full weight.</strong> Senescence, telomeres, cancer, programmed cell death, jellyfish immortality, bristlecone pines, near-death research — no hand-waving.</li>
+        <li><strong>Igbo eschatology presented honestly.</strong> Ilọ uwa, ndichie, what exactly returns — the disagreements within the tradition kept visible.</li>
+        <li><strong>A grief chapter that does not hurry.</strong> The Compound interlude sits in the middle of the book for a reason.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition free.</li>
+        <li><strong>30-day refund.</strong> Read the prologue and Part I (all four word chapters). If you have not begun to see the question differently by then, email us. Full refund.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L10_GLOBAL_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — $24 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, Apple Pay, bank transfer · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He is writing as someone who does not know.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> wrote this book because he had to. He lost people he loved. He sat beside graves. He watched the doctrine of his childhood dissolve the way mist dissolves — not in argument, but under the slow unrelenting light of ordinary mornings. He did not replace it with the opposite doctrine. He arrived, instead, at a not-knowing that turned out not to be a torment.</p>
+        <p>He has spent years reading the biology, the philosophy, the traditions, the neuroscience, the near-death literature, and the Igbo accounts. He writes from Mgbowo, Enugu, from inside the work rather than from a settled position.</p>
+        <p style="margin:0">Book Nine (Who Is God?) is recommended but not required. The two books are companions; this one takes a single sentence and works it the way Book Nine works "God." Book Seven (Alibi) is also useful, because a lot of what people believe about death is alibi, not investigation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Does this book conclude that there is an afterlife, or that there isn't?</summary><p>Neither. The author says plainly: "I have concluded nothing. I simply do not know." The chapters on consciousness, near-death, ancestors, and ilọ ụwa take the claims seriously without pretending they prove survival. The chapters on neuroscience take the evidence seriously without pretending it proves extinction. Both sides' overstatements are flagged.</p></details>
+    <details><summary>Is this a Christian book? An Igbo traditional book?</summary><p>It is a book written by an Igbo man who was raised Christian and who has read widely in both traditions and in the secular literature. It does not argue for either as a final answer. It treats Christian eschatology, Igbo ideas of ilọ uwa and ndichie, philosophical materialism, transhumanist longevity, and secular existentialism as five serious positions, and subjects each one to the same scrutiny.</p></details>
+    <details><summary>Will reading this make me more afraid of death?</summary><p>It may, for a season. Chapter 19 names the fear beneath the fear, and the honest answer is that not-knowing does not always feel like liberation. Many readers have reported the opposite — that after working through the book the fear became a companion rather than an enemy. The author does not promise comfort. He promises clarity.</p></details>
+    <details><summary>I am grieving right now. Is this a good time?</summary><p>Possibly not. The book does not rush past grief, but it does not hold your hand either. Wait until you can read carefully. The book will still be here. If you buy it now and discover the timing is wrong, come back to it in three months or a year; the lifetime-update guarantee applies regardless.</p></details>
+    <details><summary>How technical is the science?</summary><p>Written for an educated lay reader. There are chapters on cancer biology, telomeres, senescence, and the neural correlates of consciousness, but the author is a careful explainer — no prior biology or philosophy training required.</p></details>
+    <details><summary>How long is it really?</summary><p>~106,000 words — about 530 pages. This is not a book to read straight through in a weekend. One chapter a sitting. Pause at the interlude. Let the Compound chapter breathe. You will know when you are ready for Part V.</p></details>
+    <details><summary>Do I need to read Book Nine first?</summary><p>No. The two books share a method and a posture, but they address different questions and stand independently. If you find yourself wanting more on the metaphysical framing after finishing this book, Book Nine will be there.</p></details>
+    <details><summary>If you don't give an answer, what am I buying?</summary><p>A way to ask the question more carefully. The author's claim is not that he has solved death; it is that most of what passes for thinking about death is a series of evasions, and that clearing those evasions away is itself worth the price of the book. The epilogue names what you are left with after the evasions are cleared.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">The dog stopped for roasted yam.<br>The toad did not.</h2>
+    <p>Death entered the world through a message that arrived out of order. We are still living inside that mistake. The book asks what happens if you look at it clearly.</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — $24 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/global.html">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="mailto:hello@voiceofiam.com">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>Why Must We Die?</em> — <b>$24</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L10_GLOBAL_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L10_GLOBAL_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'Why Must We Die? (Global)',value:24,currency:'USD'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>

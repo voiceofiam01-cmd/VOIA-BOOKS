@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Live It Twice — The 7 Laws of the Second Life</title>
+<meta name="description" content="The first life is inherited. The second is authored. Seven laws for crossing from a life that only happened to a life that was deliberately written. By Munachimso E. Nwagbara.">
+<meta property="og:title" content="Live It Twice">
+<meta property="og:description" content="You are not in time. You are time, taking shape. The question is whether that shape belongs to you.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#faf4ec;--ink:#2b1a10;--muted:#6b5844;--rule:#d9c7a8;
+  --terra:#9a4a2e;--terra-dark:#5e2a16;--clay:#c76c3f;--gold:#c89b60;--gold-deep:#8a6030;
+  --cream:#fdfaf3;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--terra)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--terra);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);font-weight:700;margin-bottom:20px}
+.best-badge{display:inline-block;background:#dc2626;color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:5px 10px;border-radius:3px;margin-left:10px;vertical-align:middle}
+@media(max-width:420px){.best-badge{display:block;margin:10px 0 0 0;width:fit-content;margin-left:0}}
+h1{font-family:var(--serif);font-size:clamp(40px,8vw,62px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#3a261a;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(94,42,22,.6),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(155deg,#c76c3f,#9a4a2e 55%,#5e2a16)}
+.cover-texture{position:absolute;inset:0;background:url('../library/covers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.45}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#fdf1df;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(253,241,223,.7);margin-bottom:auto}
+.cover-mid{margin-top:28%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:23px;font-weight:700;line-height:1.05;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:10px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(253,241,223,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--terra-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--terra);color:#fdf1df;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px}
+.cta:hover{background:var(--terra-dark);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--terra-dark)}
+.hero-stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+p{margin-bottom:18px;color:#3a261a}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#5e3a22;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--terra);color:#fdf1df;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--terra-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#5e3a22;line-height:1.55}
+.recog{background:#fef3c7;border:1px solid #fcd34d;border-radius:4px;padding:28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:#78350f;margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:#78350f;line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:#92400e;font-weight:700}
+.warn{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#5e3a22;line-height:1.65}
+.warn b{display:block;font-family:var(--serif);font-size:18px;color:var(--terra-dark);margin-bottom:8px;font-style:italic}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--terra-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#5e3a22;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#2b1a10}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--terra);font-weight:700;font-size:22px;line-height:1}
+.buy{background:var(--ink);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#c2a488;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#c2a488;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#e8d8c2;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--terra-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#d4ad6e}
+.buy-trust{text-align:center;font-size:13px;color:#c2a488;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--terra);color:#fdf1df;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#5e3a22;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--terra-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--terra)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#5e3a22}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(253,250,243,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--terra)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Nigeria · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform <span class="best-badge">Longform · Book Six</span></span>
+        <h1>Live It<br>Twice.</h1>
+
+        <p class="lede">The first life is inherited. You did not choose to begin, nor did you choose the shape of the days. You were born into a language, a market week, a village, a family, a timetable, a name. The scripts arrived before you could read. The days arrived already shaped. Receiving is not a failure. It is simply where every human life begins.</p>
+        <p class="lede">Then, at some point, you notice. You notice the timetable that makes sense to everyone no longer makes sense to you. You notice that a full calendar has become the alibi of an unexamined life. You notice you have been spending hours on things answering to no question you actually hold. And at that point, a second life becomes available.</p>
+        <p class="lede"><strong>The first life is borrowed time — hours spent executing scripts you never examined, living as a person who never questioned the default. The second life is owned time: the same hours, the same body, the same four-day week — but directed, apportioned, held accountable. The difference between a full life and a directed life is not the number of hours. It is who holds the pen.</strong></p>
+        <p class="lede">He spent years inside a timetable that made sense to everyone — mathematics, computer science, pure structure, a proof that ended. The structure he loved became the ceiling of the room it built. He did not leave that room in a single day. Leaving was a slow sequence of small expenditures: an hour here, an evening there, spent on questions carrying no grade and no deadline. Those were the first chosen hours of his life.</p>
+        <p class="lede">Seven laws for crossing the threshold between a life that only happened and a life that was deliberately written.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>7</b><span>laws</span></div>
+          <div class="hero-stat"><b>5</b><span>thresholds</span></div>
+          <div class="hero-stat"><b>~83k</b><span>words · ~420pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">Live<br>It<br>Twice</div>
+              <div class="cover-sub">The 7 Laws of the Second Life</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">₦10,000 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      Intention is the currency of the first life — the life that means well and spends accordingly. The second life does not abolish intention, but it subordinates it strictly to the record. You may intend whatever you wish; the columns will record only what you did. That is not cruelty; it is the only accounting that can survive an audit. The Life Ledger contains a column for what was given and a column for what was chosen. It contains no column for what was intended.
+      <cite>— Law I, Own Your Time</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="pull">
+      You are not in time. You are time, taking shape. The question is whether that shape belongs to you.
+      <cite>— Law I, Own Your Time</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">The three ways a life is lost by default</span>
+    <h2>None of them look like failure.<br>Two of them look like success.</h2>
+    <p>The book opens with an uncomfortable taxonomy. There are three primary ways to lose a life without meaning to, and only one of them is visibly a mistake:</p>
+    <p><strong>Waiting.</strong> "I will live when conditions change — when the debt is paid, when the kids leave, when I find courage, when the season turns." Waiting wears the mask of patience. It is the most ruinous expense a person can incur, paid in the currency of unrecoverable years. The person who defers living until sixty-five is not saving life for later; they are spending it now, in instalments, on a future they have trained themselves not to inhabit.</p>
+    <p><strong>Distraction.</strong> Distraction is the subtle twin of urgency. The countdown is loud; the scroll is quiet. It does not demand your hours all at once; it dissolves them, in microscopic increments, unfelt because it never openly demands.</p>
+    <p><strong>Busyness.</strong> This is the most dangerous. A packed calendar looks convincingly like direction. It is not. A full calendar is the ultimate alibi of the unexamined life: the person who is perpetually busy is never forced to ask what the activity is actually for.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">You know what this feels like</span>
+    <h2>If any of these are you, the book was written for you.</h2>
+    <div class="recog">
+      <h3>The timetable has started to feel like someone else's.</h3>
+      <ul>
+        <li>You are good at your life. You are competent. You are respected. People depend on you. And yet a quiet voice keeps asking: <em>is this actually mine?</em></li>
+        <li>You have had years where you cannot point to a single thing you chose; everything was a response to someone else's need or deadline.</li>
+        <li>You confuse being busy with being directed, and you know you are confusing them.</li>
+        <li>You are deferring living until a condition that keeps not arriving — until the promotion, until the move, until the relationship stabilises, until the children leave, until retirement.</li>
+        <li>You have discovered that social media is not the cause of your distraction; it is the anaesthetic you use to avoid the question a directed life would force you to answer.</li>
+        <li>You are carrying an inheritance — a name, a profession, a way of being in the world — that you suspect was handed to you rather than chosen, and you are ready to rewrite it.</li>
+        <li>You are approaching thirty, or forty, or fifty, and you have realised with a quiet alarm that you have not yet begun the life that was actually yours to live.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>What the first life costs you if you never leave it.</h3>
+      <p>The first life is not a villain. You cannot build a second life from inside it without paying a specific, named price. But the cost of staying is also specific and named:</p>
+      <span class="sunk">You arrive at sixty-five with a body too exhausted to enjoy the retirement you deferred everything for, and habits too rigid to break.</span>
+      <span class="sunk">You pass on a timetable to your children without ever having examined whether it was worth passing on.</span>
+      <span class="sunk">You develop the particular bitterness of a person who spent decades on a script they never wrote, watching younger people make choices you cannot afford to make.</span>
+      <span class="sunk">You lose the years — the one thing money cannot buy. A man can rebuild a lost fortune; he can never earn back the decade spent waiting for better conditions.</span>
+      <span class="sunk">You wake at the end and discover you have been the instrument of someone else's authorship.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Seven laws, five thresholds</span>
+    <h2>The architecture of the second life.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Law I</span><b>Own Your Time</b><span>Given · Spent · Wasted · Chosen. The Life Ledger. Attention as the raw material of a life. The difference between a full calendar and a directed one.</span></div>
+      <div class="gcell"><span class="gn">Threshold I · The Room</span><b>The Weather of the Given</b><span>The room you did not build. The timetable that consented on your behalf.</span></div>
+      <div class="gcell"><span class="gn">Law II</span><b>Build the Compound</b><span>The inner architecture. What you furnish your mind with. Visible arrangements and interior silence.</span></div>
+      <div class="gcell"><span class="gn">Law III</span><b>Rewrite the Inheritance</b><span>The grammar you were handed. What to keep, what to translate, what to lay down. The knot love tied.</span></div>
+      <div class="gcell"><span class="gn">Threshold II · The Hand</span><b>The Instrument</b><span>You are not disembodied. The body keeps the score of the first life.</span></div>
+      <div class="gcell"><span class="gn">Law IV</span><b>Make Peace With Your Chi</b><span>Your particular destiny. The thing you were built for that no timetable can schedule.</span></div>
+      <div class="gcell"><span class="gn">Threshold III · The Return</span><b>The Market at Dawn</b><span>Deliberate waiting vs postponement. The farmer and the seed corn. The apprentice sweeping the floor.</span></div>
+      <div class="gcell"><span class="gn">Law V</span><b>Honour the Instrument</b><span>The Tuesday Body. Sleep, food, walking, attention. The second life is not built on heroics; it is built on Tuesdays.</span></div>
+      <div class="gcell"><span class="gn">Threshold IV · The Exam</span><b>The Audit</b><span>Facing what you have been spending and what you have been avoiding.</span></div>
+      <div class="gcell"><span class="gn">Law VI</span><b>Leave Something Behind</b><span>The thing that outlasts you. Not legacy as performance; a root, not a leash.</span></div>
+      <div class="gcell"><span class="gn">Threshold V · The Departure</span><b>The Last Door</b><span>The second life systematically eliminates every hiding place.</span></div>
+      <div class="gcell"><span class="gn">Law VII</span><b>Face the Mirror</b><span>Final accounting. The stranger holding your five-year page. Who held the pen.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="warn">
+      <b>This is not a "quit your job and travel" book.</b>
+      There are people selling you the second life as a dramatic break — the resignation letter, the relocation, the viral announcement, the year off. That is not the second life. That is the first life wearing a new costume. The second life is usually smaller and quieter. It begins with one hour, in the evening, spent on a question carrying no grade and no deadline. It is built on Tuesdays. It is bought with the doors you are willing to close, including the respectable ones. A full calendar is not the enemy; a calendar authored by someone else is.
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>Live It Twice</h2>
+      <p class="buy-sub">7 laws · 5 thresholds · ~83,000 words · EPUB + PDF</p>
+      <div class="buy-price">₦10,000 <small>one-time</small></div>
+      <p class="buy-note">The second life is not built on heroics. It is built on Tuesdays.</p>
+      <ul class="stack">
+        <li><strong>The complete book.</strong> Seven laws, five thresholds, epilogue. EPUB + PDF. ~420 pages.</li>
+        <li><strong>The Life Ledger.</strong> A printable four-column tool (Given · Spent · Wasted · Chosen) to run your first audit this week.</li>
+        <li><strong>The Tuesday Body practice.</strong> Concrete daily practices for Law V.</li>
+        <li><strong>Igbo cosmology and the chi</strong> explained for readers both inside and outside the tradition — what it is, what it is not, how to work with it without superstition.</li>
+        <li><strong>Honest about the cost.</strong> The second life closes doors. The names it. It does not pretend the transition is painless.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition free.</li>
+        <li><strong>30-day refund.</strong> Run the Life Ledger for one week. If you cannot point to at least one hour you did not know was being wasted, email us. Full refund.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L06_NG_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — ₦10,000 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, transfer, USSD · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He is writing from inside the second life,<br>not from the far side of it.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> left a timetable that made sense to everyone. He did not leave it in a single dramatic day; he left it slowly, in stolen hours, under an ukwu ube tree in Mgbowo. He is the same man who wrote the previous five Longform books.</p>
+        <p>He will tell you plainly that he is still building. The compound is not finished. Some of the inheritance has been rewritten; some of it is still being translated. The Tuesday body practice is the one he fails at most often. The book is written from inside the work, not from a finished state.</p>
+        <p style="margin:0">Books One (Watching), Four (Trust), and Five (Choose) are recommended before this one. You cannot author a second life while your mind is unobserved, your trust is un-inspected, and your beliefs are still held by default.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Is this a "quit your job" book?</summary><p>No. Some readers quit. Many do not. The second life is not defined by geography or employment status. It is defined by who holds the pen. A teacher who is teaching by choice, in directed hours, is living the second life. An entrepreneur who quit because someone on Twitter told him to is still living the first life in a new costume.</p></details>
+    <details><summary>Won't doing the Life Ledger make me depressed about all the wasted years?</summary><p>For a week, maybe. Then it becomes a relief. Wasted years stop being wasted the moment you name them. The column for "Wasted" is there precisely so you stop adding to it.</p></details>
+    <details><summary>Is the chi stuff religious? I'm a Christian / Muslim / atheist.</summary><p>The chapter explains what the chi is in Igbo thought and offers a translation that works regardless of your metaphysics. You do not have to adopt Igbo cosmology to work with the law. The point is the thing you were built for — the question your life is asking — not the metaphysical wrapper.</p></details>
+    <details><summary>I'm in my fifties / sixties. Is it too late?</summary><p>No. The book contains an account of a man who did this work in his sixties. The cost of waiting is real, but the arithmetic of a second life is not "how many years have I lost" — it is "who holds the pen for the years that remain."</p></details>
+    <details><summary>What if I have responsibilities — children, debt, parents?</summary><p>The book does not tell you to abandon them. The second life is not an escape from obligation; it is authorship within obligation. Some of the most powerful second lives in the book are lived by people who did not change their external circumstances at all; they changed the interior arrangement.</p></details>
+    <details><summary>How long is it really?</summary><p>~83,000 words — about 420 pages. One law every two weeks. Do the practice at the end of each law before moving on.</p></details>
+    <details><summary>Do I need to read Books One, Four, and Five first?</summary><p>Formally no. Practically, yes. The second life is built on the foundation of a watched mind, inspected trust, and beliefs held by decision rather than default. Skipping straight to authorship is how people end up writing second lives that are just the first life with a new logo.</p></details>
+    <details><summary>What if the second life is smaller than the first?</summary><p>It usually is. That is not a failure. The first life is often loud and full and impressive. The second life is often quieter, smaller, and actually yours. The book argues that smaller and yours is the whole point.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">The hours are distributed equally.<br>What differs is who is awake in them.</h2>
+    <p>The market was always there, laid out at dawn, going to those who rose to meet it.</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — ₦10,000 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="https://wa.me/2348101265454">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>Live It Twice</em> — <b>₦10,000</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L06_NG_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L06_NG_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'Live It Twice (NG)',value:10000,currency:'NGN'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>

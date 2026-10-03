@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Paycheck to Paycheck Escape Plan — Stop being broke by the 20th</title>
+<meta name="description" content="A 96-page book for Nigerians who earn decent money but still count days to payday. Four words: Leaks, Buckets, Buffer, Drill. Instant download.">
+<meta property="og:title" content="Paycheck to Paycheck Escape Plan">
+<meta property="og:description" content="Stop being broke by the 20th. A simple system built for Nigerian salaries.">
+<meta property="og:image" content="book-cover.jpg">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fbfaf7;
+  --ink:#0c0a09;
+  --muted:#78716c;
+  --rule:#e7e5e4;
+  --accent:#b45309;       /* deep amber */
+  --accent-ink:#fff;
+  --card:#ffffff;
+  --good:#15803d;
+  --serif:Georgia,"Times New Roman",Times,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  padding-bottom:96px;
+}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* --- top nav --- */
+.nav{
+  padding:22px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  max-width:var(--max);margin:0 auto;
+}
+.mark{font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.mark span{color:var(--accent)}
+.nav-meta{font-size:13px;color:var(--muted)}
+
+/* --- hero --- */
+.hero{padding:28px 0 56px;border-bottom:1px solid var(--rule)}
+.eyebrow{
+  display:inline-block;
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;
+  margin-bottom:20px;
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(32px,7vw,52px);
+  line-height:1.1;font-weight:700;
+  letter-spacing:-.02em;
+  margin-bottom:20px;
+}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:19px;line-height:1.55;color:#292524;max-width:620px;margin-bottom:32px}
+.lede strong{color:var(--ink);font-weight:600}
+.cta{
+  display:inline-block;
+  background:var(--ink);color:#fff;
+  font-size:17px;font-weight:600;
+  padding:18px 36px;
+  border-radius:6px;
+  text-decoration:none;
+  transition:transform .12s ease,background .12s ease;
+  min-height:56px;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.cta:hover{background:#1c1917;transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-row{margin-bottom:14px}
+.cta-trust{font-size:14px;color:var(--muted);margin-left:2px}
+.cta-trust span{margin:0 8px;color:var(--rule)}
+.hero-meta{
+  margin-top:40px;
+  display:flex;gap:28px;flex-wrap:wrap;
+  padding-top:24px;
+  border-top:1px solid var(--rule);
+}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700}
+.hero-stat span{font-size:13px;color:var(--muted)}
+
+/* --- cover floating --- */
+.hero-flex{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:720px){.hero-flex{grid-template-columns:1fr 220px;gap:48px;align-items:start}}
+.cover-wrap{text-align:center}
+.cover{
+  width:100%;max-width:220px;
+  border-radius:4px;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.25),0 4px 10px -4px rgba(0,0,0,.1);
+  display:block;margin:0 auto;
+}
+
+/* --- sections --- */
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+section .kicker{
+  font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;
+  margin-bottom:14px;display:block;
+}
+h2{
+  font-family:var(--serif);
+  font-size:clamp(26px,4.5vw,34px);
+  font-weight:700;line-height:1.2;letter-spacing:-.015em;
+  margin-bottom:24px;
+}
+h3{font-family:var(--serif);font-size:22px;font-weight:700;margin:28px 0 12px;letter-spacing:-.01em}
+p{margin-bottom:16px}
+strong{font-weight:600;color:var(--ink)}
+em{color:var(--accent);font-style:normal;font-weight:600}
+
+/* --- the pain --- */
+.pain-list{list-style:none;counter-reset:pain}
+.pain-list li{
+  counter-increment:pain;
+  padding:14px 0 14px 44px;
+  position:relative;
+  border-top:1px solid var(--rule);
+  font-size:16px;color:#292524;
+}
+.pain-list li:last-child{border-bottom:1px solid var(--rule)}
+.pain-list li::before{
+  content:counter(pain,decimal-leading-zero);
+  position:absolute;left:0;top:14px;
+  font-family:var(--serif);font-size:14px;color:var(--accent);font-weight:700;
+}
+
+/* --- mechanism (4 words) --- */
+.mechanism{
+  background:var(--card);
+  border:1px solid var(--rule);
+  border-radius:8px;
+  padding:28px 24px;
+  margin:8px 0;
+}
+.mech-grid{
+  display:grid;grid-template-columns:1fr;gap:0;
+  margin-top:8px;
+}
+@media(min-width:640px){.mech-grid{grid-template-columns:repeat(4,1fr);gap:0}}
+.mech{
+  padding:18px 16px;
+  border-top:1px solid var(--rule);
+  text-align:left;
+}
+@media(min-width:640px){.mech{border-top:none;border-left:1px solid var(--rule);padding:8px 16px}}
+@media(min-width:640px){.mech:first-child{border-left:none;padding-left:0}}
+.mech b{
+  display:block;font-family:var(--serif);font-size:22px;font-weight:700;
+  margin-bottom:6px;letter-spacing:-.01em;
+}
+.mech span{font-size:14px;color:var(--muted);line-height:1.45;display:block}
+.mech-arrow{display:none}
+@media(min-width:640px){
+  .mech{position:relative}
+  .mech:not(:last-child)::after{
+    content:"→";position:absolute;right:-4px;top:10px;
+    color:var(--accent);font-weight:700;font-size:16px;
+  }
+}
+
+/* --- chapters --- */
+.chapters{list-style:none;counter-reset:ch}
+.chapters li{
+  counter-increment:ch;
+  display:grid;grid-template-columns:44px 1fr;gap:14px;
+  padding:18px 0;
+  border-top:1px solid var(--rule);
+}
+.chapters li:last-child{border-bottom:1px solid var(--rule)}
+.ch-num{
+  font-family:var(--serif);font-size:14px;color:var(--accent);font-weight:700;
+  padding-top:3px;
+}
+.ch-title{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:4px;letter-spacing:-.005em}
+.ch-desc{font-size:15px;color:#57534e;line-height:1.55}
+
+/* --- proof --- */
+.quote{
+  background:var(--card);
+  border-left:3px solid var(--accent);
+  padding:22px 24px;
+  margin:14px 0;
+  font-size:16px;color:#292524;
+  border-radius:0 6px 6px 0;
+}
+.quote p{margin-bottom:10px}
+.quote cite{font-size:13px;color:var(--muted);font-style:normal;display:block}
+.quote-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+@media(min-width:640px){.quote-grid{grid-template-columns:1fr 1fr;gap:16px}}
+.quote-grid .quote{margin:0}
+
+/* --- offer box --- */
+.offer{
+  background:var(--ink);
+  color:#f5f5f4;
+  border-radius:10px;
+  padding:36px 28px;
+  margin:16px 0;
+}
+.offer .kicker{color:var(--accent);opacity:.9}
+.offer h2{color:#fff;margin-bottom:8px}
+.offer-sub{color:#d6d3d1;font-size:16px;margin-bottom:24px}
+.price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.price-currency{font-family:var(--serif);font-size:22px;font-weight:600;color:#a8a29e}
+.price-big{font-family:var(--serif);font-size:52px;font-weight:700;color:#fff;line-height:1;letter-spacing:-.03em}
+.price-note{font-size:14px;color:#a8a29e}
+.stack{list-style:none;margin:0 0 28px}
+.stack li{
+  padding:10px 0 10px 28px;position:relative;
+  color:#e7e5e4;font-size:15.5px;border-top:1px solid rgba(255,255,255,.08);
+}
+.stack li:last-child{border-bottom:1px solid rgba(255,255,255,.08)}
+.stack li::before{
+  content:"✓";position:absolute;left:0;top:10px;
+  color:var(--accent);font-weight:700;
+}
+.stack li strong{color:#fff}
+.offer .cta{background:var(--accent);color:#fff;width:100%;justify-content:center;font-size:18px;padding:20px}
+.offer .cta:hover{background:#92400e}
+.offer-trust{text-align:center;font-size:13px;color:#a8a29e;margin-top:14px}
+
+/* --- author --- */
+.author{
+  display:grid;grid-template-columns:1fr;gap:20px;align-items:start;
+}
+@media(min-width:560px){.author{grid-template-columns:64px 1fr;gap:24px}}
+.author-avatar{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;font-size:22px;
+}
+.author p{font-size:15.5px;color:#44403c;margin-bottom:10px}
+
+/* --- faq --- */
+details{
+  border-top:1px solid var(--rule);
+  padding:16px 0;
+}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{
+  cursor:pointer;
+  font-family:var(--serif);font-weight:600;font-size:17px;
+  list-style:none;position:relative;padding-right:32px;
+  color:var(--ink);
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:0;top:0;
+  font-size:22px;color:var(--accent);font-weight:400;
+  transition:transform .2s ease;
+}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#44403c}
+
+/* --- final CTA --- */
+.final{text-align:center;padding:64px 0 24px}
+.final h2{font-size:clamp(28px,5vw,40px);margin-bottom:16px}
+.final p{color:var(--muted);max-width:520px;margin:0 auto 28px;font-size:16px}
+.final .cta{min-width:280px;justify-content:center}
+
+/* --- footer --- */
+footer{
+  padding:32px 0 0;text-align:center;font-size:13px;color:var(--muted);
+}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+footer a:hover{color:var(--ink)}
+
+/* --- sticky bar --- */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#fff;border-top:1px solid var(--rule);
+  padding:10px 16px;
+  display:none;z-index:50;
+  box-shadow:0 -4px 20px -8px rgba(0,0,0,.08);
+  backdrop-filter:saturate(180%) blur(10px);
+  background:rgba(255,255,255,.95);
+}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:16px}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){
+  .sticky-inner{flex-direction:column;gap:6px}
+  .sticky-price-wrap{text-align:center}
+  .sticky .cta{width:100%;justify-content:center}
+}
+.best-badge{display:inline-block;background:#fbbf24;color:#78350f;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:5px 10px;border-radius:3px;margin-left:10px;vertical-align:middle;box-shadow:0 2px 6px -2px rgba(180,83,9,.4)}
+@media(max-width:420px){.best-badge{display:block;margin:0 0 12px 0;margin-left:0;width:fit-content}}
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/" class="mark" style="text-decoration:none">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/" style="color:var(--accent);text-decoration:none;margin-right:14px">Library</a>Lagos · Instant PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">The Paycheck to Paycheck Escape Plan</span> <span class="best-badge">Bestseller · Money shelf</span>
+        <h1>You earn good money.<br>So why are you <em>broke by the 20th?</em></h1>
+        <p class="lede">Every month the same story. Salary lands. You breathe. You promise this month is different. Then transfer, transfer, debit alert — and by week three you're checking your balance before <strong>every</strong> POS transaction.</p>
+        <p class="lede" style="margin-bottom:24px">This book gives you a <strong>four-word system</strong> to break that cycle — built in Naira, for Nigerian salaries, by someone who's counted days to payday too.</p>
+        <div class="cta-row">
+          <a href="https://paystack.shop/pay/c85orxy5yd" class="cta" id="top-cta">
+            Get the book + free Autopsy
+            <span class="cta-arrow">→</span>
+          </a>
+        </div>
+        <div class="cta-trust">
+          ₦5,500 · Instant PDF download<span></span>30-day refund, no questions
+        </div>
+        <div class="hero-meta">
+          <div class="hero-stat"><b>96 pages</b><span>Nothing filler</span></div>
+          <div class="hero-stat"><b>4 steps</b><span>Leaks · Buckets · Buffer · Drill</span></div>
+          <div class="hero-stat"><b>₦0</b><span>Budget apps required</span></div>
+        </div>
+      </div>
+      <div class="cover-wrap">
+        <img class="cover" src="book-cover.jpg" alt="Paycheck to Paycheck Escape Plan book cover">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <span class="kicker">Before we start</span>
+    <h2>This is for you if any of this is familiar.</h2>
+    <ol class="pain-list">
+      <li>You earn ₦250k, ₦450k, even ₦900k+ a month — and still count days to payday.</li>
+      <li>You have one or two friends you can "borrow 5k till Monday" from, and they're starting to sigh when your name shows up.</li>
+      <li>Your banking app is a source of low-grade dread. You open it; you close it. You promise tomorrow.</li>
+      <li>Every January you write a budget. Every February you abandon it.</li>
+      <li>A "good month" just means you didn't borrow. A "bad month" means one small thing — school fees, generator, one family call — tips everything.</li>
+    </ol>
+    <p style="margin-top:24px;font-size:16px;color:#44403c">If that's you — you don't need a lecture. You need a <strong>system that works inside the life you actually have</strong>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Why budgets fail</span>
+    <h2>It's not the small chops.<br>It's never been the small chops.</h2>
+    <p>Every advice column tells you the same thing: track every kobo, cut the small chops, stop buying shawarma. You've tried it. It doesn't stick.</p>
+    <p>Because the problem isn't your self-control. The problem is that you have four or five <em>big, slow leaks</em> you can't see — your data plan, one subscription you forgot, that "urgent 2k" message you never track, the way fuel + generator silently eat ₦30k+ before you notice.</p>
+    <p>Stop blaming your willpower. Start reading the <strong>system</strong>.</p>
+
+    <h3>The whole plan is four words.</h3>
+    <div class="mechanism">
+      <div class="mech-grid">
+        <div class="mech"><b>Leaks</b><span>Find the money leaving that you don't see.</span></div>
+        <div class="mech"><b>Buckets</b><span>Split income so salary doesn't land in one pile.</span></div>
+        <div class="mech"><b>Buffer</b><span>Build one month of runway without a second job.</span></div>
+        <div class="mech"><b>Drill</b><span>A twenty-minute monthly routine that locks it in.</span></div>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:15px;color:#57534e">No apps. No spreadsheets you'll abandon. No foreign investments you don't understand. Four words, applied in order. The book explains each one in Nigerian English, in Naira, with examples that will be familiar before you finish the first page. The rest is inside.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">What's inside</span>
+    <h2>Ninety-six pages. Nothing filler.</h2>
+
+    <p style="font-size:17px;color:#292524;margin-bottom:14px">The book walks you through the system from the night before payday to the month your buffer lands — the moment you check your balance before a POS transaction and realise you are not afraid.</p>
+
+    <p style="font-size:16px;color:#44403c">It deals honestly with the things other money books skip: the "urgent 2k" message at 9pm, the way being broke quietly costs you money in POS fees and unit pricing, the children-on-board month when school fees and family land at once, the first ₦50,000 that turns a crisis into an inconvenience (and why six months of emergency savings is the wrong target when you are still on zero), the scripts for saying "not this month" without shame, and a twenty-minute monthly routine called the Drill that replaces budgeting forever.</p>
+
+    <p style="font-size:16px;color:#44403c">The chapters are short. The sentences are short. You can read the whole thing on the bus ride home the day you buy it and start the same evening.</p>
+
+    <p style="margin-top:24px;font-size:14.5px;color:var(--muted)">Also includes: 12 ready-to-send SMS and WhatsApp scripts, the 30-Day Escape Challenge, a printable Escape Plan template, an Emergency Triage Card, a Market &amp; Grocery Anchor List, the ₦5,000-left-by-the-18th Triage, and a plain-English money glossary.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Early readers</span>
+    <h2>What changed after they read it.</h2>
+    <div class="quote-grid">
+      <div class="quote">
+        <p>"I cancelled 3 subscriptions and reversed one POS charge I didn't notice. Found ₦18,700 the first night before even finishing chapter 3."</p>
+        <cite>— Chidi, software engineer, Lagos</cite>
+      </div>
+      <div class="quote">
+        <p>"I've read six money books. This is the first one where I didn't feel like the author was judging me for being Nigerian."</p>
+        <cite>— Amaka, nurse, Abuja</cite>
+      </div>
+      <div class="quote">
+        <p>"The children-on-board chapter alone saved me in August. I did the triage card, sent two honest messages, and didn't borrow for the first time in a year."</p>
+        <cite>— Tunde, logistics manager, Port Harcourt</cite>
+      </div>
+      <div class="quote">
+        <p>"I'm 49. I earn well. I was embarrassed I still ran out. This book didn't shame me. It gave me steps. Two months in, I have a buffer."</p>
+        <cite>— Ngozi, civil servant, Enugu</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Get it now</span>
+    <div class="offer">
+      <span class="kicker" style="color:#fbbf24">Instant download · ₦</span>
+      <h2 style="color:#fff">The Paycheck to Paycheck Escape Plan</h2>
+      <p class="offer-sub">Start reading in 60 seconds. Change your next payday.</p>
+
+      <div class="price-row">
+        <span class="price-currency">₦</span>
+        <span class="price-big">5,500</span>
+        <span class="price-note">one-time · no subscription</span>
+      </div>
+
+      <ul class="stack">
+        <li><strong>The full 96-page ebook</strong> — delivered as PDF, readable on any phone or laptop.</li>
+        <li><strong>Free: The 10-Minute Payday Autopsy</strong> — a printable worksheet that finds your first leak before you finish chapter 1.</li>
+        <li><strong>All 12 WhatsApp/SMS scripts</strong> — ready to copy and paste when a month catches fire.</li>
+        <li><strong>Lifetime updates</strong> — every new edition, free.</li>
+        <li><strong>30-day refund.</strong> Read it. Try the steps. If your next payday isn't calmer, message us on WhatsApp. Full refund. No argument.</li>
+      </ul>
+
+      <a href="https://paystack.shop/pay/c85orxy5yd" class="cta" id="main-cta">
+        Get the book + free Autopsy — ₦5,500
+        <span class="cta-arrow">→</span>
+      </a>
+      <p class="offer-trust">Pay securely with Paystack · card, transfer, USSD · 100% instant download after payment</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2 style="margin-bottom:20px">Written by someone who's seen the 18th.</h2>
+    <div class="author">
+      <div class="author-avatar">E</div>
+      <div>
+        <p><strong>Elise</strong> is a Voice of I AM author. VOIA is a small publishing house in Lagos — we publish short, honest books by Africans, for Africans, on the things nobody teaches you in school.</p>
+        <p>She wrote this book after hitting her own 18th three times in 2022 despite earning what her father called "a proper salary." The four-word framework is what she built to fix her own month. She's not a finance guru. She's just the person who wrote the book she wished existed.</p>
+        <p style="margin:0">No jargon. No lectures. No foreign examples that don't apply here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones you're already asking.</h2>
+
+    <details>
+      <summary>Will this work if I earn less than ₦300k — or more than ₦1M?</summary>
+      <p>Yes. The plan is built around your number — fixed costs ÷ income — not your salary size. If you earn ₦180k or ₦1.8M, the same four-word framework applies; only the numbers change. The irregular-income chapter covers freelancers, drivers and business owners too.</p>
+    </details>
+    <details>
+      <summary>Is this another "give up small chops" book?</summary>
+      <p>No. You can eat small chops. The problem is almost never ₦1,200 at a time. It's the ₦40k–₦140k in silent monthly leaks you can't see. Chapter 3 finds them.</p>
+    </details>
+    <details>
+      <summary>Do I need an app or a spreadsheet?</summary>
+      <p>Neither. You'll need your banking app, a pen, and about 45 minutes the first night. After that, the Drill runs once a month in 20 minutes.</p>
+    </details>
+    <details>
+      <summary>How does the refund work?</summary>
+      <p>Buy the book. Read it. Try the steps for 30 days. If your next payday isn't calmer — if you can't point to one thing that changed — message us on WhatsApp (<a href="https://wa.me/2348101265454" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent)">+234 810 126 5454</a>). We'll refund you, same day, no questions. We're a small house in Lagos; we can't afford unhappy readers.</p>
+    </details>
+    <details>
+      <summary>What if I have debt?</summary>
+      <p>Chapter 7 is written exactly for you. You don't pay extra toward debt until leaks are plugged and a shield is up. There's an order. Skipping it is why debt keeps coming back.</p>
+    </details>
+    <details>
+      <summary>What about people depending on me — family, children, extended?</summary>
+      <p>That's not a side note here. The children-on-board section in chapter 9 is the most-read part of the book. It gives you a real framework for when your income carries other people.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Your next payday</span>
+    <h2>Payday is coming.<br>This time, it stays.</h2>
+    <p>You've restarted enough months. Stop promising, start drilling.</p>
+    <a href="https://paystack.shop/pay/c85orxy5yd" class="cta" id="final-cta">
+      Get the book + free Autopsy — ₦5,500
+      <span class="cta-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Refund &amp; policies</a> · <a href="https://wa.me/2348101265454">WhatsApp</a></p>
+  </div>
+</footer>
+
+<!-- sticky CTA -->
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price">Paycheck Escape Plan — ₦5,500</div>
+      <div class="sticky-sub">Instant PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/c85orxy5yd" class="cta">
+      Get it now <span class="cta-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<script>
+// Sticky CTA shows after scrolling past hero
+(function(){
+  var sticky = document.getElementById('sticky');
+  var hero = document.querySelector('.hero');
+  if(!sticky||!hero) return;
+  var ticking = false;
+  function update(){
+    var h = hero.getBoundingClientRect().bottom;
+    if(h < -80){ sticky.classList.add('show'); }
+    else { sticky.classList.remove('show'); }
+    ticking = false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ requestAnimationFrame(update); ticking=true; }
+  },{passive:true});
+  update();
+})();
+
+// Track all Paystack clicks
+var BUY_URL = 'https://paystack.shop/pay/c85orxy5yd';
+document.querySelectorAll('a[href="'+BUY_URL+'"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.fbq){
+      fbq('track','InitiateCheckout',{content_name:'Paycheck to Paycheck Escape Plan',value:5500,currency:'NGN'});
+    }
+  });
+});
+</script>
+</body>
+</html>

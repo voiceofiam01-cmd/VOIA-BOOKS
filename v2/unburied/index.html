@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-NG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Unburied Questions — What Your Blood Carries and Your Mother Could Not Say</title>
+<meta name="description" content="A piece of glass lived in his mother's cheek for eleven years. The questions a family buries live longer. Book Two of the Longform, by Munachimso E. Nwagbara.">
+<meta property="og:title" content="The Unburied Questions">
+<meta property="og:description" content="The body walls off what it cannot resolve. So does a family.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f1ea;--ink:#1a1410;--muted:#6b6255;--rule:#c9bfab;
+  --forest:#2f4f2f;--forest-dark:#1a2e1a;--moss:#4a6b42;--gold:#b08d4e;--gold-deep:#8a6c3a;
+  --cream:#faf7f0;
+  --serif:'Iowan Old Style','Palatino Linotype','Palatino',Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --max:720px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:96px}
+.container{max-width:var(--max);margin:0 auto;padding:0 26px}
+.nav{padding:24px 26px;display:flex;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto}
+.mark{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.mark span{color:var(--forest)}
+.nav-meta{font-size:13px;color:var(--muted)}
+.nav-meta a{color:var(--forest);text-decoration:none;margin-right:14px}
+.hero{padding:20px 0 52px;border-bottom:1px solid var(--rule)}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);font-weight:700;margin-bottom:20px}
+.best-badge{display:inline-block;background:#166534;color:#fff;font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;padding:5px 10px;border-radius:3px;margin-left:10px;vertical-align:middle}
+@media(max-width:420px){.best-badge{display:block;margin:10px 0 0 0;width:fit-content;margin-left:0}}
+h1{font-family:var(--serif);font-size:clamp(40px,8vw,60px);line-height:1.02;font-weight:700;letter-spacing:-.03em;margin-bottom:20px;font-style:italic}
+.lede{font-size:18px;line-height:1.6;color:#2b241d;margin-bottom:18px}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-flex{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+@media(min-width:760px){.hero-flex{grid-template-columns:1fr 240px;gap:56px}}
+.cover{width:100%;max-width:240px;border-radius:2px;box-shadow:0 28px 60px -28px rgba(26,46,26,.55),0 6px 16px -6px rgba(0,0,0,.2);display:block;margin:0 auto;position:relative;overflow:hidden;aspect-ratio:2/3;background:linear-gradient(150deg,#2f4f2f,#1a2e1a 60%,#0c1c0c)}
+.cover-texture{position:absolute;inset:0;background:url('../library/covers/texture-deepburgundy.jpg') center/cover;mix-blend-mode:overlay;opacity:.4;filter:hue-rotate(160deg)}
+.cover-inner{position:absolute;inset:0;padding:26px 20px;display:flex;flex-direction:column;color:#eaf0e6;font-family:var(--serif);z-index:2}
+.cover-top{font-family:var(--sans);font-size:8px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:rgba(234,240,230,.7);margin-bottom:auto}
+.cover-mid{margin-top:30%}
+.cover-rule{width:40px;height:1px;background:var(--gold);margin-bottom:18px}
+.cover-title{font-size:22px;font-weight:700;line-height:1.05;font-style:italic}
+.cover-sub{font-size:11px;font-style:italic;opacity:.82;margin-top:10px;line-height:1.4}
+.cover-bot{margin-top:auto}
+.cover-author{font-family:var(--sans);font-size:8px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(234,240,230,.7)}
+.offer-card{background:var(--cream);border:1px solid var(--rule);border-radius:4px;padding:28px;margin-top:30px}
+.price{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--forest-dark);line-height:1;letter-spacing:-.02em}
+.price small{font-size:15px;font-weight:400;color:var(--muted);margin-left:8px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:#f0e6d0;font-size:17px;font-weight:600;padding:18px 34px;border-radius:4px;text-decoration:none;margin-top:18px;transition:background .12s ease,transform .12s ease;min-height:56px;letter-spacing:.01em}
+.cta:hover{background:var(--forest-dark);transform:translateY(-1px)}
+.cta-arrow{transition:transform .15s ease}
+.cta:hover .cta-arrow{transform:translateX(3px)}
+.cta-trust{font-size:13px;color:var(--muted);margin-top:10px}
+.hero-meta{margin-top:30px;display:flex;gap:28px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--rule)}
+.hero-stat b{display:block;font-family:var(--serif);font-size:22px;font-weight:700;color:var(--forest-dark)}
+.hero-stat span{font-size:13px;color:var(--muted);letter-spacing:.03em}
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:14px;display:block}
+h2{font-family:var(--serif);font-size:clamp(26px,4.6vw,34px);font-weight:700;line-height:1.2;letter-spacing:-.015em;margin-bottom:24px;font-style:italic}
+p{margin-bottom:18px;color:#2b241d}
+strong{font-weight:600}
+.scene{font-family:var(--serif);font-size:18px;line-height:1.65;color:#3d352b;font-style:italic;padding:22px 28px;background:var(--cream);border-left:3px solid var(--gold);margin:24px 0;border-radius:0 4px 4px 0}
+.scene cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:14px;font-weight:700;font-style:normal}
+.pull{background:var(--forest);color:#eaf0e6;border-radius:2px;padding:36px 32px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3.6vw,26px);line-height:1.35;position:relative}
+.pull::before{content:"\201C";position:absolute;top:-10px;left:18px;font-size:90px;color:var(--gold);opacity:.4;line-height:1;font-family:var(--serif)}
+.pull cite{display:block;font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:16px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--rule);border:1px solid var(--rule);border-radius:4px;overflow:hidden;margin:30px 0}
+@media(min-width:600px){.grid{grid-template-columns:1fr 1fr}}
+.gcell{background:var(--cream);padding:22px}
+.gcell .gn{font-family:var(--sans);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:700;margin-bottom:6px}
+.gcell b{display:block;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--forest-dark);margin-bottom:6px;line-height:1.25}
+.gcell span{font-size:14px;color:#4a4035;line-height:1.55}
+.recog{background:#ecfdf5;border:1px solid #86efac;border-radius:4px;padding:28px;margin:30px 0}
+.recog h3{font-family:var(--serif);font-style:italic;font-size:20px;color:#14532d;margin-bottom:14px}
+.recog ul{list-style:none}
+.recog li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:#14532d;line-height:1.55}
+.recog li::before{content:"—";position:absolute;left:4px;top:8px;color:#166534;font-weight:700}
+.warn{background:var(--cream);border-left:3px solid var(--gold);padding:24px 28px;margin:30px 0;font-size:15.5px;color:#3d352b;line-height:1.65}
+.warn b{display:block;font-family:var(--serif);font-size:18px;color:var(--forest-dark);margin-bottom:8px;font-style:italic}
+.cost{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:32px 28px;margin:30px 0}
+.cost h3{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--forest-dark);margin-bottom:12px}
+.cost p{font-size:15.5px;color:#4a4035;margin-bottom:10px}
+.cost .sunk{display:block;padding:8px 0 8px 22px;position:relative;font-size:15px;border-top:1px solid var(--rule);color:#2b241d}
+.cost .sunk:last-child{border-bottom:1px solid var(--rule)}
+.cost .sunk::before{content:"·";position:absolute;left:4px;top:8px;color:var(--forest);font-weight:700;font-size:22px;line-height:1}
+.buy{background:var(--ink);color:#f5f5f4;border-radius:6px;padding:44px 32px;margin:24px 0}
+.buy h2{color:#f0e6d0;text-align:center;margin-bottom:6px;font-style:italic}
+.buy-sub{color:#c8bda5;text-align:center;font-size:16px;margin-bottom:24px;font-style:italic}
+.buy-price{font-family:var(--serif);font-size:54px;font-weight:700;color:#f0e6d0;text-align:center;line-height:1;margin-bottom:6px;font-style:italic}
+.buy-price small{font-size:14px;font-weight:400;color:#9a8d74;margin-left:6px;font-style:normal}
+.buy-note{font-size:13px;color:#9a8d74;text-align:center;margin-bottom:26px;font-style:italic}
+.buy .stack{list-style:none;padding:0;margin-bottom:28px}
+.buy .stack li{padding:10px 0 10px 30px;position:relative;color:#d9cfb8;font-size:15px;border-top:1px solid rgba(255,255,255,.07)}
+.buy .stack li:last-child{border-bottom:1px solid rgba(255,255,255,.07)}
+.buy .stack li::before{content:"—";position:absolute;left:0;top:10px;color:var(--gold);font-weight:700}
+.buy .cta{background:var(--gold);color:var(--forest-dark);width:100%;justify-content:center;font-weight:700}
+.buy .cta:hover{background:#c9a063}
+.buy-trust{text-align:center;font-size:13px;color:#9a8d74;margin-top:12px}
+.author{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+@media(min-width:560px){.author{grid-template-columns:72px 1fr;gap:26px}}
+.avatar{width:72px;height:72px;border-radius:50%;background:var(--forest);color:#eaf0e6;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;font-style:italic}
+.author p{font-size:15.5px;color:#4a4035;margin-bottom:10px}
+details{border-top:1px solid var(--rule);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:17px;font-style:italic;list-style:none;position:relative;padding-right:32px;color:var(--forest-dark)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:0;font-size:22px;color:var(--forest)}
+details[open] summary::after{content:"−"}
+details p{margin:12px 0 0;font-size:15.5px;color:#4a4035}
+.final{text-align:center;padding:72px 0 24px}
+.final h2{margin-bottom:14px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 28px;font-style:italic}
+footer{padding:32px 0;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(250,247,240,.96);border-top:1px solid var(--rule);padding:10px 16px;display:none;z-index:50;backdrop-filter:blur(10px)}
+.sticky.show{display:block}
+.sticky-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky-price{font-family:var(--serif);font-weight:700;font-size:15px;font-style:italic}
+.sticky-price b{color:var(--forest)}
+.sticky-sub{font-size:12px;color:var(--muted)}
+.sticky .cta{padding:12px 22px;font-size:15px;min-height:44px}
+@media(max-width:480px){.sticky-inner{flex-direction:column;gap:6px}.sticky-price-wrap{text-align:center}.sticky .cta{width:100%}}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/></noscript>
+<script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/VOIA-BOOKS/v2/library/" class="mark">Voice of <span>I AM</span></a>
+  <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/">Library</a><a href="/VOIA-BOOKS/v2/global/">Longform</a>Nigeria · EPUB + PDF</div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-flex">
+      <div>
+        <span class="eyebrow">Munachimso E. Nwagbara · Voice of I AM Longform <span class="best-badge">Longform · Book Two</span></span>
+        <h1>The Unburied<br>Questions.</h1>
+
+        <p class="lede">In 1992, riding a motorcycle taxi on an Enugu road, his mother was in an accident. A windscreen shattered. A piece of glass went into her cheek. It was not, on the day, the most urgent injury in the chaos. The triage priorities were elsewhere. The wound closed over. The glass stayed.</p>
+        <p class="lede">It stayed for eleven years. Not painless — he does not believe it was painless — but familiar. A woman raising children largely alone, farming, teaching, navigating a marriage that had already produced one public accusation of witchcraft against her, does not necessarily have the luxury of treating a small deep facial injury as an emergency. She had bigger fires. The shard became one more thing she carried, the way you learn to walk around a piece of furniture you've stopped noticing.</p>
+        <p class="lede"><strong>In 2003 the glass was surgically extracted. The scar faded until even someone looking for it could not quite find it. There was another wound, though, that no surgeon ever removed. The accusation. The oracle's silence cleared her name in the eyes of custom, the way a wound might close over on the surface. But something remained lodged beneath that closure for years — a residual suspicion, present enough to be felt, not visible enough to justify complaint, never formally extracted.</strong></p>
+        <p class="lede">This book is about that category of thing — the questions a family buries, the injuries it walls off, the patterns it passes down without ever naming them. It is about a boy born into the aftermath. It is about his brother Chukwunonso, who did not survive. It is about sickle-cell and the malaria trade-off, about ogbanje and the sociology of scapegoating, about Jung and the river beneath the self, about generators and zinc roofs, about what the body remembers that the mouth has forgotten. It is not psychology. It is not tradition. It is both, held up to the light, with neither allowed to claim it has the final answer.</p>
+
+        <div class="hero-meta">
+          <div class="hero-stat"><b>43</b><span>chapters</span></div>
+          <div class="hero-stat"><b>6</b><span>books</span></div>
+          <div class="hero-stat"><b>~94k</b><span>words · ~480pp</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="cover">
+          <div class="cover-texture"></div>
+          <div class="cover-inner">
+            <div class="cover-top">Voice of I AM · Longform</div>
+            <div class="cover-mid">
+              <div class="cover-rule"></div>
+              <div class="cover-title">The<br>Unburied<br>Questions</div>
+              <div class="cover-sub">What Your Blood Carries and Your Mother Could Not Say</div>
+            </div>
+            <div class="cover-bot">
+              <div class="cover-author">Munachimso E. Nwagbara</div>
+            </div>
+          </div>
+        </div>
+        <div class="offer-card">
+          <div class="price">₦20,000 <small>one-time</small></div>
+          <a href="#buy" class="cta" id="top-cta">Get the book <span class="cta-arrow">→</span></a>
+          <p class="cta-trust">EPUB + PDF · lifetime updates · 30-day refund</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      Bodies and reputations carry old injuries in remarkably similar ways: both prefer to heal over rather than fully resolve, both can remain functional for years while quietly harboring something sharp beneath the surface, and both, if left unaddressed long enough, eventually require someone willing to go looking with the right instruments to finally take the old thing out.
+      <cite>— Chapter 4, The 1992 Shard</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">What gets inherited</span>
+    <h2>The body walls off what it cannot resolve.<br>So does a family.</h2>
+    <p>A retained foreign body — glass, metal, wood, debris left in tissue after injury — gets encapsulated by fibrous scar tissue. The surrounding wound closes and functions normally while the fragment remains beneath the surface, sometimes for decades, sometimes producing no symptoms at all, sometimes producing chronic low-grade discomfort easy for both patient and physician to underestimate.</p>
+    <p>Something very like that happens to families. The thing that cannot be spoken gets walled off. Life continues on the surface. Children grow up learning to walk around the sealed-off room the way they learn to walk around a piece of furniture. They can feel that something is there — they learn the facial expression that means don't ask, the subject that gets changed at a certain mention, the aunt whose name is spoken differently — but nobody tells them what it is, and eventually they stop asking.</p>
+
+    <div class="pull">
+      There is a specific, particular grief that belongs to children who lose a parent before they are mature enough to have asked the questions that parent's life deserved. I did not get to ask my mother, as an adult, what those eleven years actually felt like from the inside. What I have instead of her answer is this chapter.
+      <cite>— Chapter 4, What I Did Not Know to Ask Her</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">You will recognise this if</span>
+    <h2>Any of these sound like you or someone you carry.</h2>
+    <div class="recog">
+      <h3>The questions you were never allowed to ask have started asking themselves.</h3>
+      <ul>
+        <li>You are carrying a wound no one in your family will name — a death nobody talks about, a feud nobody explains, an aunt whose name changes the room.</li>
+        <li>You have reacted to your partner, your child, or your boss with an intensity that surprises you, and later you realise you were not reacting to them at all.</li>
+        <li>There is a facial expression, a tone of voice, a way of sighing, that you learned from a parent and have caught yourself using in exactly the same situations.</li>
+        <li>You have patterns in your relationships — the same argument, the same distance, the same exit — that you can see clearly in hindsight and cannot stop in the moment.</li>
+        <li>You find yourself attracted to churches or prophets or men who promise you certainty, and you suspect the attraction has less to do with truth than with how badly you want a clean answer.</li>
+        <li>You know the bare facts of a family story and you have begun to suspect there is a whole other version.</li>
+        <li>You have read books about "inner healing" or "generational curses" and walked away unsatisfied — the formulas felt borrowed, the explanations too clean for the thing you actually carry.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cost">
+      <h3>The cost of leaving it buried.</h3>
+      <p>Encapsulated shards do not kill you. That is what makes them dangerous — because you can live with them for a decade, or a lifetime, without realising the accommodation they have cost you:</p>
+      <span class="sunk">You pass on to your children a tone of voice you thought you were choosing freely.</span>
+      <span class="sunk">You choose partners who reproduce the exact dynamics you promised yourself you would never repeat.</span>
+      <span class="sunk">You cannot enter certain rooms, or certain subjects, without a chronic low-grade tension you have mistaken for personality.</span>
+      <span class="sunk">You reach for religious certainty, or political certainty, or therapeutic certainty, because a sealed question is more comfortable than an open one.</span>
+      <span class="sunk">You lose the brother or sister or parent a second time — once to the event, once to the story the family agreed to tell about it afterwards.</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Six books. Forty-three chapters.</span>
+    <h2>What the book actually does.</h2>
+    <div class="grid">
+      <div class="gcell"><span class="gn">Book I</span><b>Blood, Birth, and Accusation</b><span>Nwanneka. The oracle's silence at Awgu. The sociology of scapegoating. The 1992 glass shard that lived in her cheek for eleven years. Chukwunonso, the brother he never met. The biology of the sickle-cell trade-off — why the gene that kills one child protects the next.</span></div>
+      <div class="gcell"><span class="gn">Book II</span><b>Small Rooms</b><span>One room in Upper Chime. The geometry of small spaces. Sunday in two acts. Epistemic pluralism — what happens when church, tradition, and neuroscience all claim to explain the same thing and none of them quite do. The notebook behind the cloth divider.</span></div>
+      <div class="gcell"><span class="gn">Book III</span><b>The River's Edge</b><span>Ugbokonkwo. Constraint-driven childhood. Nwangene River. His brother Collins's biology and homeostasis. The two pens (revisited from Book One — but now you see where the watching came from).</span></div>
+      <div class="gcell"><span class="gn">Book IV</span><b>The Blackboard of Language</b><span>The barrister's house. Humpty Dumpty on a blackboard. Witness consciousness. The neuroscience of self-observation. The mathematics of the invisible — Cantor, asymptotes, and what you can prove exists without being able to reach it.</span></div>
+      <div class="gcell"><span class="gn">Book V</span><b>Cumulative Weight</b><span>Three aunts and one uncle. Cumulative loss. The word that arrived. Thirteen years between. Bread and football. Chioma and the bucket.</span></div>
+      <div class="gcell"><span class="gn">Book VI</span><b>Collins and What Remains</b><span>The door that opened. The folder. The land that arrived too late. Ambiguous loss. The doors that closed. Talismans and the neurobiology of belief. Jung and the river beneath. The Tao, the Gita, and sabr — three traditions that meet on the ground of unknowing.</span></div>
+    </div>
+    <p style="font-style:italic;color:var(--muted);font-size:15px;margin-top:10px">Every historical, scientific, and scriptural claim is graded for reliability in Appendix A. The strongest opposing case is stated in every instance. Where a reading is the author's own rather than scholarly consensus, it is marked as such. He does not ask you to trust him. He asks you to look.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="scene">
+      The trade-off is written into the blood. The same gene that gives a child malaria protection in the dangerous first years of life is the gene that can kill that child's sibling if that child inherits two copies. There is no villain here. There is a deal — a very old deal, struck between a species and a parasite long before any of us were born, a deal in which some children are born with protection and some children are born with a sentence, and most mothers in malaria country, standing over a grave, will not be told there was mathematics at work in their loss.
+      <cite>— Chapter 7, The Biology of the Genetic Trade-off</cite>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Pluralism, not pick-a-side</span>
+    <h2>He refuses one vocabulary.<br>That refusal is the book's central argument.</h2>
+    <p>There are readers who want this to be a traditional book — about ancestors, ogbanje, the oracle, the river beneath, unbroken lineage. There are readers who want this to be a psychology book — intergenerational trauma, somatic markers, attachment, encapsulation, the talking cure. There are readers who want this to be a Christian book in which prayer resolves every buried thing.</p>
+    <p>It is not any one of those books. It will not pick a side. The author spent years moving between those vocabularies. He sat under the ukwu ube tree with cowries and he sat in hospital waiting rooms and he sat in churches and he sat with the mathematics and he found that none of them alone explains what a mother's eleven-year shard is, or why the body remembers, or what a brother who died at three days old leaves in the bones of the siblings who survive.</p>
+
+    <div class="warn">
+      <b>This is not a book about answers.</b>
+      It is a book about questions that were buried — in a grandmother's silence, in a mother's cheek, in a brother's absence, in the body of a child who inherited them all. The author does not resolve these questions. He digs them up. If you need a book that picks one vocabulary and defends it against the others — if you need Jesus to be the answer, or tradition to be the answer, or psychology to be the answer — there are many. If you want a book that lets them all sit on the same table, and shows you what happens when they do, this is that book.
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="container">
+    <div class="buy">
+      <span class="kicker" style="color:var(--gold);text-align:center;display:block;margin-bottom:14px;font-size:11px;letter-spacing:.22em;font-weight:700">Get it now</span>
+      <h2>The Unburied Questions</h2>
+      <p class="buy-sub">6 books · 43 chapters · ~94,000 words · EPUB + PDF</p>
+      <div class="buy-price">₦20,000 <small>one-time</small></div>
+      <p class="buy-note">Someone carried the question for you. You are the one who gets to dig it up.</p>
+      <ul class="stack">
+        <li><strong>The complete book.</strong> Forty-three chapters across six books, epilogue, two appendices. EPUB + PDF. ~480 pages.</li>
+        <li><strong>Appendix A — Evidence grading.</strong> Every historical, medical, scriptural, and sociological claim graded for reliability. Contested points named. Opposing cases stated.</li>
+        <li><strong>Not a devotional, not a psychology manual, not a traditionalist manifesto.</strong> The vocabularies sit at the same table.</li>
+        <li><strong>Written the way a mathematician writes about family</strong> — precise, careful, refusing easy comfort on either side of any question that mattered.</li>
+        <li><strong>Lifetime updates.</strong> Every new edition, every revision, free.</li>
+        <li><strong>30-day refund.</strong> Read Book I and the glass-shard chapter. If it does not shift something in how you understand what you are carrying, email us. Full refund.</li>
+      </ul>
+      <a href="https://paystack.shop/pay/REPLACE_L02_NG_PRODUCT_ID" class="cta" id="main-cta">
+        Get the book — ₦20,000 <span class="cta-arrow">→</span>
+      </a>
+      <p class="buy-trust">Pay securely with Paystack · card, transfer, USSD · instant download</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">About the author</span>
+    <h2>He is not writing from the far side of healing.</h2>
+    <div class="author">
+      <div class="avatar">M</div>
+      <div>
+        <p><strong>Munachimso E. Nwagbara</strong> was born in Enugu and lives between the city and Mgbowo, where he keeps the house his father left him under an ukwu ube tree. He has a mathematics degree, a supply company, a wife, two children, and — since his twenties — the strange, unasked-for practice of sitting with cowries and telling people true things about themselves he has no ordinary way of knowing.</p>
+        <p>This is the book he did not want to write. He wrote it because the questions would not stay buried. His mother is dead. His brother Collins is still missing. He has not "processed" everything in these pages, and will not pretend otherwise. He writes as a son, a brother, a mathematician, a man who has sat under the tree long enough to know what he does not know.</p>
+        <p style="margin:0">Book One (<em>The Watching Mind</em>) teaches you to watch. Book Two is what you find when you start digging. Formally the books stand alone. Practically, read Watching first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="kicker">Questions</span>
+    <h2 style="margin-bottom:8px">The ones before you buy.</h2>
+    <details><summary>Is this a traditionalist / African spirituality book?</summary><p>It is a book by an Igbo man about what Igbo families carry. It writes frankly about oracles, ogbanje, chi, and sacred trees because those things are part of the material, not because it is advocating them as a system. He is equally frank about the church he grew up in, the neuroscience he has read, the Jung he argues with, and the mathematics.</p></details>
+    <details><summary>Is this a Christian book?</summary><p>The author is a Christian. The book does not resolve to Christian answers, or to anti-Christian answers. Chapter 17 — "When the Churches Closed" — is one of the more direct things written in the Longform about what the church was and was not able to do in the face of the things he is describing. Readers from many traditions have written to say the book respected their own.</p></details>
+    <details><summary>Is this a trauma book / a therapy book?</summary><p>He draws on somatic trauma work (van der Kolk appears in Chapter 5) and on clinical medicine (retained foreign bodies, encapsulated scar tissue, sickle-cell genetics). He does not pretend to be a therapist. If the thing you carry is active and wrecking your sleep, your marriage, or your capacity to work, this book is not a substitute for a clinician. It is a companion — something to read alongside, with both feet on the ground.</p></details>
+    <details><summary>Do I need to read The Watching Mind first?</summary><p>Formally no. Practically, yes. If you cannot yet step back and notice a thought as an object rather than a truth, the material in this book will become either a weapon you use against your family or a pity party you throw for yourself. Book One teaches you the basic move. Book Two is what you do with it.</p></details>
+    <details><summary>How long is it really?</summary><p>~94,000 words — about 480 pages. It is the longest Longform to date. Read one or two chapters at a sitting. Pause after Book I. Do not rush the glass-shard chapter.</p></details>
+    <details><summary>What if my family is fine and there's nothing buried?</summary><p>Then read it anyway. The book is not only for people with obvious wounds. Every family has something it walled off. The question is whether you have found it yet. Many readers write to say they thought they came from "an ordinary family with no drama" and finished the book knowing differently.</p></details>
+    <details><summary>Does this book say African families are broken?</summary><p>It says African families are human families, and human families carry things. There is no special indictment here. The specific forms are specific to his people; the underlying mechanisms — scapegoating, encapsulation, inherited pattern, grief without permission to name it — are universal.</p></details>
+    <details><summary>Is this book going to make me angry at my parents?</summary><p>It may. It also gives you, in the second half, a way not to stay angry. Understanding what was walled off is not the same as prosecuting the people who walled it. They were often carrying the same shard.</p></details>
+  </div>
+</section>
+
+<section class="final" style="border-bottom:none">
+  <div class="container">
+    <span class="kicker">Start wherever you are</span>
+    <h2 style="font-style:italic">The scar fades.<br>The thing beneath the scar does not.</h2>
+    <p>Someone carried the question for you. You are the one who gets to dig it up.</p>
+    <a href="#buy" class="cta" id="final-cta">Get the book — ₦20,000 <span class="cta-arrow">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© Voice of I AM · <a href="/VOIA-BOOKS/v2/library/">Library</a> · <a href="/VOIA-BOOKS/v2/about.html">About</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="https://wa.me/2348101265454">WhatsApp</a></p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky-inner">
+    <div class="sticky-price-wrap">
+      <div class="sticky-price"><em>The Unburied Questions</em> — <b>₦20,000</b></div>
+      <div class="sticky-sub">EPUB + PDF · 30-day refund</div>
+    </div>
+    <a href="https://paystack.shop/pay/REPLACE_L02_NG_PRODUCT_ID" class="cta">Get it <span class="cta-arrow">→</span></a>
+  </div>
+</div>
+
+<script>
+(function(){var s=document.getElementById('sticky'),h=document.querySelector('.hero');if(!s||!h)return;var t=false;function u(){var b=h.getBoundingClientRect().bottom;if(b<-80)s.classList.add('show');else s.classList.remove('show');t=false}window.addEventListener('scroll',function(){if(!t){requestAnimationFrame(u);t=true}},{passive:true});u()})();
+var BUY='https://paystack.shop/pay/REPLACE_L02_NG_PRODUCT_ID';
+document.querySelectorAll('a[href="'+BUY+'"]').forEach(function(a){a.addEventListener('click',function(){if(window.fbq)fbq('track','InitiateCheckout',{content_name:'The Unburied Questions (NG)',value:20000,currency:'NGN'})})});
+document.querySelectorAll('a[href="#buy"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('buy').scrollIntoView({behavior:'smooth'})})});
+</script>
+</body>
+</html>
