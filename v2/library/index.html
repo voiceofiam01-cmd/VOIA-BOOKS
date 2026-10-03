@@ -312,7 +312,7 @@ footer a:hover{color:#f0e6d0}
 .modal-blurb{font-family:var(--serif);font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:24px}
 .modal-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
 .modal-price{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--burgundy)}
-.modal-price-note{font-size:13px;color:var(--muted)}
+.modal-price-note{font-size:13px;color:var(--muted)}.modal-price-was{font-size:16px!important;color:var(--muted)!important;text-decoration:line-through!important;font-weight:400!important;margin-left:8px}
 .modal-buys{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 .btn-buy{
   display:inline-flex;align-items:center;gap:8px;
@@ -388,7 +388,8 @@ fbq('init','1775037067141776');fbq('track','PageView');
     <div class="hdr-right">
       <a href="/VOIA-BOOKS/v2/about.html" class="hdr-link">About</a>
       <a href="/VOIA-BOOKS/v2/policies.html" class="hdr-link">Policies</a>
-      <a href="#" class="hdr-cart" onclick="openCartDrawer();return false">
+      <span data-currency-switcher style="display:inline-flex;align-items:center"></span>
+      <a href="#" class="hdr-cart"" onclick="openCartDrawer();return false">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
         Bag · <span id="cart-count" data-cart-count>0</span>
       </a>
@@ -509,6 +510,7 @@ fbq('init','1775037067141776');fbq('track','PageView');
   </div>
 </div>
 
+<script src="/VOIA-BOOKS/v2/assets/js/money.js"></script>
 <script src="/VOIA-BOOKS/v2/assets/js/cart.js"></script>
 <script src="catalogue.js"></script>
 <script>
@@ -741,7 +743,7 @@ function renderLibrary(){
 }
 
 function cardHtml(b){
-  var _ngn = b.priceNG||7500; var price = b.comingSoon ? '<span style="color:var(--muted);font-style:italic;font-weight:400;font-size:13px">Coming soon</span>' : '₦'+Number(_ngn).toLocaleString();
+  var _usd = b.price||10; var price = b.comingSoon ? '<span style="color:var(--muted);font-style:italic;font-weight:400;font-size:13px">Coming soon</span>' : '<span data-price-usd="'+_usd+'">'+(window.VOIA&&VOIA.money?VOIA.money.fmt(_usd):('$'+_usd.toFixed(2)))+'</span><span class="list-was" style="font-size:12px;color:var(--muted);text-decoration:line-through;margin-left:6px;font-weight:400" data-pricewas-usd="'+(b.priceUSD||_usd*1.2)+'"></span>';
   var badge='';
   if(b.comingSoon) badge='<span class="book-badge" style="background:#d4d4d8;color:#52525b;box-shadow:none">Coming soon</span>';
   else if(b.badge) badge='<span class="book-badge" style="background:#dc2626;color:#fff;box-shadow:0 2px 6px -2px rgba(220,38,38,.5)">'+b.badge+'</span>';
@@ -782,9 +784,9 @@ function openBook(sku){
   var isSoon = !!b.comingSoon;
   var isPrelaunch = !isLive(b) && b.promoPage; // has a promo page but Paystack not yet wired
   var hasRealCheckout = isLive(b);
-  var _ngn = b.priceNG||7500; var _isLaunch = !!(b.priceNGLaunch && Date.now()<new Date('2026-10-26T23:59:00+01:00').getTime() && b.sku==='TRY-037');
-  var _curPrice = _isLaunch ? b.priceNGLaunch : _ngn;
-  var priceDisplay = isSoon ? '<span style="color:var(--muted);font-style:italic">Coming soon</span>' : (_isLaunch?'<span style="font-size:18px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-right:8px;font-family:var(--serif)">₦'+Number(_ngn).toLocaleString()+'</span>':'')+'₦'+Number(_curPrice).toLocaleString();
+  var _usd = b.price||10; var _usdList = b.priceUSD||Math.round(_usd*1.2);
+  function _p(usd){return window.VOIA&&VOIA.money?VOIA.money.fmt(usd):('$'+usd.toFixed(2))}
+  var priceDisplay = isSoon ? '<span style="color:var(--muted);font-style:italic">Coming soon</span>' : '<span data-price-usd="'+_usd+'" class="modal-price-main">'+_p(_usd)+'</span><span data-pricewas-usd="'+_usdList+'" class="modal-price-was" style="font-size:18px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-left:10px;font-family:var(--serif)">'+_p(_usdList)+'</span>';
   var ctaExtra = '';
   if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' also</span>';
 
@@ -793,13 +795,13 @@ function openBook(sku){
   if(hasRealCheckout){
     var ngPay = paystackUrl(b,'ng');
     priceNote = (_isLaunch?'<span style="color:var(--burgundy);font-weight:700">Launch price</span><span style="margin:0 8px;color:var(--rule)">·</span>':'')+'Instant PDF + EPUB · Lifetime updates · 30-day refund';
-    buyLabel = 'Add to bag — ₦'+Number(_curPrice).toLocaleString();
-    buyAction = 'href="#" onclick="addFromModal(\''+b.sku+'\','+_curPrice+');return false"';
+    buyLabel = 'Add to bag';
+    buyAction = 'href="#" onclick="addFromModal(\''+b.sku+'\','+_usd+');return false"';
     buyBtnCls = 'btn-buy';
     trustLine = 'Free delivery to your inbox<span>·</span>Paystack secure checkout<span>·</span>30-day no-questions refund';
     waitlistForm =
         '<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">'
-          +(ngPay?'<a class="btn-sample" href="https://paystack.shop/pay/'+ngPay+'" target="_blank" rel="noopener" style="cursor:pointer">Buy now (checkout) →</a>':'')
+          +(b.paystackGlobal||b.paystackNG?'<a class="btn-sample" href="#" onclick="buyNowModal();return false" style="cursor:pointer">Buy now (checkout) →</a>':'')
           +'<a class="btn-sample" href="'+BASE+'p/?sku='+b.sku+'" style="cursor:pointer">Full book page →</a>'
         +'</div>';
   } else if(isPrelaunch){
@@ -961,9 +963,18 @@ function showSample(b){
   m.innerHTML = sample;
 }
 
-function addFromModal(sku,price){
-  var bb=getBook(sku); VOIA.cart.add(sku,{title:bb.title,price:price,edition:'PDF'});
-  if(window.fbq) fbq('track','AddToCart',{content_ids:[sku],content_name:bb.title,value:price,currency:'NGN'});
+function buyNowModal(){
+  var bb=getBook(sku);
+  var cur=VOIA.money.get();
+  var payId=(cur==='NGN'&&bb.paystackNG)?bb.paystackNG:bb.paystackGlobal;
+  if(payId){
+    fbq('track','InitiateCheckout',{content_ids:[sku],content_name:bb.title,value:bb.price,currency:'USD'});
+    window.open('https://paystack.shop/pay/'+payId,'_blank');
+  } else { addFromModal(sku,bb.price); }
+}
+function addFromModal(sku,usdPrice){
+  var bb=getBook(sku); var ngn=Math.round(VOIA.money.convert(usdPrice,'NGN')/50)*50;VOIA.cart.add(sku,{title:bb.title,price:ngn,edition:'PDF',usdPrice:usdPrice});
+  if(window.fbq) fbq('track','AddToCart',{content_ids:[sku],content_name:bb.title,value:usdPrice,currency:'USD'});
   openCartDrawer();
 }
 function closeModal(){
@@ -1070,11 +1081,12 @@ function renderLibCart(){
     return '<div class="cart-item"><div class="ci-mini" style="'+cs+';border-radius:2px"></div><div><div class="ci-t">'+escapeHtml(it.title)+'</div><div class="ci-p">'+fmtN(it.price)+' &times; '+it.qty+' &middot; PDF</div></div><button class="ci-x" onclick="VOIA.cart.remove(\''+it.sku+'\');renderLibCart()">&times;</button></div>';
   }).join('');
   var tot=VOIA.cart.total();
-  foot.innerHTML='<div class="cart-total"><span>Total</span><span>'+fmtN(tot)+'</span></div><button class="btn-buy" style="border:none;cursor:pointer;width:100%;display:inline-flex;justify-content:center" onclick="VOIA.cart.checkout()">Checkout &rarr;</button><p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic">Secure Paystack &middot; 30-day refund</p>';
+  foot.innerHTML='<div class="cart-total"><span>Total</span><span>'+fmtN(tot)+'</span></div><button class="btn-buy" style="border:none;cursor:pointer;width:100%;display:inline-flex;justify-content:center" onclick="VOIA.cart.checkout()">Checkout &rarr;</button><p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic">Secure Paystack &middot; 30-day refund<span data-charge-note style="display:block;margin-top:4px;font-size:11px"></span></p>';
 }
 window.addEventListener('voia:cart',function(){var c=document.getElementById('cart-count');if(c)c.textContent=VOIA.cart.count();if(document.getElementById('lib-drawer').classList.contains('open'))renderLibCart();});
 document.addEventListener('DOMContentLoaded',function(){var c=document.getElementById('cart-count');if(c)c.textContent=VOIA.cart.count();});
 </script>
 
+<script src="/VOIA-BOOKS/v2/assets/js/currency-switcher.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <title id="page-title">Voice of I AM — book</title>
 <meta name="description" id="page-desc" content="" />
+<script src="/VOIA-BOOKS/v2/assets/js/money.js"></script>
 <link rel="icon" type="image/png" sizes="32x32" href="/VOIA-BOOKS/v2/assets/favicon-32.png" />
 <link rel="apple-touch-icon" href="/VOIA-BOOKS/v2/assets/apple-touch-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -142,8 +143,9 @@ window.__AB_VARIANT__='v2-redesign';
   <div class="links">
     <a href="/VOIA-BOOKS/v2/library/">Library</a>
     <a href="/VOIA-BOOKS/v2/policies.html">Policies</a>
+    <span data-currency-switcher style="display:inline-flex;align-items:center"></span>
     <a href="#" class="cart-link" onclick="openCart();return false">
-      Cart <span class="cart-badge" data-cart-count>0</span>
+      Bag <span class="cart-badge" data-cart-count>0</span>
     </a>
   </div>
 </nav>
@@ -181,7 +183,7 @@ if(!b){ document.getElementById('main').innerHTML='<div style="padding:60px 0;te
 // Meta + title
 document.getElementById('page-title').textContent = b.title+' — Voice of I AM';
 document.getElementById('page-desc').setAttribute('content', (b.blurb||'').substring(0,160));
-fbq('track','ViewContent',{content_ids:[b.sku],content_name:b.title,value:b.priceNG,currency:'NGN'});
+fbq('track','ViewContent',{content_ids:[b.sku],content_name:b.title,value:b.price,currency:'USD'});
 
 function darken(hex,amt){
   var c=hex.replace('#','');
@@ -191,19 +193,18 @@ function darken(hex,amt){
   return '#'+[r,g,bb].map(function(n){var h=n.toString(16);return h.length<2?'0'+h:h}).join('');
 }
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function fmt(n){return '₦'+Number(n).toLocaleString()}
+function moneyFmt(usd){return VOIA.money?VOIA.money.fmt(usd):'$'+usd.toFixed(2)}
+function pFmt(usd){return '<span data-price-usd="'+usd+'">'+moneyFmt(usd)+'</span>'}
 
 // Cover
 var coverStyle = 'background:linear-gradient(135deg,'+b.coverColor+','+darken(b.coverColor,.3)+')';
 var pages = b.pages ? ('<div class="mi"><div class="k">Length</div><div>'+b.pages+' pages</div></div>') : '';
 var author = b.author.replace('Munachimso E. Nwagbara','Munachimso Nwagbara');
 
-// Pricing — show launch price if active
-var now = Date.now();
-var LAUNCH_END = new Date('2026-10-26T23:59:00+01:00').getTime();
-var isLaunch = b.priceNGLaunch && now < LAUNCH_END && b.sku==='TRY-037';
-var price = isLaunch ? b.priceNGLaunch : b.priceNG;
-var wasPrice = isLaunch ? b.priceNG : null;
+// Pricing: MAP (priceUSD) struck through, house price (price) shown.
+var price = b.price;
+var wasPrice = b.priceUSD;
+var isLaunch = false;
 
 // Tabs content
 var includes = b.save ? '<p><em>Bundle price saves you '+esc(b.save)+'.</em></p>' : '';
@@ -218,12 +219,15 @@ var whatYouGet = '<ul>'
 var rel = BOOKS.filter(x=>x.sku!==b.sku && x.shelf===b.shelf).slice(0,3);
 if(rel.length<3){ rel = rel.concat(BOOKS.filter(x=>x.sku!==b.sku && x.featured && rel.indexOf(x)<0)).slice(0,3); }
 
-// Editions cross-link (Paycheck has global)
 var editions = '';
 if(b.sku==='TRY-037'){
-  editions = '<div class="editions"><h3>Editions</h3><div class="ed-row">'
-    +'<a class="ed-pill" href="'+BASE+'paycheck/"><span class="ed-cur">₦</span> Nigerian edition — Naira, Nigerian examples</a>'
-    +'<span class="ed-pill" style="opacity:.65;cursor:default"><span class="ed-cur coming">$</span> Global edition — USD (coming soon)</span>'
+  editions = '<div class="editions"><h3>Ad-optimized sales pages</h3><div class="ed-row">'
+    +'<a class="ed-pill" href="'+BASE+'global/">Worldwide (USD)</a>'
+    +'<a class="ed-pill" href="'+BASE+'paycheck/">Nigerian (₦)</a>'
+    +'</div><p style="margin-top:8px;font-size:12px;color:var(--ink-mute);font-style:italic;font-family:var(--serif)">Sales pages are targeted campaign versions. The price here is the house price.</p></div>';
+} else if(b.promoPage || b.promoPageNG){
+  editions = '<div class="editions"><h3>Sales page</h3><div class="ed-row">'
+    +'<a class="ed-pill" href="'+BASE+(b.promoPageNG||b.promoPage).replace(/^\//,'')+'">Read the full sales page →</a>'
     +'</div></div>';
 }
 
@@ -247,16 +251,16 @@ var mainHTML =
 
     +'<div class="price-box">'
       +'<div class="prices">'
-        +'<span class="price">'+fmt(price)+'</span>'
-        +(wasPrice?'<span class="price-was">'+fmt(wasPrice)+'</span>':'')
+        +'<span class="price" data-price-usd="'+price+'">'+moneyFmt(price)+'</span>'
+        +(wasPrice?'<span class="price-was" data-pricewas-usd="'+wasPrice+'">'+moneyFmt(wasPrice)+'</span>':'')
       +'</div>'
-      +'<div class="price-note">Instant PDF + EPUB · Lifetime updates · 30-day refund'+(isLaunch?' · Launch price ends soon':'')+'</div>'
+      +'<div class="price-note">Instant PDF + EPUB · Lifetime updates · 30-day refund<span data-charge-note style="display:block;margin-top:4px;font-size:12px"></span></div>'
     +'</div>'
     +'<div class="ctas">'
       +(b.live
         ? '<button class="btn btn-primary" onclick="buyNow()">Buy now →</button>'
         : '<button class="btn btn-primary" style="opacity:.65;cursor:not-allowed" disabled>Coming soon</button>')
-      +'<button class="btn btn-outline" onclick="VOIA.cart.add(\''+b.sku+'\',{title:\''+esc(b.title).replace(/'/g,"\\'")+'\',price:'+price+',edition:\'PDF\''+'});toastAdd();renderCart()">Add to bag</button>'
+      +'<button class="btn btn-outline" onclick="addBagUsd()">Add to bag</button>'
     +'</div>'
     +'<div class="trust">Secure Paystack checkout<span>·</span>Instant download after payment<span>·</span>30-day no-questions refund</div>'
 
@@ -281,7 +285,7 @@ var mainHTML =
           +'<div style="font-family:var(--serif);font-weight:600;font-size:12px;line-height:1.15;margin-top:auto;padding-top:40px">'+esc(r.title.length>30?r.title.substring(0,28)+'…':r.title)+'</div>'
         +'</div>'
         +'<div class="al-t">'+esc(r.title)+'</div>'
-        +'<div class="al-p">'+fmt(r.priceNG)+'</div>'
+        +'<div class="al-p">'<span data-price-usd="'+r.price+'">'+moneyFmt(r.price)+'</span>'</div>'
       +'</a>';
     }).join('')+'</div></div>':'')
   +'</div>';
@@ -300,15 +304,28 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
 
 function buyNow(){
   // If live and has Paystack NG link, go direct (sales-page behavior); if inline is on, use inline.
-  if(b.paystackNG){
-    if(window.fbq) fbq('track','InitiateCheckout',{content_ids:[b.sku],content_name:b.title,value:price,currency:'NGN'});
-    window.open('https://paystack.shop/pay/'+b.paystackNG,'_blank');
-  } else {
-    // Fallback — add to cart
-    VOIA.cart.add(b.sku,{title:b.title,price:price,edition:'PDF'});
-    openCart();
-  }
+  var cur = VOIA.money.get();
+  var payId = (cur==='NGN' && b.paystackNG) ? b.paystackNG : b.paystackGlobal;
+  if(payId){
+    if(window.fbq) fbq('track','InitiateCheckout',{content_ids:[b.sku],content_name:b.title,value:b.price,currency:'USD'});
+    window.open('https://paystack.shop/pay/'+payId,'_blank');
+  } else { addBagUsd(); }
 }
+
+function addBagUsd(){
+  var usd = b.price;
+  var ngn = Math.round(VOIA.money.convert(usd,'NGN')/50)*50;
+  VOIA.cart.add(b.sku,{title:b.title,price:ngn,edition:'PDF',usdPrice:usd});
+  if(window.fbq) fbq('track','AddToCart',{content_ids:[b.sku],content_name:b.title,value:usd,currency:'USD'});
+  toastAdd();renderCart();
+}
+window.addEventListener('voia:currency',function(){
+  document.querySelectorAll('[data-price-usd]').forEach(function(el){el.textContent=moneyFmt(parseFloat(el.dataset.priceUsd))});
+  document.querySelectorAll('[data-pricewas-usd]').forEach(function(el){el.textContent=moneyFmt(parseFloat(el.dataset.pricewasUsd))});
+  var n = VOIA.money.chargeNote();
+  document.querySelectorAll('[data-charge-note]').forEach(function(el){el.textContent=n;el.style.display=n?'block':'none'});
+});
+setTimeout(function(){window.dispatchEvent(new Event('voia:currency'))},1500);
 
 // Cart drawer
 function openCart(){ document.getElementById('drawer').classList.add('open'); renderCart(); }
@@ -351,5 +368,6 @@ document.querySelectorAll('[data-cart-count]').forEach(el=>VOIA.cart.add||null);
 // Initial render
 renderCart();
 </script>
+<script src="/VOIA-BOOKS/v2/assets/js/currency-switcher.js"></script>
 </body>
 </html>
