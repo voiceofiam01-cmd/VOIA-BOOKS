@@ -671,13 +671,13 @@ function renderFeatured(){
         (liveCta?'<span class="feat-tag">Available now</span>':'<span class="feat-tag">New &amp; noted</span>')+
         '<h3>'+escapeHtml(b.title)+'</h3>'+
         '<p>'+escapeHtml(b.blurb.substring(0,120))+'…</p>'+
-        '<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">'+(liveCta?'See the book →':'Read more →')+'</span>'+
+        '<span class="feat-cta">'+(liveCta?'See the book →':'Read more →')+'</span>'+
       '</div>'+
     '</div>';
   }).join('');
   fg.querySelectorAll('.feat-book[data-sku]').forEach(function(el){
     var b = getBook(el.dataset.sku);
-    if(b && !b.promoPage){
+    if(b){
       el.style.cursor='pointer';
       el.addEventListener('click',function(){openBook(b.sku)});
     }
@@ -746,7 +746,8 @@ function renderLibrary(){
 }
 
 function cardHtml(b){
-  var _usd = b.price||10; var price = b.comingSoon ? '<span style="color:var(--muted);font-style:italic;font-weight:400;font-size:13px">Coming soon</span>' : '<span data-price-usd="'+_usd+'">'+(window.VOIA&&VOIA.money?VOIA.money.fmt(_usd):('$'+_usd.toFixed(2)))+'</span><span class="list-was" style="font-size:12px;color:var(--muted);text-decoration:line-through;margin-left:6px;font-weight:400" data-pricewas-usd="'+(b.priceUSD||_usd*1.2)+'"></span>';
+  var _usd = b.price||10; var _usdList = b.priceUSD||Math.round(_usd*1.2);
+  var price = b.comingSoon ? '<span style="color:var(--muted);font-style:italic;font-weight:400;font-size:13px">Coming soon</span>' : '<span data-price-usd="'+_usd+'">'+(window.VOIA&&VOIA.money?VOIA.money.fmt(_usd):('$'+_usd.toFixed(2)))+'</span><span class="list-was" style="font-size:12px;color:var(--muted);text-decoration:line-through;margin-left:6px;font-weight:400" data-pricewas-usd="'+_usdList+'">'+(window.VOIA&&VOIA.money?VOIA.money.fmt(_usdList):('$'+_usdList.toFixed(2)))+'</span>';
   var badge='';
   if(b.comingSoon) badge='<span class="book-badge" style="background:#d4d4d8;color:#52525b;box-shadow:none">Coming soon</span>';
   else if(b.badge) badge='<span class="book-badge" style="background:#dc2626;color:#fff;box-shadow:0 2px 6px -2px rgba(220,38,38,.5)">'+b.badge+'</span>';
@@ -766,6 +767,7 @@ function cardHtml(b){
 
 /* ── product modal ── */
 function openBook(sku){
+  window.__activeModalSku = sku;
   var b = getBook(sku); if(!b) return;
   // Books with fully wired promos → go straight there
   if(false && isLive(b)){ /* never redirect; live books now use modal */ } // legacy{ window.location.href = BASE + b.promoPage.replace(/^\//,''); return; }
@@ -794,17 +796,21 @@ function openBook(sku){
   if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' also</span>';
 
   var priceNote, buyLabel, buyAction, buyBtnCls, trustLine, waitlistForm;
+  var _isLaunch = false;
+
+  var cur = (window.VOIA&&VOIA.money)?VOIA.money.get():'USD';
+  var samplePromo = (cur==='NGN'&&b.promoPageNG) ? b.promoPageNG : (b.promoPage||'');
 
   if(hasRealCheckout){
     var ngPay = paystackUrl(b,'ng');
-    priceNote = (_isLaunch?'<span style="color:var(--burgundy);font-weight:700">Launch price</span><span style="margin:0 8px;color:var(--rule)">·</span>':'')+'Instant PDF + EPUB · Lifetime updates · 30-day refund';
+    priceNote = (_isLaunch?'<span style="color:var(--burgundy);font-weight:700">Launch price</span><span style="margin:0 8px;color:var(--rule)">·</span>':'')+'Instant PDF + EPUB · Lifetime updates · 30-day refund<span data-charge-note style="display:none;margin-top:4px;font-size:11px"></span>';
     buyLabel = 'Add to bag';
     buyAction = 'href="#" onclick="addFromModal(\''+b.sku+'\','+_usd+');return false"';
     buyBtnCls = 'btn-buy';
     trustLine = 'Free delivery to your inbox<span>·</span>Paystack secure checkout<span>·</span>30-day no-questions refund';
     waitlistForm =
         '<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">'
-          +(b.paystackGlobal||b.paystackNG?'<a class="btn-sample" href="#" onclick="buyNowModal();return false" style="cursor:pointer">Buy now (checkout) →</a>':'')
+          +(b.paystackGlobal||b.paystackNG?'<a class="btn-sample" href="#" onclick="buyNowModal(\''+b.sku+'\');return false" style="cursor:pointer">Buy now (checkout) →</a>':'')
           +'<a class="btn-sample" href="'+BASE+'p/?sku='+b.sku+'" style="cursor:pointer">Full book page →</a>'
         +'</div>';
   } else if(isPrelaunch){
@@ -849,7 +855,7 @@ function openBook(sku){
       '<div class="modal-buys">'+
         (hasRealCheckout
           ? '<a class="'+buyBtnCls+'" '+buyAction+'>'+buyLabel+ctaExtra+'</a>'+
-            '<a class="btn-sample" href="'+BASE+(b.promoPage||'').replace(/^\//,'')+'#sample">Read a free sample</a>'
+            '<a class="btn-sample" href="'+BASE+(samplePromo||b.promoPage||'').replace(/^\//,'')+'#sample">Read a free sample</a>'
           : '<button type="button" class="'+buyBtnCls+'" data-act="show-waitlist" style="font-family:var(--sans)">'+buyLabel+ctaExtra+'</button>'+
             (!isSoon ? '<button type="button" class="btn-sample" data-act="sample" style="font-family:var(--sans);cursor:pointer">Preview the opening</button>'
                      : '<span style="display:inline-flex;align-items:center;padding:14px 0;color:var(--muted);font-size:13px;font-style:italic">Sample coming when edits are closer.</span>')
@@ -909,6 +915,7 @@ function openBook(sku){
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   history.replaceState(null,'','#book/'+sku);
+  reRenderPrices();
 }
 
 function waitlistHtml(b){
@@ -967,17 +974,22 @@ function showSample(b){
   m.innerHTML = sample;
 }
 
-function buyNowModal(){
+function buyNowModal(sku){
+  if(!sku && window.__activeModalSku) sku = window.__activeModalSku;
   var bb=getBook(sku);
-  var cur=VOIA.money.get();
+  if(!bb) return;
+  var cur=(window.VOIA&&VOIA.money)?VOIA.money.get():'USD';
   var payId=(cur==='NGN'&&bb.paystackNG)?bb.paystackNG:bb.paystackGlobal;
   if(payId){
-    fbq('track','InitiateCheckout',{content_ids:[sku],content_name:bb.title,value:bb.price,currency:'USD'});
+    if(window.fbq) fbq('track','InitiateCheckout',{content_ids:[sku],content_name:bb.title,value:bb.price,currency:'USD'});
     window.open('https://paystack.shop/pay/'+payId,'_blank');
   } else { addFromModal(sku,bb.price); }
 }
 function addFromModal(sku,usdPrice){
-  var bb=getBook(sku); var ngn=Math.round(VOIA.money.convert(usdPrice,'NGN')/50)*50;VOIA.cart.add(sku,{title:bb.title,price:ngn,edition:'PDF',usdPrice:usdPrice});
+  var bb=getBook(sku);
+  if(!bb) return;
+  var ngn=(window.VOIA&&VOIA.money)?Math.round(VOIA.money.convert(usdPrice,'NGN')/50)*50:(bb.priceNG||7500);
+  if(window.VOIA&&VOIA.cart) VOIA.cart.add(sku,{title:bb.title,price:ngn,edition:'PDF',usdPrice:usdPrice});
   if(window.fbq) fbq('track','AddToCart',{content_ids:[sku],content_name:bb.title,value:usdPrice,currency:'USD'});
   openCartDrawer();
 }
@@ -1057,7 +1069,7 @@ function reRenderPrices(){
     var usd=parseFloat(el.dataset.pricewasUsd);
     el.textContent=VOIA.money.fmt(usd);
   });
-  var n=(VOIA.money.cur()==='NGN')?'Nigerian Naira: Paystack charges in NGN — your bank handles FX conversion at the live rate.':'';
+  var n = (window.VOIA && VOIA.money && VOIA.money.chargeNote) ? VOIA.money.chargeNote() : '';
   document.querySelectorAll('[data-charge-note]').forEach(function(el){el.textContent=n;el.style.display=n?'block':'none'});
   // If drawer open, re-render it too
   if(document.getElementById('lib-drawer').classList.contains('open'))renderLibCart();

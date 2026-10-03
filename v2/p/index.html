@@ -184,7 +184,7 @@ if(!b){ document.getElementById('main').innerHTML='<div style="padding:60px 0;te
 // Meta + title
 document.getElementById('page-title').textContent = b.title+' — Voice of I AM';
 document.getElementById('page-desc').setAttribute('content', (b.blurb||'').substring(0,160));
-fbq('track','ViewContent',{content_ids:[b.sku],content_name:b.title,value:b.price,currency:'USD'});
+if(window.fbq) fbq('track','ViewContent',{content_ids:[b.sku],content_name:b.title,value:b.price,currency:'USD'});
 
 function darken(hex,amt){
   var c=hex.replace('#','');
