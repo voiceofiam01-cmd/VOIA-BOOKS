@@ -31,11 +31,24 @@
     }catch(e){ return 'USD'; }
   }
 
-  // Fetch live rates (USD base). Fail silently to fallbacks.
+  // Fetch live rates (USD base). Try open.er-api.com first, then fall back to
+  // exchangerate.host. Fail silently to hardcoded FALLBACK_RATES on any error.
+  function applyRates(d){
+    if(!d) return;
+    // open.er-api.com returns {rates:{...}}; exchangerate.host same shape.
+    var r = d.rates || (d.data && d.data.rates);
+    if(r){ rates = Object.assign({}, FALLBACK_RATES, r); emit(); }
+  }
+  function fetchJson(url){
+    return fetch(url,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('bad status');return r.json()});
+  }
   try{
-    fetch('https://api.exchangerate.host/latest?base=USD&symbols='+Object.keys(FALLBACK_RATES).join(','),{cache:'no-store'})
-      .then(function(r){return r.json()})
-      .then(function(d){if(d&&d.rates){rates=Object.assign({},FALLBACK_RATES,d.rates);emit();}})
+    var syms = Object.keys(FALLBACK_RATES).join(',');
+    fetchJson('https://open.er-api.com/v6/latest/USD')
+      .then(applyRates)
+      .catch(function(){
+        return fetchJson('https://api.exchangerate.host/latest?base=USD&symbols='+syms).then(applyRates);
+      })
       .catch(function(){});
   }catch(e){}
 
