@@ -2,346 +2,83 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Your 10-Minute Audit is here</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Your 10-Minute Money Audit is here</title>
 <meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" sizes="32x32" href="/VOIA-BOOKS/v2/assets/favicon-32.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1775037067141776');
-fbq('track', 'PageView');
-fbq('trackCustom', 'ab_variant', {variant:'v2-redesign', page:window.location.pathname});
-window.__AB_VARIANT__='v2-redesign';
-fbq('track', 'Lead', { content_name: 'The 10-Minute Audit (Global) - confirmed', content_category: 'Lead Magnet' });
-
-// ===== LAUNCH CONFIG =====
-// Real launch price ends at this date (WAT = UTC+1). EDIT THIS when you push live.
-// When this date passes: update the PAYSTACK link to a $14 product,
-// or change the date to extend the launch.
-var LAUNCH_END = new Date('2026-10-26T23:59:00+01:00').getTime(); // Oct 26 2026, 11:59pm WAT (aligned with Nigerian Edition launch)
-var LAUNCH_PRICE = 9;
-var REGULAR_PRICE = 14;
-var PAYSTACK_LAUNCH = 'https://paystack.shop/pay/3sr-qh8ovi'; // TODO: replace with $14 product URL after launch
-// =========================
-
-function trackAuditDownload(){
-  if(typeof fbq === 'function'){
-    fbq('track', 'ViewContent', {
-      content_name: 'The 10-Minute Audit PDF downloaded',
-      content_category: 'Lead Magnet',
-      value: 0,
-      currency: 'USD'
-    });
-  }
-}
-function trackUpsellClick(price){
-  if(typeof fbq === 'function'){
-    fbq('track', 'InitiateCheckout', {
-      content_name: 'The Paycheck-to-Paycheck Escape Plan (Global)',
-      content_category: price < REGULAR_PRICE ? 'Launch Upsell' : 'Book Upsell',
-      value: price,
-      currency: 'USD'
-    });
-  }
-}
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=PageView&noscript=1"/><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1775037067141776&ev=Lead&noscript=1"/></noscript>
 <style>
-:root{--midnight:#0a1628;--midnight-2:#0f1f38;--ink:#0a1628;--ink-soft:#2a3a55;--paper:#f7f3ea;--paper-2:#efe8d8;--gold:#d4a84b;--gold-soft:#e6c577;--gold-deep:#a8802e;--white:#fff;--muted:#5a6b86;--line:rgba(212,168,75,.25);--green:#2f6b5c;--red:#c53b3b}
+:root{--ink:#0c0a09;--ink-soft:#44403c;--ink-mute:#78716c;--paper:#faf7f0;--paper-2:#f3ede0;--rule:#d6ceb8;--burgundy:#7c2d12;--gold:#b08634;--gold-soft:#d4a84b;--serif:'Fraunces',Georgia,'Times New Roman',Times,serif;--sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--midnight-2),var(--midnight));min-height:100vh;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:20px 16px 40px}
-.card{background:var(--paper);border-radius:20px;max-width:540px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.45);overflow:hidden;border-top:4px solid var(--gold)}
-
-/* Step indicator */
-.steps-bar{display:flex;align-items:center;background:var(--midnight);padding:14px 22px;gap:8px;font-size:12px;color:#8ea0bb;font-weight:600;letter-spacing:.04em}
-.steps-bar .step{display:flex;align-items:center;gap:7px;opacity:.4}
-.steps-bar .step.done{opacity:.6}.steps-bar .step.active{opacity:1;color:var(--gold-soft)}
-.steps-bar .step .num{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);color:#8ea0bb}
-.steps-bar .step.done .num{background:var(--green);border-color:var(--green);color:#fff}
-.steps-bar .step.active .num{background:var(--gold);border-color:var(--gold);color:var(--midnight)}
-.steps-bar .divider{flex:1;height:1px;background:rgba(255,255,255,.08)}
-.steps-bar .step-label{line-height:1}
-
-/* Hero block — download CTA */
-.hero{padding:28px 26px 22px;text-align:center;border-bottom:1px solid var(--line)}
-.check{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));color:var(--midnight);font-size:26px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 8px 20px rgba(212,168,75,.3)}
-h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:25px;line-height:1.15;color:var(--ink);margin-bottom:8px}
-.lede{color:var(--ink-soft);font-size:14.5px;line-height:1.55;margin-bottom:18px}
-.download{margin:0}
-.download .big-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:16px 22px;border-radius:14px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 28px rgba(212,168,75,.35);min-height:56px}
-.download .big-btn:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
-.download .big-btn .icon{font-size:20px}
-.download .meta{text-align:center;font-size:12.5px;color:var(--muted);margin-top:7px;letter-spacing:.01em}
-
-/* Launch countdown — compact strip inside the upsell, under the buy button */
-.launch{margin:12px 0 4px;background:rgba(200,40,40,.12);border:1px solid rgba(224,72,72,.3);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;color:#ffd9d9;font-size:12.5px;font-weight:600;letter-spacing:.01em;text-align:center}
-.launch.expired{background:rgba(47,107,92,.1);border-color:rgba(47,107,92,.3);color:#c4e4bc}
-.launch .pulse{width:7px;height:7px;border-radius:50%;background:#e04848;box-shadow:0 0 0 0 rgba(224,72,72,.6);animation:pulse 2s infinite;flex-shrink:0}
-.launch.expired .pulse{background:var(--green);box-shadow:0 0 0 0 rgba(47,107,92,.6);animation:none}
-.launch .price{color:var(--gold-soft);font-weight:700}
-.launch .clock{display:inline-flex;gap:4px;align-items:center}
-.launch .clock .unit{background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:3px 6px;font-variant-numeric:tabular-nums;font-size:12px;color:#fff;min-width:28px;text-align:center;font-weight:700;line-height:1.2}
-.launch .clock .label{font-size:8px;color:#b89292;display:block;font-weight:500;letter-spacing:.05em;text-transform:uppercase;margin-top:1px}
-.launch.expired .clock .unit{color:#c4e4bc;border-color:rgba(255,255,255,.06);background:rgba(0,0,0,.25)}
-.launch.expired .clock .label{color:#7a9a72}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,72,72,.6)}70%{box-shadow:0 0 0 8px rgba(224,72,72,0)}100%{box-shadow:0 0 0 0 rgba(224,72,72,0)}}
-
-/* Upsell */
-.upsell{padding:24px 22px 22px;background:linear-gradient(180deg,#1a2d4d,#0f1f38);text-align:center;position:relative;overflow:hidden}
-.upsell::before{content:"";position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,75,.2),transparent 65%);pointer-events:none}
-.upsell-grid{display:flex;gap:18px;align-items:center;position:relative;z-index:2;margin-bottom:16px}
-.upsell .cover-wrap{flex:0 0 120px;position:relative}
-.upsell .cover{position:relative;width:120px;height:170px;border-radius:5px 8px 8px 5px;overflow:hidden;box-shadow:
-    0 2px 0 rgba(255,255,255,.08) inset,
-    -2px 0 0 rgba(0,0,0,.3) inset,
-    0 20px 36px rgba(0,0,0,.55),
-    0 8px 14px rgba(0,0,0,.4),
-    0 0 0 1px rgba(212,168,75,.35);
-  transform:perspective(800px) rotateY(-6deg) rotateX(2deg) rotateZ(-1deg);
-  background:#0a1628}
-.upsell .cover img{width:100%;height:100%;object-fit:cover;display:block;border-radius:5px 8px 8px 5px}
-.upsell .cover .spine{position:absolute;top:0;left:0;width:6px;height:100%;background:linear-gradient(90deg,rgba(0,0,0,.4),rgba(255,255,255,.08) 40%,rgba(0,0,0,.15));border-radius:5px 0 0 5px}
-.upsell .cover .gloss{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(115deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 65%,rgba(255,255,255,.05) 100%);pointer-events:none;border-radius:5px 8px 8px 5px}
-.upsell .pitch{flex:1;min-width:0;text-align:left}
-.upsell .tag{display:inline-block;background:rgba(212,168,75,.18);color:var(--gold-soft);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:20px;border:1px solid rgba(212,168,75,.35);margin-bottom:8px}
-.upsell h2{font-family:'Fraunces',Georgia,serif;font-size:22px;line-height:1.1;color:var(--white);font-weight:500;margin-bottom:10px;letter-spacing:-.01em}
-.upsell ul{list-style:none;padding:0;margin:0}
-.upsell li{color:#cdd6e3;font-size:14px;line-height:1.4;padding:3px 0 3px 20px;position:relative}
-.upsell li::before{content:"✓";position:absolute;left:0;color:var(--gold-soft);font-weight:700;font-size:13px;top:3px}
-.upsell .price-row{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:12px;position:relative;z-index:2}
-.upsell .now{font-family:'Fraunces',Georgia,serif;font-size:34px;font-weight:600;color:var(--gold-soft);line-height:1}
-.upsell .was{font-size:15px;color:#8ea0bb;text-decoration:line-through}
-.upsell .save{font-size:11.5px;background:rgba(212,168,75,.18);color:var(--gold-soft);font-weight:700;padding:3px 8px;border-radius:20px;border:1px solid rgba(212,168,75,.3)}
-.upsell .primary{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:100%;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--midnight);font-weight:700;font-size:16px;padding:15px 18px;border-radius:12px;text-decoration:none;box-shadow:0 6px 0 var(--gold-deep),0 10px 24px rgba(212,168,75,.35);min-height:54px;position:relative;z-index:2}
-.upsell .primary:hover{background:linear-gradient(180deg,#f0d48a,#dab05b)}
-.upsell .primary .arrow{transition:transform .2s}
-.upsell .primary:hover .arrow{transform:translateX(3px)}
-.upsell .meta{text-align:center;font-size:12px;color:#8ea0bb;margin-top:7px;letter-spacing:.01em;position:relative;z-index:2}
-.upsell .no-thanks{display:block;text-align:center;margin-top:10px;color:#7a8aa3;font-size:12.5px;text-decoration:none;position:relative;z-index:2}
-.upsell .no-thanks:hover{color:var(--gold-soft);text-decoration:underline}
-.guarantee{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:10px 14px;margin-top:14px;font-size:12px;color:#a7b4c6;text-align:left;position:relative;z-index:2;line-height:1.45}
-.guarantee .icon{flex:0 0 18px;font-size:16px}
-
-/* Instructions */
-.how{padding:22px 26px;text-align:left;background:var(--paper);border-top:1px solid var(--line)}
-.how h2{font-family:'Fraunces',Georgia,serif;font-size:12.5px;color:var(--gold-deep);letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;font-weight:600}
-.how ol{padding-left:22px;color:var(--ink-soft);font-size:14px;line-height:1.6}
-.how li{margin-bottom:6px}
-.how li strong{color:var(--ink)}
-
-/* Footer */
-.foot{padding:18px 26px 24px;background:var(--paper-2);text-align:center;border-top:1px solid var(--line)}
-.note{font-size:13px;color:var(--muted);margin-bottom:10px;line-height:1.55}
-.note a{color:var(--gold-deep);font-weight:600}
-.home{display:inline-block;color:var(--muted);font-size:13.5px;text-decoration:none}
-.home:hover{text-decoration:underline;color:var(--gold-deep)}
-
-@media (max-width:480px){
-  body{padding:10px}
-  .card{border-radius:16px}
-  .steps-bar{padding:11px 16px;font-size:11px;gap:6px}
-  .steps-bar .step-label{display:none}
-  .steps-bar .step .num{width:18px;height:18px;font-size:10px}
-  .hero{padding:22px 20px 18px}
-  h1{font-size:22px}
-  .lede{font-size:14px;margin-bottom:14px}
-  .download .big-btn{font-size:15px;padding:14px 18px;min-height:52px}
-  .download .meta{font-size:12px;margin-top:6px}
-  .upsell{padding:18px 16px 16px}
-  .upsell::before{top:-60px;width:220px;height:220px}
-  .upsell-grid{gap:14px;margin-bottom:14px;align-items:flex-start}
-  .upsell .cover-wrap{flex:0 0 96px}
-  .upsell .cover{width:96px;height:136px;border-radius:4px 7px 7px 4px;box-shadow:
-      0 2px 0 rgba(255,255,255,.08) inset,-2px 0 0 rgba(0,0,0,.3) inset,
-      0 16px 28px rgba(0,0,0,.55),0 6px 12px rgba(0,0,0,.35),0 0 0 1px rgba(212,168,75,.3);
-    transform:perspective(650px) rotateY(-8deg) rotateX(2deg) rotateZ(-2deg)}
-  .upsell .cover .spine{width:5px}
-  .upsell .tag{font-size:9px;padding:2px 7px;margin-bottom:6px}
-  .upsell h2{font-size:18px;line-height:1.1;margin-bottom:8px}
-  .upsell ul{margin-top:4px}
-  .upsell li{font-size:12.5px;padding:2px 0 2px 18px;line-height:1.35}
-  .upsell .now{font-size:28px}
-  .upsell .was{font-size:14px}
-  .upsell .save{font-size:11px;padding:2px 7px}
-  .upsell .price-row{gap:8px;margin-bottom:10px}
-  .upsell .primary{font-size:15px;padding:13px 18px;min-height:48px;border-radius:11px;box-shadow:0 5px 0 var(--gold-deep),0 8px 18px rgba(212,168,75,.3)}
-  .upsell .meta{font-size:11px;margin-top:6px}
-  .launch{padding:8px 10px;font-size:11px;margin:8px 0 2px;gap:5px}
-  .launch .clock .unit{padding:2px 5px;font-size:11px;min-width:22px}
-  .launch .clock .label{font-size:7px}
-  .upsell .no-thanks{font-size:12px;margin-top:8px}
-  .guarantee{font-size:11.5px;padding:8px 11px;margin-top:10px;gap:7px;line-height:1.4}
-  .how{padding:18px 20px}
-  .how h2{font-size:12px;margin-bottom:8px}
-  .how ol{font-size:13px;padding-left:20px}
-  .foot{padding:16px 20px 20px}
-}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.bar{background:var(--ink);color:#cfc4ad;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.bar a{color:var(--gold-soft);text-decoration:none}
+main{max-width:720px;margin:0 auto;padding:64px 28px 96px}
+.eyebrow{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+h1{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(34px,5vw,52px);line-height:1.05;letter-spacing:-.015em;margin-bottom:24px}
+h1 em{font-style:normal;color:var(--gold);font-weight:500}
+p{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--ink-soft);margin-bottom:18px}
+.dl{display:inline-block;background:var(--burgundy);color:#fdf6e3;padding:16px 32px;border-radius:2px;font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;margin:24px 0;box-shadow:0 3px 0 var(--ink)}
+.dl:hover{background:#92400e}
+.note{font-size:14px;color:var(--ink-mute);font-style:italic;margin-bottom:48px}
+.upsell{background:var(--paper-2);padding:36px 32px;border-radius:3px;border-left:4px solid var(--gold);margin-top:48px}
+.upsell h2{font-family:var(--serif);font-weight:500;font-style:italic;font-size:26px;margin-bottom:12px;line-height:1.2}
+.upsell h2 em{font-style:normal;color:var(--burgundy);font-weight:600}
+.upsell p{font-size:16px;margin-bottom:20px}
+.up-cta{display:inline-block;background:var(--ink);color:#fdf6e3;padding:14px 28px;border-radius:2px;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.up-cta:hover{background:var(--burgundy)}
+.mini{font-size:13px;color:var(--ink-mute);margin-top:10px}
+ul.plain{list-style:none;padding:0;margin:20px 0}
+ul.plain li{padding:8px 0 8px 28px;position:relative;font-size:15px;color:var(--ink-soft);border-bottom:1px solid var(--rule)}
+ul.plain li::before{content:"→";position:absolute;left:0;top:8px;color:var(--gold);font-weight:700}
+footer{background:var(--ink);color:#a89f8f;padding:40px 28px;text-align:center;font-size:13px}
+footer a{color:var(--gold-soft)}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1775037067141776');fbq('track','PageView');
+fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname});
+window.__AB_VARIANT__='v2-redesign';
+fbq('track','Lead',{content_name:'10-Minute Money Audit confirmed (global)',content_category:'Lead Magnet',currency:'USD'});
+var PAYSTACK_GLOBAL = 'https://paystack.shop/pay/3sr-qh8ovi';
+function trackDownload(){fbq&&fbq('track','ViewContent',{content_name:'10-Minute Money Audit PDF downloaded (global)',content_category:'Lead Magnet',value:0,currency:'USD'})}
+function trackUpsell(){fbq&&fbq('track','InitiateCheckout',{content_name:'Paycheck Escape Plan (global) — upsell from audit',content_category:'Lead-magnet Upsell',value:14,currency:'USD'})}
+</script>
 </head>
 <body>
-<main class="card">
+<div class="bar">
+  <a href="/VOIA-BOOKS/v2/" style="font-family:var(--serif);font-weight:600;letter-spacing:.18em">VOICE OF I AM</a>
+  <a href="/VOIA-BOOKS/v2/global/">← The book</a>
+</div>
 
-  <!-- STEP INDICATOR -->
-  <div class="steps-bar" aria-label="Progress">
-    <div class="step done"><span class="num">✓</span><span class="step-label">Signed up</span></div>
-    <div class="divider"></div>
-    <div class="step active"><span class="num">2</span><span class="step-label">Download Audit</span></div>
-    <div class="divider"></div>
-    <div class="step"><span class="num">3</span><span class="step-label">Fix the leak</span></div>
+<main>
+  <p class="eyebrow">Step one · free</p>
+  <h1>Your Audit <em>is here.</em></h1>
+  <p>It will take ten minutes. Set a timer. Print the page if you can. Open your banking app. Do the three columns before you read anything else.</p>
+  <p>The largest leak is almost never what you think it is before you write the numbers down.</p>
+
+  <a class="dl" href="/VOIA-BOOKS/v2/global/ten-minute-money-audit.pdf" download onclick="trackDownload()">Download the Audit PDF →</a>
+  <p class="note">If the download doesn't start, <a href="/VOIA-BOOKS/v2/global/ten-minute-money-audit.pdf" target="_blank" rel="noopener">click here</a>. Check your Downloads folder.</p>
+
+  <div class="upsell">
+    <h2>The Audit finds <em>the first leak.</em><br>The book gives you <em>the full system.</em></h2>
+    <p>The 10-Minute Audit finds what you're losing this month. It's the opening chapter. The rest of the work — plugging the leaks for good, building a buffer that doesn't disappear on the 19th, stopping the cycle permanently — is what <strong>The Paycheck-to-Paycheck Escape Plan</strong> is for.</p>
+    <ul class="plain">
+      <li>Four-word system: <strong>Leaks · Buckets · Buffer · Drill.</strong></li>
+      <li>96 pages, one weekend of reading, written in plain English with global examples.</li>
+      <li>Instant PDF + EPUB download · Lifetime updates · 30-day refund.</li>
+    </ul>
+    <a class="up-cta" href="/VOIA-BOOKS/v2/global/" onclick="trackUpsell()">Get the full system — $14 →</a>
+    <p class="mini">If you're reading from Nigeria, <a href="/VOIA-BOOKS/v2/paycheck/">the Nigerian edition is ₦5,500</a> — written in Naira, with Nigerian examples.</p>
   </div>
-
-  <!-- HERO: instant download (visible on first open) -->
-  <section class="hero">
-    <div class="check" aria-hidden="true">✓</div>
-    <h1>Here's your Audit.</h1>
-    <p class="lede">Your copy of <strong>The 10-Minute Audit</strong> is ready. Tap the button below to open it now — we also emailed a copy to your inbox in case you want it later.</p>
-    <div class="download">
-      <a class="big-btn"
-         href="the-10-minute-audit.pdf"
-         target="_blank"
-         rel="noopener"
-         download="The 10-Minute Audit.pdf"
-         onclick="trackAuditDownload()">
-        <span class="icon" aria-hidden="true">📄</span>
-        Download The 10-Minute Audit →
-      </a>
-      <p class="meta">PDF · 8 pages · opens instantly · free forever</p>
-    </div>
-  </section>
-
-  <!-- UPSELL: side-by-side cover + pitch, then full-width CTA + countdown -->
-  <section class="upsell">
-    <div class="upsell-grid">
-      <div class="cover-wrap">
-        <div class="cover">
-          <img src="global-cover-thumb.jpg" alt="The Paycheck-to-Paycheck Escape Plan — Global Edition" />
-          <div class="spine" aria-hidden="true"></div>
-          <div class="gloss" aria-hidden="true"></div>
-        </div>
-      </div>
-      <div class="pitch">
-        <span class="tag">After the Audit</span>
-        <h2>Here's the plan<br>to fix it.</h2>
-        <ul>
-          <li>Plug the silent leaks</li>
-          <li>Your first payday split — today</li>
-          <li>Build a $1,000 buffer fast</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="price-row">
-      <span class="now">$9</span>
-      <span class="was">$14</span>
-      <span class="save">Save $5</span>
-    </div>
-    <a class="primary" id="buy-btn"
-       href="https://paystack.shop/pay/3sr-qh8ovi"
-       onclick="trackUpsellClick(LAUNCH_PRICE)">
-      Get the book — $9 <span class="arrow">→</span>
-    </a>
-    <p class="meta"><span id="meta-note">Launch price</span> · 66 pages · PDF · delivered instantly via email</p>
-
-    <!-- COUNTDOWN (full width, under button) -->
-    <div class="launch" id="launch-banner" role="alert">
-      <span class="pulse" aria-hidden="true"></span>
-      <span id="launch-msg"><strong>Launch price ends in</strong></span>
-      <span class="clock" aria-label="Countdown">
-        <span class="unit"><span id="cd-days">0</span><span class="label">d</span></span>
-        <span class="unit"><span id="cd-hours">00</span><span class="label">h</span></span>
-        <span class="unit"><span id="cd-mins">00</span><span class="label">m</span></span>
-        <span class="unit"><span id="cd-secs">00</span><span class="label">s</span></span>
-      </span>
-    </div>
-
-    <a class="no-thanks" href="/VOIA-BOOKS/v2/global/">I'll do the Audit first →</a>
-
-    <div class="guarantee">
-      <span class="icon" aria-hidden="true">🛡</span>
-      <span>Try the first drill. If it doesn't land, WhatsApp me for a full refund.</span>
-    </div>
-  </section>
-
-  <!-- INSTRUCTIONS -->
-  <section class="how">
-    <h2>How to get the most out of the Audit</h2>
-    <ol>
-      <li><strong>Print it if you can.</strong> Paper remembers what the thumb forgets — handwriting changes this exercise.</li>
-      <li><strong>Grab a pen, open your banking app,</strong> last month's statements. Fixed payments only. No shame.</li>
-      <li><strong>Set a timer for 10 minutes</strong> and do it tonight. The number itself changes things.</li>
-    </ol>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="foot">
-    <p class="note"><strong>Email didn't arrive?</strong> Check Promotions or Spam. Not there after 10 minutes? <a href="https://wa.me/2348101265454?text=Hi%2C%20I%20signed%20up%20for%20the%2010-Minute%20Audit%20but%20didn%27t%20get%20the%20email.">Message us on WhatsApp</a>.</p>
-    <a class="home" href="/VOIA-BOOKS/v2/">&larr; Back to Voice of I AM</a>
-  </footer>
 </main>
 
-<script>
-// Countdown timer — counts to REAL date LAUNCH_END. Does NOT reset.
-(function(){
-  var banner = document.getElementById('launch-banner');
-  var msg = document.getElementById('launch-msg');
-  var dEl = document.getElementById('cd-days');
-  var hEl = document.getElementById('cd-hours');
-  var mEl = document.getElementById('cd-mins');
-  var sEl = document.getElementById('cd-secs');
-  var buyBtn = document.getElementById('buy-btn');
-  var metaNote = document.getElementById('meta-note');
-  var pulse = banner.querySelector('.pulse');
-  var wasEl = document.querySelector('.upsell .was');
-  var saveBadge = document.querySelector('.upsell .save');
-  var priceNow = document.querySelector('.upsell .now');
-
-  function pad(n){return n<10?'0'+n:''+n}
-
-  function setExpired(){
-    banner.classList.add('expired');
-    msg.innerHTML = '<strong>Launch has ended.</strong> The book is now <span class="price">$' + REGULAR_PRICE + '</span>.';
-    dEl.textContent='00';hEl.textContent='00';mEl.textContent='00';sEl.textContent='00';
-    // Update visible prices from $9 to $14
-    var nowEl = document.querySelector('.upsell .now');
-    if(nowEl) nowEl.textContent = '$'+REGULAR_PRICE;
-    if(wasEl) wasEl.style.display = 'none';
-    if(saveBadge) saveBadge.style.display = 'none';
-    if(metaNote) metaNote.textContent = 'Regular price';
-    buyBtn.href = PAYSTACK_LAUNCH; // TODO: replace with $14 Paystack product URL when launch ends
-    buyBtn.setAttribute('onclick','trackUpsellClick('+REGULAR_PRICE+')');
-    buyBtn.innerHTML = 'Get the book — $'+REGULAR_PRICE+' <span class="arrow">→</span>';
-  }
-
-  function tick(){
-    var now = Date.now();
-    var diff = LAUNCH_END - now;
-    if(diff <= 0){
-      setExpired();
-      return;
-    }
-    var d = Math.floor(diff/86400000);
-    var h = Math.floor((diff%86400000)/3600000);
-    var m = Math.floor((diff%3600000)/60000);
-    var s = Math.floor((diff%60000)/1000);
-    dEl.textContent = d;
-    hEl.textContent = pad(h);
-    mEl.textContent = pad(m);
-    sEl.textContent = pad(s);
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
-</script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a443c42dbce3edef',t:'MTc5MDk0NDcyOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<footer>
+  <p><a href="/VOIA-BOOKS/v2/">Voice of I AM home</a> · <a href="/VOIA-BOOKS/v2/policies.html">Policies</a> · <a href="mailto:hello@voiceofiam.com">hello@voiceofiam.com</a></p>
+  <p style="margin-top:8px;font-size:12px;color:#6a6350">© 2026 Voice of I AM Publishing House</p>
+</footer>
+</body>
 </html>
