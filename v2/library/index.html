@@ -491,7 +491,7 @@ fbq('init','1775037067141776');fbq('track','PageView');
         <li><a href="/VOIA-BOOKS/v2/about.html">About VOIA</a></li>
         <li><a href="#">For booksellers</a></li>
         <li><a href="#">Submissions</a></li>
-        <li><a href="#">Privacy</a></li>
+        <li><a href="/VOIA-BOOKS/v2/privacy.html">Privacy</a></li>
       </ul>
     </div>
   </div>
@@ -511,6 +511,15 @@ fbq('init','1775037067141776');fbq('track','PageView');
 
 <script src="catalogue.js"></script>
 <script>
+/* ── base path + live promos ── */
+const BASE = '/VOIA-BOOKS/v2/';
+// Books whose promo pages are fully wired (real Paystack IDs, no REPLACE placeholders) → direct link.
+// Everything else with a promoPage opens a pre-launch modal with a waitlist email capture.
+const LIVE_PROMOS = {
+  'TRY-037': true,   // Paycheck-to-Paycheck Escape Plan (NG)
+};
+const WAITLIST_FORM_ID = '9993291'; // Kit form — same engine; tagged per book via hidden field
+
 /* ── texture map (blank text-FREE cloth/paper backgrounds; real type rendered in HTML) ── */
 const SHELF_TEXTURE = {
   'foundations':   'texture-cream.jpg',
@@ -546,7 +555,7 @@ function coverHtml(book, sizeCls){
   var texture, ink, solidBg = null;
   if(override === null){
     // Real JPG cover for books that have one (Paycheck)
-    return '<div class="'+sizeCls+'" style="background:url(\'../paycheck/book-cover.jpg\') center/cover #1c1917;">'+
+    return '<div class="'+sizeCls+'" style="background:url(\''+BASE+'paycheck/book-cover.jpg\') center/cover #1c1917;">'+
       '<div class="spine" style="background:rgba(0,0,0,.28)"></div></div>';
   } else if(override){
     if(override === 'solid'){
@@ -638,13 +647,15 @@ function renderFeatured(){
   var featured = BOOKS.filter(function(b){return b.featured}).slice(0,3);
   var fg = document.getElementById('featured-grid');
   fg.innerHTML = featured.map(function(b){
+    var liveCta = (b.promoPage && LIVE_PROMOS[b.sku]);
     return '<div class="feat-book" data-sku="'+b.sku+'">'+
       coverHtml(b,'feat-cover')+
       '<div class="feat-body">'+
-        (b.promoPage?'<span class="feat-tag">Featured read</span>':'<span class="feat-tag">New &amp; noted</span>')+
+        (liveCta?'<span class="feat-tag">Available now</span>':'<span class="feat-tag">New &amp; noted</span>')+
         '<h3>'+escapeHtml(b.title)+'</h3>'+
         '<p>'+escapeHtml(b.blurb.substring(0,120))+'…</p>'+
-        (b.promoPage?'<a class="feat-cta" href="'+b.promoPage+'">Read the full page →</a>':'<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">Read more →</span>')+
+        (liveCta?'<a class="feat-cta" href="'+BASE+b.promoPage.replace(/^\//,'')+'">Read the full page →</a>'
+               :'<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">Read more →</span>')+
       '</div>'+
     '</div>';
   }).join('');
@@ -740,7 +751,9 @@ function cardHtml(b){
 /* ── product modal ── */
 function openBook(sku){
   var b = getBook(sku); if(!b) return;
-  if(b.promoPage){ window.location.href = b.promoPage; return; }
+  // Books with fully wired promos → go straight there
+  if(b.promoPage && LIVE_PROMOS[b.sku]){ window.location.href = BASE + b.promoPage.replace(/^\//,''); return; }
+  // Everything else: open in-library modal (true preview / waitlist experience)
 
   var shelf = SHELVES.find(function(s){return s.id===b.shelf});
   // find relatives: same shelf + any books in b.contains, or books that point to it
@@ -756,15 +769,45 @@ function openBook(sku){
   }
 
   var isSoon = !!b.comingSoon;
-  var buyUrl = '#'; // placeholder — will be filled when Paystack product per SKU is set up
-  var buyLabel = isSoon ? 'Coming soon — join the waitlist' : 'Add to cart — $'+b.price;
-  var ctaExtra = '';
-  if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' at checkout</span>';
+  var isPrelaunch = !LIVE_PROMOS[b.sku] && b.promoPage; // has a promo page but Paystack not yet wired
+  var hasRealCheckout = LIVE_PROMOS[b.sku];
   var priceDisplay = isSoon ? '<span style="color:var(--muted);font-style:italic">Coming soon</span>' : '$'+b.price;
-  var priceNote = isSoon ? 'This book is being edited and prepared for release. Join the waitlist to be first to know.' : 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
-  var buyAction = isSoon ? 'href="#waitlist"' : 'href="'+buyUrl+'" onclick="return addToCart(\''+b.sku+'\')"';
-  var buyBtnCls = isSoon ? 'btn-buy btn-soon' : 'btn-buy';
-  var trustLine = isSoon ? 'We\'ll email you the moment it launches<span>·</span>No spam, ever<span>·</span>One-click unsubscribe' : 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
+  var ctaExtra = '';
+  if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' also</span>';
+
+  var priceNote, buyLabel, buyAction, buyBtnCls, trustLine, waitlistForm;
+
+  if(hasRealCheckout){
+    // Should not reach here (already redirected), but defensive:
+    priceNote = 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
+    buyLabel = 'Get it — $'+b.price;
+    buyAction = 'href="'+BASE+b.promoPage.replace(/^\//,'')+'"';
+    buyBtnCls = 'btn-buy';
+    trustLine = 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
+    waitlistForm = '';
+  } else if(isPrelaunch){
+    // Book exists, sales page exists in draft, checkout not yet live — pre-launch waitlist
+    priceNote = 'Launch price $'+b.price+' · Final edits in progress · Waitlist members get 48-hour early access + launch discount.';
+    buyLabel = 'Join the early-access list';
+    buyBtnCls = 'btn-buy promo';
+    trustLine = 'You\'ll be the first to know when it drops<span>·</span>Launch-only discount for the list<span>·</span>One email at launch, no spam';
+    waitlistForm = waitlistHtml(b);
+  } else if(isSoon){
+    // Not yet started / in planning
+    priceNote = 'This book is being written and edited. Join the waitlist to be first to know — and to weigh in on what should be inside.';
+    buyLabel = 'Notify me when it lands';
+    buyBtnCls = 'btn-buy btn-soon';
+    trustLine = 'One email when it launches<span>·</span>No spam, ever<span>·</span>One-click unsubscribe';
+    waitlistForm = waitlistHtml(b);
+  } else {
+    // Regular book, no promo page — cart coming
+    priceNote = 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
+    buyLabel = 'Add to cart — $'+b.price;
+    buyAction = 'href="#" onclick="return addToCart(\''+b.sku+'\')"';
+    buyBtnCls = 'btn-buy';
+    trustLine = 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
+    waitlistForm = '';
+  }
 
   var html =
     '<div class="modal-cover-side">'+coverHtml(b,'modal-cover')+'</div>'+
@@ -781,10 +824,16 @@ function openBook(sku){
         '<span class="modal-price-note">'+priceNote+'</span>'+
       '</div>'+
       '<div class="modal-buys">'+
-        '<a class="'+buyBtnCls+'" '+buyAction+'>'+buyLabel+ctaExtra+'</a>'+
-        '<a class="btn-sample" href="#">Read a free sample</a>'+
+        (hasRealCheckout
+          ? '<a class="'+buyBtnCls+'" '+buyAction+'>'+buyLabel+ctaExtra+'</a>'+
+            '<a class="btn-sample" href="'+BASE+(b.promoPage||'').replace(/^\//,'')+'#sample">Read a free sample</a>'
+          : '<button type="button" class="'+buyBtnCls+'" data-act="show-waitlist" style="font-family:var(--sans)">'+buyLabel+ctaExtra+'</button>'+
+            (!isSoon ? '<button type="button" class="btn-sample" data-act="sample" style="font-family:var(--sans);cursor:pointer">Preview the opening</button>'
+                     : '<span style="display:inline-flex;align-items:center;padding:14px 0;color:var(--muted);font-size:13px;font-style:italic">Sample coming when edits are closer.</span>')
+        )+
       '</div>'+
-      '<div class="modal-trust">'+trustLine+'</div>';
+      '<div class="modal-trust">'+trustLine+'</div>'+
+      waitlistForm;
   if(b.save){
     html += '<div style="background:#fef3c7;border:1px solid #fde68a;border-radius:4px;padding:12px 16px;margin-bottom:20px;font-size:13px;color:#78350f"><strong>Bundle saves you '+b.save+'.</strong> Contains all the books below — delivered together in one download.</div>';
   }
@@ -801,10 +850,83 @@ function openBook(sku){
   html += '</div>';
 
   document.getElementById('modal-body').innerHTML = html;
+  // Wire the modal's waitlist/sample buttons via event delegation
+  var modalBody = document.getElementById('modal-body');
+  modalBody.addEventListener('click',function onMB(e){
+    var t = e.target.closest('[data-act]'); if(!t) return;
+    var act = t.dataset.act;
+    if(act==='show-waitlist'){
+      var card = document.getElementById('waitlist-card');
+      if(card){
+        card.style.display = card.style.display==='none' ? 'block' : 'block';
+        card.querySelector('input[type=email]').focus();
+        if(window.fbq) fbq('track','InitiateCheckout',{content_name:'waitlist:'+b.sku});
+      }
+    } else if(act==='sample'){
+      showSample(b);
+    }
+  },{once:false});
+
   var modal = document.getElementById('modal');
   modal.classList.add('open');modal.setAttribute('aria-hidden','false');
   document.body.style.overflow='hidden';
   history.replaceState(null,'','#book/'+sku);
+}
+
+function waitlistHtml(b){
+  // Hidden by default; revealed when "Join the list" / "Notify me" is clicked.
+  // Uses same Kit form engine as the Payday Autopsy but tagged per-book via a hidden field.
+  return '<div class="waitlist-card" id="waitlist-card" style="display:none;margin-top:20px;background:var(--paper);border:1px solid var(--rule);border-left:3px solid var(--gold);padding:20px 22px;border-radius:3px">'+
+    '<div style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink);margin-bottom:6px">We\'ll let you know the moment it launches.</div>'+
+    '<div style="font-size:13px;color:var(--muted);margin-bottom:14px">One email when it goes live — including the launch discount for waitlist members. No other mail, no spam, one-click unsubscribe.</div>'+
+    '<form class="wl-form" style="display:flex;gap:8px;flex-wrap:wrap" onsubmit="return submitWaitlist(this,event)">'+
+      '<input type="hidden" name="fields[book_interest]" value="'+escapeAttr(b.sku+' · '+b.title)+'">'+
+      '<input type="email" name="email_address" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:12px 14px;border:1px solid var(--rule);border-radius:3px;font-family:var(--sans);font-size:14px;background:var(--paper);color:var(--ink);outline:none">'+
+      '<button type="submit" class="btn-buy" style="border:none;cursor:pointer">Join the list →</button>'+
+    '</form>'+
+    '<div class="wl-ok" style="display:none;padding:12px 0;color:#166534;font-family:var(--serif);font-style:italic">✓ You\'re on the list for <strong>'+escapeHtml(b.title)+'</strong>. Watch your inbox when we launch.</div>'+
+  '</div>';
+}
+function escapeAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function submitWaitlist(form,e){
+  e.preventDefault();
+  var email = form.email_address.value;
+  var bookField = form.querySelector('input[name="fields[book_interest]"]').value;
+  var btn = form.querySelector('button'); btn.disabled=true; btn.textContent='Adding…';
+  // POST to Kit.com form (same form as the Autopsy — uses tagging on the backend)
+  var body = new FormData();
+  body.append('email_address', email);
+  body.append('fields[book_interest]', bookField);
+  fetch(form.action||('https://app.kit.com/forms/'+WAITLIST_FORM_ID+'/subscriptions'),{method:'POST',body:body,mode:'no-cors'})
+    .catch(function(){})
+    .then(function(){
+      form.style.display='none';
+      form.parentElement.querySelector('.wl-ok').style.display='block';
+      if(window.fbq) fbq('track','Lead',{content_name:'waitlist:'+bookField});
+    });
+  return false;
+}
+function showSample(b){
+  // Books whose promo pages exist (pre-launch) — link to the promo page (it loads even if Paystack is placeholder)
+  if(b.promoPage){
+    window.location.href = BASE + b.promoPage.replace(/^\//,'');
+    return;
+  }
+  // Otherwise — open a small sample modal overlay; for coming-soon books we keep this gentle
+  var m = document.getElementById('modal-body');
+  var orig = m.innerHTML;
+  var sample = '<div style="padding:44px">'+
+    '<div style="font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px">Preview · First pages</div>'+
+    '<h2 style="font-family:var(--serif);font-size:28px;font-weight:700;margin-bottom:6px;letter-spacing:-.01em">'+escapeHtml(b.title)+'</h2>'+
+    '<div style="font-family:var(--serif);font-style:italic;color:var(--ink-soft);margin-bottom:24px">'+escapeHtml(b.subtitle||'')+'</div>'+
+    '<div style="font-family:var(--serif);font-size:17px;line-height:1.75;color:var(--ink-soft);max-width:600px">'+
+      '<p style="margin-bottom:16px">'+escapeHtml(b.blurb)+'</p>'+
+      '<p style="color:var(--muted);font-style:italic;font-size:14px">The full opening chapter is being prepared. Join the early-access list above and we\'ll send you the first ten pages the moment edits are close — before the public launch page goes up.</p>'+
+    '</div>'+
+    '<div style="margin-top:24px"><button onclick="document.getElementById(\'modal-body\').innerHTML = window.__lastModal;return false" class="btn-sample" style="cursor:pointer">← Back to book</button></div>'+
+  '</div>';
+  window.__lastModal = orig;
+  m.innerHTML = sample;
 }
 
 function closeModal(){
