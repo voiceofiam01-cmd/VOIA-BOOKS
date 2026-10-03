@@ -208,6 +208,7 @@ a{color:inherit}
 .book-price{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--burgundy);display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
 .book-price .old,.list-was{font-size:13px;color:var(--muted);text-decoration:line-through;font-weight:400}
 .modal-price-main{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--burgundy)}
+.modal-hook{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;color:var(--burgundy);border-left:3px solid var(--gold);padding-left:14px;margin:6px 0 16px}
 .modal-price-note span[data-charge-note]{display:block;margin-top:4px;font-size:11px;font-style:italic}
 .book-badge{
   display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
@@ -836,6 +837,7 @@ function openBook(sku){
       '<div class="bread"><a href="#shelf/'+shelf.id+'">'+shelf.label+'</a> · '+b.sku+'</div>'+
       '<h1>'+escapeHtml(b.title)+'</h1>'+
       '<div class="sub">'+escapeHtml(b.subtitle||'')+'</div>'+
+      (b.hook?'<div class="modal-hook">'+escapeHtml(b.hook)+'</div>':'')+
       '<div class="author">By <strong>'+escapeHtml(b.author)+'</strong>';
   if(b.pages) html += ' · '+b.pages+' pages';
   html += '</div>'+
