@@ -208,12 +208,14 @@ fbq('init','1775037067141776');fbq('track','PageView');
 <script>window.__AB_VARIANT__='v2-redesign';if(window.fbq){fbq('trackCustom','ab_variant',{variant:'v2-redesign',page:window.location.pathname})}</script>
 <script src="/VOIA-BOOKS/v2/assets/js/money.js"></script>
 <script src="/VOIA-BOOKS/v2/assets/js/currency-switcher.js"></script>
+<style>[data-currency-switcher] select{appearance:none;background:rgba(212,168,75,.14);border:1px solid rgba(212,168,75,.3);color:#d4a84b;font-family:Inter,sans-serif;font-size:11px;font-weight:600;padding:4px 20px 4px 8px;border-radius:2px;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%228%22 height=%225%22 viewBox=%220 0 8 5%22><path d=%22M0 0l4 5 4-5z%22 fill=%22%23d4a84b%22/></svg>');background-repeat:no-repeat;background-position:right 6px center;cursor:pointer}</style>
 </head>
 <body>
 
 <nav class="nav">
   <a href="/VOIA-BOOKS/v2/library/" class="mark" style="text-decoration:none">Voice of <span>I AM</span></a>
   <div class="nav-meta"><a href="/VOIA-BOOKS/v2/library/" style="color:var(--accent);text-decoration:none;margin-right:14px">Library</a>Instant PDF · Worldwide</div>
+<span data-currency-switcher style="display:inline-flex;align-items:center;margin-left:12px"></span>
 </nav>
 
 <header class="hero">
@@ -349,8 +351,8 @@ fbq('init','1775037067141776');fbq('track','PageView');
       <p class="offer-sub">Start reading in 60 seconds. Change your next payday.</p>
 
       <div class="price-row">
-        <span class="price-currency">$</span>
-        <span class="price-big">14</span>
+        <span class="price-currency" data-price-currency>$</span>
+        <span class="price-big" data-price-usd="14">14</span>
         <span class="price-note">one-time · no subscription</span>
       </div>
 
@@ -474,7 +476,7 @@ fbq('init','1775037067141776');fbq('track','PageView');
 <div class="sticky" id="sticky">
   <div class="sticky-inner">
     <div class="sticky-price-wrap">
-      <div class="sticky-price">Paycheck Escape Plan — $14</div>
+      <div class="sticky-price" data-price-usd-sticky>Paycheck Escape Plan — $14</div>
       <div class="sticky-sub">Instant PDF · 30-day refund</div>
     </div>
     <a href="https://paystack.shop/pay/3sr-qh8ovi" class="cta">
@@ -511,6 +513,27 @@ document.querySelectorAll('a[href="'+BUY_URL+'"]').forEach(function(a){
     }
   });
 });
+
+// Re-render prices when currency changes
+function renderPrices(){
+  if(!window.VOIA || !VOIA.money) return;
+  var cur = VOIA.money.cur();
+  document.querySelectorAll('[data-price-usd]').forEach(function(el){
+    var usd = parseFloat(el.dataset.priceUsd);
+    var fmt = VOIA.money.fmt(usd);
+    if(el.classList.contains('price-big')){
+      var m = fmt.match(/^(\D+)(.*)$/);
+      document.querySelector('[data-price-currency]').textContent = m?m[1]:'$';
+      el.textContent = m?m[2]:fmt.replace(/^\D+/,'');
+    } else {
+      el.textContent = fmt.replace(/^[^\d]+/,'Paycheck Escape Plan — ')+' — ';
+      // simpler: replace the whole text
+      el.textContent = 'Paycheck Escape Plan — '+fmt;
+    }
+  });
+}
+setTimeout(renderPrices,0);
+window.addEventListener('voia:currency',renderPrices);
 </script>
 </body>
 </html>
