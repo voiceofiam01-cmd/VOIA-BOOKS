@@ -261,9 +261,21 @@ var mainHTML =
     +'<div class="ctas">'
       +(b.live
         ? '<button class="btn btn-primary" onclick="buyNow()">Buy now →</button>'
-        : '<button class="btn btn-primary" style="opacity:.65;cursor:not-allowed" disabled>Coming soon</button>')
-      +'<button class="btn btn-outline" onclick="addBagUsd()">Add to bag</button>'
+          +'<button class="btn btn-outline" onclick="addBagUsd()">Add to bag</button>'
+        : '<button class="btn btn-primary" onclick="toggleWaitlist()">Notify me when it launches →</button>')
     +'</div>'
+    +(b.live ? '' :
+      '<div id="p-waitlist" style="display:none;margin-top:16px;background:var(--cream-2);border-left:3px solid var(--gold);padding:18px 20px;border-radius:4px">'
+        +'<div style="font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);margin-bottom:6px">Be first to read <strong>'+esc(b.title)+'</strong>.</div>'
+        +'<div style="font-size:13px;color:var(--ink-mute);margin-bottom:12px">One email when it drops — including the launch-only discount for early members.</div>'
+        +'<form style="display:flex;gap:8px;flex-wrap:wrap" onsubmit="return submitWaitlist(this,event)">'
+          +'<input type="hidden" name="fields[book_interest]" value="'+esc(b.sku+' · '+b.title)+'">'
+          +'<input type="email" name="email_address" required placeholder="your@email.com" style="flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--rule);border-radius:3px;font-size:14px;background:#fff;color:var(--ink);outline:none">'
+          +'<button type="submit" class="btn btn-primary" style="cursor:pointer">Join the list →</button>'
+        +'</form>'
+        +'<div class="wl-ok" style="display:none;padding:10px 0;color:#166534;font-family:var(--serif);font-style:italic">✓ You\'re on the list. Watch your inbox when we launch.</div>'
+      +'</div>'
+    )
     +'<div class="trust">Secure Paystack checkout<span>·</span>Instant download after payment<span>·</span>30-day no-questions refund</div>'
 
     +'<div class="tabs">'
@@ -303,6 +315,34 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
     document.querySelector('.panel[data-panel="'+btn.dataset.tab+'"]').classList.add('active');
   });
 });
+
+const WAITLIST_FORM_ID = '9993291';
+function toggleWaitlist(){
+  var w = document.getElementById('p-waitlist');
+  if(w){
+    w.style.display = (w.style.display==='none' ? 'block' : 'none');
+    var inp = w.querySelector('input[type=email]');
+    if(inp && w.style.display==='block') inp.focus();
+  }
+}
+function submitWaitlist(form,e){
+  e.preventDefault();
+  var email = form.email_address.value;
+  var bookField = form.querySelector('input[name="fields[book_interest]"]').value;
+  var btn = form.querySelector('button'); btn.disabled=true; btn.textContent='Adding…';
+  var body = new FormData();
+  body.append('email_address', email);
+  body.append('fields[book_interest]', bookField);
+  fetch('https://app.kit.com/forms/'+WAITLIST_FORM_ID+'/subscriptions',{method:'POST',body:body,mode:'no-cors'})
+    .catch(function(){})
+    .then(function(){
+      form.style.display='none';
+      form.parentElement.querySelector('.wl-ok').style.display='block';
+      if(window.fbq) fbq('track','Lead',{content_name:'waitlist:'+bookField});
+      window.dispatchEvent(new CustomEvent('voia:waitlist',{detail:{sku:b.sku,email:email}}));
+    });
+  return false;
+}
 
 function buyNow(){
   // If live and has Paystack NG link, go direct (sales-page behavior); if inline is on, use inline.
