@@ -513,12 +513,23 @@ fbq('init','1775037067141776');fbq('track','PageView');
 <script>
 /* ── base path + live promos ── */
 const BASE = '/VOIA-BOOKS/v2/';
-// Books whose promo pages are fully wired (real Paystack IDs, no REPLACE placeholders) → direct link.
-// Everything else with a promoPage opens a pre-launch modal with a waitlist email capture.
-const LIVE_PROMOS = {
-  'TRY-037': true,   // Paycheck-to-Paycheck Escape Plan (NG)
-};
+// A book is "live" when catalogue.live === true (real Paystack ID(s), no REPLACE placeholders).
+// Live books open an in-library modal with Add-to-cart + "Full sales page" CTA (instead of
+// redirecting away from the library). Everything else shows a waitlist modal.
 const WAITLIST_FORM_ID = '9993291'; // Kit form — same engine; tagged per book via hidden field
+
+function isLive(b){ return !!b.live; }
+function promoUrl(b, edition){
+  // edition: 'global' (default, USD) or 'ng' (NGN). Falls back to b.promoPage.
+  if(edition==='ng' && b.promoPageNG) return BASE + b.promoPageNG.replace(/^\//,'');
+  if(b.promoPage) return BASE + b.promoPage.replace(/^\//,'');
+  return '#';
+}
+function paystackUrl(b, edition){
+  var id = (edition==='ng') ? b.paystackNG : b.paystackGlobal;
+  return id ? 'https://paystack.shop/pay/'+id : null;
+}
+function hasNG(b){ return !!(b.promoPageNG || b.paystackNG); }
 
 /* ── texture map (blank text-FREE cloth/paper backgrounds; real type rendered in HTML) ── */
 const SHELF_TEXTURE = {
@@ -647,15 +658,14 @@ function renderFeatured(){
   var featured = BOOKS.filter(function(b){return b.featured}).slice(0,3);
   var fg = document.getElementById('featured-grid');
   fg.innerHTML = featured.map(function(b){
-    var liveCta = (b.promoPage && LIVE_PROMOS[b.sku]);
+    var liveCta = isLive(b);
     return '<div class="feat-book" data-sku="'+b.sku+'">'+
       coverHtml(b,'feat-cover')+
       '<div class="feat-body">'+
         (liveCta?'<span class="feat-tag">Available now</span>':'<span class="feat-tag">New &amp; noted</span>')+
         '<h3>'+escapeHtml(b.title)+'</h3>'+
         '<p>'+escapeHtml(b.blurb.substring(0,120))+'…</p>'+
-        (liveCta?'<a class="feat-cta" href="'+BASE+b.promoPage.replace(/^\//,'')+'">Read the full page →</a>'
-               :'<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">Read more →</span>')+
+        '<span class="feat-cta" onclick="openBook(\''+b.sku+'\')">'+(liveCta?'See the book →':'Read more →')+'</span>'+
       '</div>'+
     '</div>';
   }).join('');
@@ -752,7 +762,7 @@ function cardHtml(b){
 function openBook(sku){
   var b = getBook(sku); if(!b) return;
   // Books with fully wired promos → go straight there
-  if(b.promoPage && LIVE_PROMOS[b.sku]){ window.location.href = BASE + b.promoPage.replace(/^\//,''); return; }
+  if(false && isLive(b)){ /* never redirect; live books now use modal */ } // legacy{ window.location.href = BASE + b.promoPage.replace(/^\//,''); return; }
   // Everything else: open in-library modal (true preview / waitlist experience)
 
   var shelf = SHELVES.find(function(s){return s.id===b.shelf});
@@ -769,8 +779,8 @@ function openBook(sku){
   }
 
   var isSoon = !!b.comingSoon;
-  var isPrelaunch = !LIVE_PROMOS[b.sku] && b.promoPage; // has a promo page but Paystack not yet wired
-  var hasRealCheckout = LIVE_PROMOS[b.sku];
+  var isPrelaunch = !isLive(b) && b.promoPage; // has a promo page but Paystack not yet wired
+  var hasRealCheckout = isLive(b);
   var priceDisplay = isSoon ? '<span style="color:var(--muted);font-style:italic">Coming soon</span>' : '$'+b.price;
   var ctaExtra = '';
   if(b.paperback) ctaExtra = '<span style="font-size:12px;opacity:.8;margin-left:8px">· Paperback $'+b.paperback+' also</span>';
@@ -778,13 +788,24 @@ function openBook(sku){
   var priceNote, buyLabel, buyAction, buyBtnCls, trustLine, waitlistForm;
 
   if(hasRealCheckout){
-    // Should not reach here (already redirected), but defensive:
-    priceNote = 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
-    buyLabel = 'Get it — $'+b.price;
-    buyAction = 'href="'+BASE+b.promoPage.replace(/^\//,'')+'"';
+    // LIVE BOOK: in-library modal with Add-to-cart + full-page link.
+    // Global edition (USD) is the primary CTA; Nigerian edition shown if available.
+    var globalPay = paystackUrl(b,'global');
+    var ngPay = paystackUrl(b,'ng');
+    var ngRow = hasNG(b) ?
+        '<div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px;color:var(--ink-mute)">'
+          +'Reading from Nigeria? <a href="'+promoUrl(b,'ng')+'" style="color:var(--burgundy);font-weight:700;text-decoration:none;border-bottom:1px solid var(--burgundy)">Nigerian edition — ₦'+b.priceNG.toLocaleString()+' →</a>'
+        +'</div>' : '';
+    priceNote = (b.paperback?'PDF + EPUB · Paperback also available · ':'Instant PDF + EPUB · ')+'Lifetime updates · 30-day refund';
+    buyLabel = 'Add to cart — $'+b.price;
+    buyAction = globalPay ? 'href="'+globalPay+'" target="_blank" rel="noopener" data-act="buy-global"' : 'href="'+promoUrl(b,'global')+'"';
     buyBtnCls = 'btn-buy';
-    trustLine = 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
-    waitlistForm = '';
+    trustLine = 'Buying here opens Paystack checkout securely<span>·</span>Instant download after payment<span>·</span>30-day no-questions refund';
+    waitlistForm =
+        '<div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">'
+          +'<a class="btn-sample" href="'+promoUrl(b,'global')+'" style="cursor:pointer">See the full sales page →</a>'
+        +'</div>'
+        + ngRow;
   } else if(isPrelaunch){
     // Book exists, sales page exists in draft, checkout not yet live — pre-launch waitlist
     priceNote = 'Launch price $'+b.price+' · Final edits in progress · Waitlist members get 48-hour early access + launch discount.';
