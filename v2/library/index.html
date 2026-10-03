@@ -205,8 +205,10 @@ a{color:inherit}
 .book-meta{padding:0 2px}
 .book-title{font-family:var(--serif);font-size:15px;font-weight:700;line-height:1.25;letter-spacing:-.005em;margin-bottom:4px}
 .book-sub{font-size:12px;color:var(--muted);line-height:1.4;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.book-price{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--burgundy)}
-.book-price .old{font-size:13px;color:var(--muted);text-decoration:line-through;font-weight:400;margin-left:6px}
+.book-price{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--burgundy);display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.book-price .old,.list-was{font-size:13px;color:var(--muted);text-decoration:line-through;font-weight:400}
+.modal-price-main{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--burgundy)}
+.modal-price-note span[data-charge-note]{display:block;margin-top:4px;font-size:11px;font-style:italic}
 .book-badge{
   display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
   background:var(--burgundy);color:#f0e6d0;
@@ -311,7 +313,7 @@ footer a:hover{color:#f0e6d0}
 .modal-info .author strong{color:var(--ink);font-weight:600}
 .modal-blurb{font-family:var(--serif);font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:24px}
 .modal-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:8px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
-.modal-price{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--burgundy)}
+.modal-price{display:inline-flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .modal-price-note{font-size:13px;color:var(--muted)}.modal-price-was{font-size:16px!important;color:var(--muted)!important;text-decoration:line-through!important;font-weight:400!important;margin-left:8px}
 .modal-buys{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
 .btn-buy{
@@ -821,7 +823,7 @@ function openBook(sku){
   } else {
     // Regular book, no promo page — cart coming
     priceNote = 'Instant PDF download · Lifetime updates'+(b.paperback?' · Paperback also available':'');
-    buyLabel = 'Add to cart — $'+b.price;
+    buyLabel = 'Add to bag';
     buyAction = 'href="#" onclick="return addToCart(\''+b.sku+'\')"';
     buyBtnCls = 'btn-buy';
     trustLine = 'Instant download after payment<span>·</span>30-day refund, no questions<span>·</span>PDF works on any device';
@@ -1041,6 +1043,25 @@ window.addEventListener('hashchange',routeHash);
 renderFeatured();
 renderLibrary();
 setTimeout(routeHash,0);
+
+/* ── re-render prices on currency change ── */
+function reRenderPrices(){
+  if(!window.VOIA||!VOIA.money)return;
+  document.querySelectorAll('[data-price-usd]').forEach(function(el){
+    var usd=parseFloat(el.dataset.priceUsd);
+    el.textContent=VOIA.money.fmt(usd);
+  });
+  document.querySelectorAll('[data-pricewas-usd]').forEach(function(el){
+    var usd=parseFloat(el.dataset.pricewasUsd);
+    el.textContent=VOIA.money.fmt(usd);
+  });
+  var n=(VOIA.money.cur()==='NGN')?'Nigerian Naira: Paystack charges in NGN — your bank handles FX conversion at the live rate.':'';
+  document.querySelectorAll('[data-charge-note]').forEach(function(el){el.textContent=n;el.style.display=n?'block':'none'});
+  // If drawer open, re-render it too
+  if(document.getElementById('lib-drawer').classList.contains('open'))renderLibCart();
+}
+setTimeout(reRenderPrices,50);
+window.addEventListener('voia:currency',reRenderPrices);
 </script>
 
 <div class="drawer" id="lib-drawer" onclick="if(event.target===this)this.classList.remove('open')">
